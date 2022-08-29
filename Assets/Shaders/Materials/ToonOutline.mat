@@ -37,10 +37,10 @@ Material:
     m_Floats:
     - _CellShading: 255
     - _Outline_Fade: 0.1
-    - _Outline_Pixel: 2.5
+    - _Outline_Pixel: 2
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _ToonFade: 0.5
+    - _ToonFade: 0.463
     m_Colors:
     - _Outline_Color: {r: 0, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

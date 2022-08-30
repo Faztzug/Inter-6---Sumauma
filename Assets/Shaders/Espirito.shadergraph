@@ -32,6 +32,9 @@
         },
         {
             "m_Id": "756b78b811ed411f989b0b1e82db2a31"
+        },
+        {
+            "m_Id": "b0ee019356a24836b51a9f24da387056"
         }
     ],
     "m_Keywords": [],
@@ -3620,6 +3623,33 @@
 }
 
 {
+    "m_SGVersion": 1,
+    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
+    "m_ObjectId": "b0ee019356a24836b51a9f24da387056",
+    "m_Guid": {
+        "m_GuidSerialized": "a84a5d25-7e74-48ba-b96a-fb94157106b4"
+    },
+    "m_Name": "Float",
+    "m_DefaultRefNameVersion": 1,
+    "m_RefNameGeneratedByDisplayName": "Float",
+    "m_DefaultReferenceName": "_Float",
+    "m_OverrideReferenceName": "",
+    "m_GeneratePropertyBlock": true,
+    "m_UseCustomSlotLabel": false,
+    "m_CustomSlotLabel": "",
+    "m_Precision": 0,
+    "overrideHLSLDeclaration": false,
+    "hlslDeclarationOverride": 0,
+    "m_Hidden": false,
+    "m_Value": 0.0,
+    "m_FloatType": 1,
+    "m_RangeValues": {
+        "x": 0.0,
+        "y": 1.0
+    }
+}
+
+{
     "m_SGVersion": 3,
     "m_Type": "UnityEditor.ShaderGraph.Internal.ColorShaderProperty",
     "m_ObjectId": "b0fc178485ec42b48c6b340aaf7f1b58",
@@ -4682,6 +4712,9 @@
         },
         {
             "m_Id": "756b78b811ed411f989b0b1e82db2a31"
+        },
+        {
+            "m_Id": "b0ee019356a24836b51a9f24da387056"
         }
     ]
 }

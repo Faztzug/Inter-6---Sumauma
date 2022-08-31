@@ -88,7 +88,7 @@ public class Movimento : MonoBehaviour
             gravityAcceleration -= gravity * Time.deltaTime;
         }
 
-        Vector3 movement = (vertical + horizontal) * Time.deltaTime;
+        Vector3 movement = (vertical + horizontal).normalized * Time.deltaTime;
         if(Input.GetButton("Sprint")) currentSpeed += runAccelaration * Time.deltaTime;
         else currentSpeed -= runAccelaration * Time.deltaTime;
 

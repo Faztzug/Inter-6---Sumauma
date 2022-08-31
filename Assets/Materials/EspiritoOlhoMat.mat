@@ -10,14 +10,15 @@ Material:
   m_Name: EspiritoOlhoMat
   m_Shader: {fileID: -6465566751694194690, guid: cf36446b7f2c58a4cb42e6c47cd9b29a,
     type: 3}
-  m_ValidKeywords: []
-  m_InvalidKeywords:
+  m_ValidKeywords:
   - _SURFACE_TYPE_TRANSPARENT
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap: {}
+  m_CustomRenderQueue: 3000
+  stringTagMap:
+    RenderType: Transparent
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -61,6 +62,7 @@ Material:
     - _ZTest: 4
     - _ZWrite: 1
     - _ZWriteControl: 1
+    - _combine: 0
     m_Colors:
     - _Color: {r: 0, g: 0, b: 0, a: 0}
     - _FresnelColor: {r: 1, g: 1, b: 1, a: 1}

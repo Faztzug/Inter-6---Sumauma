@@ -15,11 +15,9 @@ Material:
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
-  stringTagMap:
-    RenderType: Opaque
-  disabledShaderPasses:
-  - SHADOWCASTER
+  m_CustomRenderQueue: 2400
+  stringTagMap: {}
+  disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
@@ -43,18 +41,22 @@ Material:
     - _Blend: 2
     - _CastShadows: 0
     - _Cull: 2
+    - _DecalMeshBiasType: 0
+    - _DecalMeshDepthBias: 0
+    - _DecalMeshViewBias: 0
+    - _DrawOrder: 0
     - _DstBlend: 0
     - _Float: 0
     - _FresnelPower: 0.06
     - _GlowSpread: 1
-    - _InteriorSpread: 0.15
+    - _InteriorSpread: 1.38
     - _MoveAmount: 0.087
     - _MoveDistance: 0.25
     - _MoveFrequency: 6.71
     - _MoveSpeed: 2.3
     - _Opacity: 0
     - _QueueControl: 0
-    - _QueueOffset: 0
+    - _QueueOffset: -50
     - _ReceiveShadows: 1
     - _Size: 0.029
     - _SrcBlend: 1
@@ -68,7 +70,7 @@ Material:
     - _Color: {r: 0, g: 0, b: 0, a: 0}
     - _FresnelColor: {r: 0.42352942, g: 1.4980392, b: 1.1921569, a: 1}
     - _InteriorColor: {r: 1.9999998, g: 1.9999998, b: 1.9999998, a: 1}
-    - _InteriorPos: {r: 0.79, g: 0.03, b: -0.72, a: 0}
+    - _InteriorPos: {r: 0, g: 0.03, b: -0.72, a: 0}
     - _Vector3: {r: 0.2, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &5832119108191811332

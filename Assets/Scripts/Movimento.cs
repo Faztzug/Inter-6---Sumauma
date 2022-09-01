@@ -12,6 +12,8 @@ public class Movimento : MonoBehaviour
     [SerializeField] [Range(0.5f,1f)] private float backWardsMultiplier = 0.5f;
     [SerializeField] [Range(0.5f,1f)] private float strafeMultiplier = 0.9f;
     [SerializeField] private float jumpForce = 10f;
+    [SerializeField] private float doubleJump = 0.5f;
+    private bool podeDoubleJump = false;
     private CharacterController controller;
     private Camera cam;
     //private Animator anim;
@@ -70,9 +72,10 @@ public class Movimento : MonoBehaviour
         Vector3 rawHorizontal = Input.GetAxis("Horizontal") * cam.transform.right;
         Vector3 horizontal = rawHorizontal * strafeMultiplier;
 
-        if(controller.isGrounded)
+        if (controller.isGrounded)
         {
             gravityAcceleration = 0f;
+            podeDoubleJump = true;
             //anim.SetBool("isJumping", false);
 
             if (Input.GetButtonDown("Jump"))
@@ -85,6 +88,11 @@ public class Movimento : MonoBehaviour
         }
         else
         {
+            if (Input.GetButtonDown("Jump") && podeDoubleJump)
+            {
+                gravityAcceleration = jumpForce * doubleJump;
+                podeDoubleJump = false;
+            }
             gravityAcceleration -= gravity * Time.deltaTime;
         }
 

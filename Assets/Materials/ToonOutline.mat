@@ -49,13 +49,13 @@ Material:
     - _DstBlend: 0
     - _Opacity: 1
     - _Outline_Fade: 0.1
-    - _Outline_Pixel: 2
+    - _Outline_Pixel: 4
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
     - _SrcBlend: 1
     - _Surface: 0
-    - _ToonFade: 0.887
+    - _ToonFade: 0.6
     - _WorkflowMode: 0
     - _ZTest: 4
     - _ZWrite: 1

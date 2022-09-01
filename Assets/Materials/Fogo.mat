@@ -7,22 +7,27 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EspiritoMat
-  m_Shader: {fileID: -6465566751694194690, guid: cf36446b7f2c58a4cb42e6c47cd9b29a,
+  m_Name: Fogo
+  m_Shader: {fileID: -6465566751694194690, guid: 8fd8625acf0a637448e2363e45f57192,
     type: 3}
-  m_ValidKeywords: []
+  m_ValidKeywords:
+  - _SURFACE_TYPE_TRANSPARENT
   m_InvalidKeywords: []
-  m_LightmapFlags: 4
+  m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_CustomRenderQueue: 3000
   stringTagMap:
-    RenderType: Opaque
+    RenderType: Transparent
   disabledShaderPasses:
-  - SHADOWCASTER
+  - DepthOnly
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - _MainTexture:
+        m_Texture: {fileID: 10300, guid: 0000000000000000f000000000000000, type: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - unity_Lightmaps:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -38,40 +43,30 @@ Material:
     m_Ints: []
     m_Floats:
     - _AlphaClip: 0
-    - _BUILTIN_QueueControl: -1
-    - _BUILTIN_QueueOffset: 0
-    - _Blend: 2
-    - _CastShadows: 0
-    - _Cull: 2
-    - _DstBlend: 0
-    - _Float: 0
-    - _FresnelPower: 0.06
-    - _GlowSpread: 1
-    - _InteriorSpread: 0.15
-    - _MoveAmount: 0.087
-    - _MoveDistance: 0.25
-    - _MoveFrequency: 6.71
-    - _MoveSpeed: 2.3
-    - _Opacity: 0
+    - _Blend: 0
+    - _CastShadows: 1
+    - _Cull: 0
+    - _DissolveAmount: -0.5
+    - _DissolveScale: 4
+    - _DistortaionAmount: 0.1
+    - _DistortionAmount: 0.1
+    - _DistortionScale: 4
+    - _DstBlend: 10
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _Size: 0.029
-    - _SrcBlend: 1
-    - _Surface: 0
+    - _SrcBlend: 5
+    - _Surface: 1
     - _WorkflowMode: 1
     - _ZTest: 4
-    - _ZWrite: 1
+    - _ZWrite: 0
     - _ZWriteControl: 0
-    - _combine: 0
     m_Colors:
-    - _Color: {r: 0, g: 0, b: 0, a: 0}
-    - _FresnelColor: {r: 0.42352942, g: 1.4980392, b: 1.1921569, a: 1}
-    - _InteriorColor: {r: 1.9999998, g: 1.9999998, b: 1.9999998, a: 1}
-    - _InteriorPos: {r: 0.79, g: 0.03, b: -0.72, a: 0}
-    - _Vector3: {r: 0.2, g: 0, b: 0, a: 0}
+    - _Color: {r: 4.584609, g: 0.7585532, b: 0.28803828, a: 1}
+    - _DissolveSpeed: {r: -0.3, g: -0.2, b: 0, a: 0}
+    - _DistortionSpeed: {r: 0, g: -0.3, b: 0, a: 0}
   m_BuildTextureStacks: []
---- !u!114 &5832119108191811332
+--- !u!114 &5612218379105111310
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}

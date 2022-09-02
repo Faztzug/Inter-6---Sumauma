@@ -14,6 +14,8 @@ public class Movimento : MonoBehaviour
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float doubleJump = 0.5f;
     private bool podeDoubleJump = false;
+    public float dashSpeed;
+    public float dashTime;
     private CharacterController controller;
     private Camera cam;
     //private Animator anim;
@@ -96,6 +98,12 @@ public class Movimento : MonoBehaviour
             gravityAcceleration -= gravity * Time.deltaTime;
         }
 
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Debug.Log("Dashou");
+            StartCoroutine(Dash());
+        }
+
         Vector3 movement = (vertical + horizontal).normalized * Time.deltaTime;
         if(Input.GetButton("Sprint")) currentSpeed += runAccelaration * Time.deltaTime;
         else currentSpeed -= runAccelaration * Time.deltaTime;
@@ -129,5 +137,17 @@ public class Movimento : MonoBehaviour
         // {
         //     audioSource.Stop();
         // }
+    }
+
+    IEnumerator Dash()
+    {
+        float startTime = Time.time;
+
+        while(Time.time < startTime + dashTime)
+        {
+            controller.Move(Vector3.forward * dashSpeed * Time.deltaTime);
+
+            yield return null;
+        }
     }
 }

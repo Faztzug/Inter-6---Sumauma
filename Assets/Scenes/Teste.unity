@@ -464,55 +464,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &754973483
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 754973485}
-  - component: {fileID: 754973484}
-  m_Layer: 0
-  m_Name: EspritoVolume
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &754973484
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754973483}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_IsGlobal: 1
-  priority: 1
-  blendDistance: 0
-  weight: 1
-  sharedProfile: {fileID: 11400000, guid: 1398f1f933cf6644ea47af76dc690da0, type: 2}
---- !u!4 &754973485
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 754973483}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.1869999, y: 1.9499999, z: 0.2670002}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &943255137
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,8 +1124,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1435859097}
-  m_LocalRotation: {x: 0.100481994, y: 0.039456487, z: -0.0059446427, w: 0.9941385}
-  m_LocalPosition: {x: 2.0647864, y: 1.8799548, z: -2.2930412}
+  m_LocalRotation: {x: 0.23876736, y: 0.4511255, z: -0.1289641, w: 0.85020244}
+  m_LocalPosition: {x: -0.69732475, y: 2.755577, z: -1.244781}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2039,3 +1990,72 @@ Transform:
   m_Father: {fileID: 1757337100}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1399052594382079975
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1399052594726599882, guid: e516faed4779a074b8a18a0cbd37aa76,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399052594726599882, guid: e516faed4779a074b8a18a0cbd37aa76,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 1.1869999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399052594726599882, guid: e516faed4779a074b8a18a0cbd37aa76,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.9499999
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399052594726599882, guid: e516faed4779a074b8a18a0cbd37aa76,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.2670002
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399052594726599882, guid: e516faed4779a074b8a18a0cbd37aa76,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399052594726599882, guid: e516faed4779a074b8a18a0cbd37aa76,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399052594726599882, guid: e516faed4779a074b8a18a0cbd37aa76,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399052594726599882, guid: e516faed4779a074b8a18a0cbd37aa76,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399052594726599882, guid: e516faed4779a074b8a18a0cbd37aa76,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399052594726599882, guid: e516faed4779a074b8a18a0cbd37aa76,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399052594726599882, guid: e516faed4779a074b8a18a0cbd37aa76,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1399052594726599884, guid: e516faed4779a074b8a18a0cbd37aa76,
+        type: 3}
+      propertyPath: m_Name
+      value: EspritoVolume
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: e516faed4779a074b8a18a0cbd37aa76, type: 3}

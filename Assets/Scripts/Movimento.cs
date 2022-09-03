@@ -98,7 +98,7 @@ public class Movimento : MonoBehaviour
             gravityAcceleration -= gravity * Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Fire1"))
+        if (Input.GetButtonDown("Dash"))
         {
             Debug.Log("Dashou");
             StartCoroutine(Dash());

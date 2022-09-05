@@ -16,6 +16,9 @@ public class Movimento : MonoBehaviour
     private bool podeDoubleJump = false;
     public float dashSpeed;
     public float dashTime;
+
+    [Header("Needed References")]
+    [SerializeField] private Transform rotateObj;
     private CharacterController controller;
     private Camera cam;
     //private Animator anim;
@@ -49,8 +52,6 @@ public class Movimento : MonoBehaviour
 
     private void Movement()
     {
-        MoveRotation();
-
         MoveInput();
     }
 
@@ -69,10 +70,12 @@ public class Movimento : MonoBehaviour
 
     private void MoveInput()
     {
-        Vector3 vertical = Input.GetAxis("Vertical") * transform.forward;
-        if(Input.GetAxis("Vertical") < 0) vertical = Input.GetAxis("Vertical") * transform.forward * backWardsMultiplier;
-        Vector3 rawHorizontal = Input.GetAxis("Horizontal") * cam.transform.right;
-        Vector3 horizontal = rawHorizontal * strafeMultiplier;
+        var camRot = cam.transform.rotation;
+        var newCamRot = new Vector3(0, camRot.y, 0);
+        cam.transform.eulerAngles = newCamRot;
+        Vector3 vertical = Input.GetAxis("Vertical") * cam.transform.forward;
+        Vector3 horizontal = Input.GetAxis("Horizontal") * cam.transform.right;
+        cam.transform.rotation = camRot;
 
         if (controller.isGrounded)
         {
@@ -104,9 +107,17 @@ public class Movimento : MonoBehaviour
             StartCoroutine(Dash());
         }
 
-        Vector3 movement = (vertical + horizontal).normalized * Time.deltaTime;
+        Vector3 movement = (vertical + horizontal).normalized;
+        rotateObj.localPosition = movement;
+        if(rotateObj.localPosition != Vector3.zero) 
+        {
+            MoveRotation();
+            transform.LookAt(rotateObj);
+        }
         if(Input.GetButton("Sprint")) currentSpeed += runAccelaration * Time.deltaTime;
         else currentSpeed -= runAccelaration * Time.deltaTime;
+
+        movement = movement * Time.deltaTime;
 
         if(currentSpeed < speed) currentSpeed = speed;
         else if(currentSpeed > runSpeed) currentSpeed = runSpeed;
@@ -145,7 +156,7 @@ public class Movimento : MonoBehaviour
 
         while(Time.time < startTime + dashTime)
         {
-            controller.Move(Vector3.forward * dashSpeed * Time.deltaTime);
+            controller.Move(transform.forward * dashSpeed * Time.deltaTime);
 
             yield return null;
         }

@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: EspiritoFogoMat 1
+  m_Name: Alma
   m_Shader: {fileID: -6465566751694194690, guid: cf36446b7f2c58a4cb42e6c47cd9b29a,
     type: 3}
   m_ValidKeywords: []

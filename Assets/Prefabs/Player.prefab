@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4981651763800509955}
   - component: {fileID: 4981651763800509956}
   - component: {fileID: 4981651763800509957}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4981651764065274255}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: CameraFollow
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,9 +141,9 @@ GameObject:
   - component: {fileID: 4981651764726837389}
   - component: {fileID: 4981651764726837390}
   - component: {fileID: 4981651764726837391}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -220,7 +220,7 @@ GameObject:
   - component: {fileID: 4981651765152321258}
   - component: {fileID: 4981651765152321259}
   - component: {fileID: 4981651765152321260}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: EYEES
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +314,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5283581914375384392}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: RotateObj
   m_TagString: Untagged
   m_Icon: {fileID: 0}

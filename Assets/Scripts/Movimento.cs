@@ -18,6 +18,7 @@ public class Movimento : MonoBehaviour
     public float dashTime;
     public float dashCooldownTime;
     private float dashCooldownState;
+    private float boing;
 
     [Header("Needed References")]
     [SerializeField] private Transform rotateObj;
@@ -95,7 +96,7 @@ public class Movimento : MonoBehaviour
         }
         else
         {
-            if (Input.GetButtonDown("Jump") && podeDoubleJump)
+            if (Input.GetButtonDown("Jump") && podeDoubleJump && gravityAcceleration < jumpForce * doubleJump)
             {
                 gravityAcceleration = jumpForce * doubleJump;
                 podeDoubleJump = false;
@@ -122,6 +123,11 @@ public class Movimento : MonoBehaviour
 
         movement = movement * currentSpeed;
 
+        if(boing > 0)
+        {
+            gravityAcceleration = boing;
+            boing = 0;
+        }
         movement.y = gravityAcceleration * Time.deltaTime * speed;
         
         controller.Move(movement);
@@ -155,6 +161,12 @@ public class Movimento : MonoBehaviour
             StartCoroutine(Dash());
         }
         dashCooldownState -= 1f * Time.deltaTime;
+    }
+
+    public void ImpulseJump(float force)
+    {
+        boing = force;
+        Debug.Log("BOING");
     }
 
     IEnumerator Dash()

@@ -16,6 +16,8 @@ public class Movimento : MonoBehaviour
     private bool podeDoubleJump = false;
     public float dashSpeed;
     public float dashTime;
+    public float dashCooldownTime;
+    private float dashCooldownState;
 
     [Header("Needed References")]
     [SerializeField] private Transform rotateObj;
@@ -101,11 +103,7 @@ public class Movimento : MonoBehaviour
             gravityAcceleration -= gravity * Time.deltaTime;
         }
 
-        if (Input.GetButtonDown("Dash"))
-        {
-            Debug.Log("Dashou");
-            StartCoroutine(Dash());
-        }
+        DashUpdate();
 
         Vector3 movement = (vertical + horizontal).normalized;
         rotateObj.localPosition = movement;
@@ -150,15 +148,31 @@ public class Movimento : MonoBehaviour
         // }
     }
 
+    private void DashUpdate()
+    {
+        if (Input.GetButtonDown("Dash"))
+        {
+            StartCoroutine(Dash());
+        }
+        dashCooldownState -= 1f * Time.deltaTime;
+    }
+
     IEnumerator Dash()
     {
-        float startTime = Time.time;
-
-        while(Time.time < startTime + dashTime)
+        if(dashCooldownState > 0f) Debug.Log("Null Dash");
+        if(dashCooldownState > 0f) yield return null;
+        else
         {
-            controller.Move(transform.forward * dashSpeed * Time.deltaTime);
+            dashCooldownState = dashCooldownTime;
+            float startTime = Time.time;
+            Debug.Log("Dashou");
 
-            yield return null;
+            while(Time.time < startTime + dashTime)
+            {
+                controller.Move(transform.forward * dashSpeed * Time.deltaTime);
+
+                yield return null;
+            }
         }
     }
 }

@@ -205,6 +205,7 @@ MonoBehaviour:
   doubleJump: 1
   dashSpeed: 20
   dashTime: 0.25
+  dashCooldownTime: 0.75
   rotateObj: {fileID: 5283581914375384392}
   gravity: 5
 --- !u!1 &4981651765152321262

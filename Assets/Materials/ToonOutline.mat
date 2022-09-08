@@ -49,7 +49,7 @@ Material:
     - _DstBlend: 0
     - _Opacity: 1
     - _Outline_Fade: 0.1
-    - _Outline_Pixel: 4
+    - _Outline_Pixel: 2
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1

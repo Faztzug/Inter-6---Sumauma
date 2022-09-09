@@ -15,7 +15,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: Olho
-    Event: 1000
+    Event: 400
     filterSettings:
       RenderQueueType: 0
       LayerMask:
@@ -25,7 +25,7 @@ MonoBehaviour:
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
     overrideDepthState: 1
-    depthCompareFunction: 6
+    depthCompareFunction: 4
     enableWrite: 1
     stencilSettings:
       overrideStencilState: 0
@@ -126,8 +126,8 @@ MonoBehaviour:
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
     overrideDepthState: 1
-    depthCompareFunction: 6
-    enableWrite: 0
+    depthCompareFunction: 4
+    enableWrite: 1
     stencilSettings:
       overrideStencilState: 0
       stencilReference: 0
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_AssetVersion: 1
   m_OpaqueLayerMask:
     serializedVersion: 2
-    m_Bits: 511
+    m_Bits: 2559
   m_TransparentLayerMask:
     serializedVersion: 2
     m_Bits: 2147483647
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: RenderObjects
-    Event: 1000
+    Event: 400
     filterSettings:
       RenderQueueType: 0
       LayerMask:
@@ -232,7 +232,7 @@ MonoBehaviour:
     enableWrite: 1
     stencilSettings:
       overrideStencilState: 0
-      stencilReference: 0
+      stencilReference: 4
       stencilCompareFunction: 8
       passOperation: 0
       failOperation: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6603548879026868435}
   - component: {fileID: 8665259970310329881}
   - component: {fileID: 3439872201750538598}
+  - component: {fileID: 6594947337992300897}
   m_Layer: 0
   m_Name: Flame01
   m_TagString: Untagged
@@ -4831,3 +4832,16 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &6594947337992300897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632197028531735115}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb97c486e346814db9e6645c77d94f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageBySec: -10

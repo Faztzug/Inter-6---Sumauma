@@ -41,6 +41,7 @@ public class Movimento : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
         cam = Camera.main;
+        Application.targetFrameRate = 60;
         //anim = GetComponentInChildren<Animator>();
     }
 
@@ -63,22 +64,13 @@ public class Movimento : MonoBehaviour
         
     }
 
-    private void MoveRotation()
-    {
-        var camRotation = cam.transform.rotation;
-        var objRotation = transform.rotation;
-        Vector3 setRotation = new Vector3(objRotation.eulerAngles.x, camRotation.eulerAngles.y, objRotation.eulerAngles.z);
-        transform.eulerAngles = setRotation;
-    }
-
     private void MoveInput()
     {
         var camRot = cam.transform.rotation;
-        var newCamRot = new Vector3(0, camRot.y, 0);
-        cam.transform.eulerAngles = newCamRot;
+        var newCamRot = new Quaternion(0, camRot.y, 0, camRot.w);
+        cam.transform.rotation = newCamRot;
         Vector3 vertical = Input.GetAxis("Vertical") * cam.transform.forward;
         Vector3 horizontal = Input.GetAxis("Horizontal") * cam.transform.right;
-        cam.transform.rotation = camRot;
 
         if (controller.isGrounded)
         {
@@ -107,12 +99,13 @@ public class Movimento : MonoBehaviour
         DashUpdate();
 
         Vector3 movement = (vertical + horizontal).normalized;
-        rotateObj.localPosition = movement;
+        rotateObj.position = transform.position + movement;
         if(rotateObj.localPosition != Vector3.zero) 
         {
-            MoveRotation();
             transform.LookAt(rotateObj);
         }
+        cam.transform.rotation = camRot;
+        rotateObj.position = transform.position + movement;
         if(Input.GetButton("Sprint")) currentSpeed += runAccelaration * Time.deltaTime;
         else currentSpeed -= runAccelaration * Time.deltaTime;
 

@@ -6,7 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerHealth : Health
 {
-    [SerializeField] private Image bar;
+    //[SerializeField] private Image bar;
+    private Image bar => GameState.mainCanvas.healthBar;
     //[SerializeField] private PostProcessVolume damageEffect;
     private float damageTime = 0;
     [SerializeField] float effectTimeMultplier = 10;

@@ -118,8 +118,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c63cba0891229f546abc3396916adae8
-      internalID: -1156307006
+      spriteID: 9aa4c31a82cb1ba449360919d47e412b
+      internalID: -810441116
       vertices: []
       indices: 
       edges: []
@@ -139,8 +139,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8a168de9ca0e68a4ab48f77fe8d350cc
-      internalID: 686933784
+      spriteID: 15505c8f8a85c9d4b9a505e6ec7e1b52
+      internalID: -520618388
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: f3f26ae616c024f4e9159939a4506b49
     internalID: 0
     vertices: []
     indices: 
@@ -156,8 +156,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      UI_Heliconia_1: 686933784
-      UI_Heliconia_0: -1156307006
+      UI_Heliconia_1: -520618388
+      UI_Heliconia_0: -810441116
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

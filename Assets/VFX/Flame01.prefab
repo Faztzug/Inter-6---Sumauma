@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3439872201750538598}
   - component: {fileID: 6594947337992300897}
   - component: {fileID: 1715722408560729421}
-  - component: {fileID: 7480751969670586952}
   m_Layer: 0
   m_Name: Flame01
   m_TagString: Untagged
@@ -604,7 +603,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 1
-    maxNumParticles: 1000
+    maxNumParticles: 100
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
@@ -870,7 +869,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 80
+      scalar: 20
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -3834,7 +3833,7 @@ ParticleSystem:
       properties: 0
       emitProbability: 1
   LightsModule:
-    enabled: 1
+    enabled: 0
     ratio: 1
     light: {fileID: 7831587985273839737, guid: e9dd35d7f24724f40a1c08f10ba57314, type: 3}
     randomDistribution: 1
@@ -4858,18 +4857,5 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 5}
-  m_Center: {x: 0, y: 0, z: 1.5}
---- !u!135 &7480751969670586952
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2632197028531735115}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2
-  m_Center: {x: 0, y: 0, z: 2.5}
+  m_Size: {x: 2, y: 3.5294833, z: 4.483835}
+  m_Center: {x: 0, y: -0.177104, z: 1.241918}

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyFireSpiritIA : EnemyIA
 {
-    [SerializeField] protected float touchDamage;
+    [SerializeField] protected float touchDamage = -10;
     private PlayerHealth health;
     protected override void AsyncUpdateIA()
     {

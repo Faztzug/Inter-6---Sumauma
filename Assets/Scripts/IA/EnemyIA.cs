@@ -6,7 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Rigidbody), typeof(NavMeshAgent))] 
 public class EnemyIA : MonoBehaviour
 {
-    [SerializeField] [Range(0,1)] protected float[] updateRateRNG = new float[2];
+    [SerializeField] [Range(0,5)] protected float[] updateRateRNG = new float[2];
     [HideInInspector] public Transform player;
     protected Vector3 pos;
     protected Vector3 playerPos;
@@ -25,14 +25,13 @@ public class EnemyIA : MonoBehaviour
 
     protected virtual void Start() 
     {
-        updateRate = Random.Range(updateRateRNG[0], updateRateRNG[1]);
+        if(updateRate == 0) updateRate = Random.Range(updateRateRNG[0], updateRateRNG[1]);
         state = GameState.GameStateInstance;
         player = GameState.PlayerTransform;
         agent = GetComponent<NavMeshAgent>();
         rgbd = GetComponent<Rigidbody>();
         rgbd.maxAngularVelocity = 0;
         distance = Mathf.Infinity;
-        stunTimerAsync = damageStunAsync * 3;
         //anim = GetComponent<Animator>();
         StartCoroutine(CourotineAsyncUpdateIA());
     }
@@ -44,8 +43,8 @@ public class EnemyIA : MonoBehaviour
 
     protected IEnumerator CourotineAsyncUpdateIA()
     {
-        updateRate = Random.Range(updateRateRNG[0], updateRateRNG[1]);
-
+        if(this is EnemyFireSpiritIA) 
+        Debug.Log("Update Rate " + updateRate);
         yield return new WaitForSeconds(updateRate);
 
         rgbd.velocity = Vector3.zero;
@@ -55,6 +54,8 @@ public class EnemyIA : MonoBehaviour
             stunTimerAsync--;
         }
         else  AsyncUpdateIA();
+        
+        updateRate = Random.Range(updateRateRNG[0], updateRateRNG[1]);
 
         StartCoroutine(CourotineAsyncUpdateIA());
     }
@@ -63,6 +64,12 @@ public class EnemyIA : MonoBehaviour
     {
         
     }
+
+    public virtual void ForceUpdateIA()
+    {
+        updateRate = 0.020f;
+    }
+    
     protected bool IsPlayerAlive()
     {
         if(player != null && player.gameObject.activeSelf && state.isPlayerDead == false) return true;

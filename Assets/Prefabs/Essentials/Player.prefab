@@ -199,12 +199,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  runSpeed: 10
-  runAccelaration: 3
+  runSpeed: 15
+  runAccelaration: 5
   backWardsMultiplier: 1
   strafeMultiplier: 1
-  jumpForce: 3
-  doubleJump: 1
+  jumpForce: 2
+  doubleJump: 1.2
   dashSpeed: 30
   dashTime: 0.25
   dashCooldownTime: 0.75
@@ -241,6 +241,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 4981651764726837389}
+  isPlayerDead: 0
   playerLookAt: {fileID: 4981651764065274255}
 --- !u!136 &1045582645361269382
 CapsuleCollider:

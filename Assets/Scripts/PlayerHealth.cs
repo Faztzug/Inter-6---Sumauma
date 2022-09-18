@@ -13,6 +13,7 @@ public class PlayerHealth : Health
     [SerializeField] float effectTimeMultplier = 10;
     [SerializeField] float effectGainMultplier = 2f;
     [SerializeField] float effectDownMultplier = 0.5f;
+    [SerializeField] float fallingDeathHeight = -1000;
     //private GameState state;
     public bool dead;
 
@@ -49,6 +50,8 @@ public class PlayerHealth : Health
         //     damageEffect.weight += Time.deltaTime;
         //     gameOver.SetActive(true);
         // } 
+
+        if(transform.position.y < fallingDeathHeight) DestroyCharacter();
         
     }
 
@@ -76,9 +79,10 @@ public class PlayerHealth : Health
 
     public override void DestroyCharacter()
     {
-        //if(state.playerDead) return;
+        if(GameState.IsPlayerDead) return;
         //anim.SetTrigger("Die");
         //gameOver.SetActive(true);
+        GameState.IsPlayerDead = true;
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.None;
         foreach (var item in GetComponentsInChildren<Collider>())
@@ -87,9 +91,10 @@ public class PlayerHealth : Health
         }
         foreach (var item in GetComponentsInChildren<MonoBehaviour>())
         {
-            if(item == this) continue;
+            if(item == this || item is Movimento || item is GameState) continue;
             item.enabled = false;
         }
+        GameState.ReloadScene(5f);
         //state.playerDead = true;
         //this.gameObject.SetActive(false);
     }

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
+using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour
 {
@@ -10,6 +11,10 @@ public class GameState : MonoBehaviour
     public Transform playerTransform;
     static public Transform PlayerTransform => GameStateInstance.playerTransform;
     public bool isPlayerDead = false;
+    static public bool IsPlayerDead {
+        get => GameStateInstance.isPlayerDead;
+        set => GameStateInstance.isPlayerDead = value;
+    }
     public Transform playerLookAt;
     private static GameState gameState;
     private GameState() { }
@@ -23,5 +28,25 @@ public class GameState : MonoBehaviour
         cinemachineFreeLook.Follow = playerTransform;
         cinemachineFreeLook.LookAt = playerLookAt;
         gameState = this;
+    }
+
+    public static void ReloadScene(float waitTime)
+    {
+        var ob = GameStateInstance;
+        var sceneName = ob.gameObject.scene.name;
+        ob.StartCoroutine(ob.LoadSceneCourotine(waitTime, sceneName));
+    }
+    
+    public static void LoadScene(float waitTime, string sceneName)
+    {
+        var ob = GameStateInstance;
+        ob.StartCoroutine(ob.LoadSceneCourotine(waitTime, sceneName));
+    }
+
+    IEnumerator LoadSceneCourotine(float waitTime, string sceneName)
+    {
+        yield return new WaitForSecondsRealtime(waitTime);
+
+        SceneManager.LoadScene(sceneName);
     }
 }

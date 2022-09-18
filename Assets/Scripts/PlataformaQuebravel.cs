@@ -9,7 +9,7 @@ public class PlataformaQuebravel : MonoBehaviour
 
     void OnTriggerEnter(Collider collider)
     {
-        if (collider.gameObject.name == "Player")
+        if (collider.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject, breakTime);
         }

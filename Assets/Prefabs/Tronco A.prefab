@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5452047739677287456}
   - component: {fileID: 6658577726870631738}
   - component: {fileID: 6658577726870631739}
-  - component: {fileID: 6658577726870631741}
+  - component: {fileID: 243757412914070582}
+  - component: {fileID: 857644973042047825}
   m_Layer: 0
   m_Name: Tronco A
   m_TagString: Untagged
@@ -110,12 +111,12 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5812296607634294261}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 9.6948185, y: 2.83589, z: 2.125129}
-  m_Center: {x: -0.010383847, y: 0.20551972, z: -0.015819788}
---- !u!114 &6658577726870631741
+  m_Size: {x: 9.6948185, y: 2.5, z: 2.125129}
+  m_Center: {x: -0.010383847, y: 0, z: -0.015819788}
+--- !u!114 &243757412914070582
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -124,8 +125,23 @@ MonoBehaviour:
   m_GameObject: {fileID: 5812296607634294261}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 577140e27f58d9e44bf7ad4b63df5dba, type: 3}
+  m_Script: {fileID: 11500000, guid: ba78634c961e011468d229ec1cc36a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  destroyedVersion: {fileID: 2038824652245042237, guid: 1bc077a4d426cee43b9d25ca48733175,
+  brokenObject: {fileID: 2038824652245042237, guid: 1bc077a4d426cee43b9d25ca48733175,
     type: 3}
+  breakTime: 0
+--- !u!136 &857644973042047825
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5812296607634294261}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 9.5
+  m_Direction: 0
+  m_Center: {x: 0, y: 0, z: 0}

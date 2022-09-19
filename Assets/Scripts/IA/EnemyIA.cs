@@ -43,8 +43,6 @@ public class EnemyIA : MonoBehaviour
 
     protected IEnumerator CourotineAsyncUpdateIA()
     {
-        if(this is EnemyFireSpiritIA) 
-        Debug.Log("Update Rate " + updateRate);
         yield return new WaitForSeconds(updateRate);
 
         rgbd.velocity = Vector3.zero;

@@ -30,7 +30,13 @@ public class PlayerHealth : Health
 
     void Update()
     {
-        //if(state.GodMode) health = maxHealth;
+        if(GameState.GodMode) UpdateHealth(maxHealth);
+
+        if(Input.GetButtonDown("GodMode"))
+        {
+            GameState.ToogleGodMode();
+            Debug.Log("GOD MODE: " + GameState.GodMode);
+        }
 
         // if(damageEffect.weight > 0)
         // {

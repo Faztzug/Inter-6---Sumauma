@@ -14,6 +14,7 @@ public class PlayerHealth : Health
     [SerializeField] float effectGainMultplier = 2f;
     [SerializeField] float effectDownMultplier = 0.5f;
     [SerializeField] float fallingDeathHeight = -1000;
+    public AudioSource audio;
     //private GameState state;
     public bool dead;
 
@@ -82,6 +83,7 @@ public class PlayerHealth : Health
         if(GameState.IsPlayerDead) return;
         //anim.SetTrigger("Die");
         //gameOver.SetActive(true);
+        audio.Play();
         GameState.IsPlayerDead = true;
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.None;

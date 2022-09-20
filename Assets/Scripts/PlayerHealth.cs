@@ -90,7 +90,7 @@ public class PlayerHealth : Health
         if(GameState.IsPlayerDead) return;
         //anim.SetTrigger("Die");
         //gameOver.SetActive(true);
-        //audio.Play();
+        audio.Play();
         GameState.IsPlayerDead = true;
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.None;

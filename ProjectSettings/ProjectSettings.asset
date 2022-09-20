@@ -16,7 +16,7 @@ PlayerSettings:
   productName: "Inter 6 - Suma\xFAma"
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
-  m_SplashScreenBackgroundColor: {r: 0.24528301, g: 0.19293308, b: 0.17933428, a: 1}
+  m_SplashScreenBackgroundColor: {r: 0.19157146, g: 0.41509432, b: 0.18212885, a: 1}
   m_ShowUnitySplashScreen: 1
   m_ShowUnitySplashLogo: 1
   m_SplashScreenOverlayOpacity: 1
@@ -138,7 +138,7 @@ PlayerSettings:
     16:10: 1
     16:9: 1
     Others: 1
-  bundleVersion: 0.1.0
+  bundleVersion: 0.1.1
   preloadedAssets: []
   metroInputSource: 0
   wsaTransparentSwapchain: 0
@@ -161,7 +161,7 @@ PlayerSettings:
   applicationIdentifier:
     Standalone: com.UnityTechnologies.com.unity.template-starter-kit
   buildNumber:
-    Standalone: 0
+    Standalone: 1
     iPhone: 0
     tvOS: 0
   overrideDefaultApplicationIdentifier: 1
@@ -273,7 +273,14 @@ PlayerSettings:
   AndroidMinifyDebug: 0
   AndroidValidateAppBundleSize: 1
   AndroidAppBundleSizeToValidate: 150
-  m_BuildTargetIcons: []
+  m_BuildTargetIcons:
+  - m_BuildTarget: 
+    m_Icons:
+    - serializedVersion: 2
+      m_Icon: {fileID: 2800000, guid: ee315bce2dca4d840a63278680d5698e, type: 3}
+      m_Width: 128
+      m_Height: 128
+      m_Kind: 0
   m_BuildTargetPlatformIcons:
   - m_BuildTarget: iPhone
     m_Icons:

@@ -29,8 +29,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6334560530997069360}
-  - {fileID: 6334560530527463958}
-  - {fileID: 6334560531569975476}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -61,12 +59,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6334560530527463954}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2191217, y: -0.4671368, z: -9.269001}
+  m_LocalPosition: {x: 0.24690723, y: 0, z: -0.38898182}
   m_LocalScale: {x: 0.31057, y: 0.31057, z: 0.31057}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6334560530179593693}
-  m_RootOrder: 1
+  m_Father: {fileID: 6334560530997069360}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6334560530527463959
 MeshFilter:
@@ -127,7 +125,7 @@ SphereCollider:
   m_GameObject: {fileID: 6334560530527463954}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -161,7 +159,9 @@ Transform:
   m_LocalPosition: {x: -0.027783394, y: -0.4671368, z: -8.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6334560530527463958}
+  - {fileID: 6334560531569975476}
   m_Father: {fileID: 6334560530179593693}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -255,12 +255,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6334560531569975472}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.31087828, y: -0.4671368, z: -9.269}
+  m_LocalPosition: {x: -0.28309155, y: 0, z: -0.38898182}
   m_LocalScale: {x: 0.31057, y: 0.31057, z: 0.31057}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 6334560530179593693}
-  m_RootOrder: 2
+  m_Father: {fileID: 6334560530997069360}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &6334560531569975477
 MeshFilter:
@@ -321,7 +321,7 @@ SphereCollider:
   m_GameObject: {fileID: 6334560531569975472}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}

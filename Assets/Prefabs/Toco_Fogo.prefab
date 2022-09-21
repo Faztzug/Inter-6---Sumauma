@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2188815145858721191}
   - component: {fileID: 2181428606478443403}
   - component: {fileID: 8876573038465334742}
+  - component: {fileID: 197401011505851047}
   m_Layer: 0
   m_Name: Toco_Fogo
   m_TagString: Untagged
@@ -94,6 +95,20 @@ CapsuleCollider:
   m_GameObject: {fileID: 2166854665657238257}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.73
+  m_Height: 2.39
+  m_Direction: 1
+  m_Center: {x: -0.09, y: -0.3, z: 0}
+--- !u!136 &197401011505851047
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2166854665657238257}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
   m_Radius: 0.93
   m_Height: 2.75

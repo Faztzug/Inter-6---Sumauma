@@ -165,13 +165,14 @@ public class Movimento : MonoBehaviour
 
     IEnumerator Dash()
     {
-        if(dashCooldownState > 0f) Debug.Log("Null Dash");
+        if(dashCooldownState > 0f) Debug.Log("Dash In Cooldown");
         if(dashCooldownState > 0f) yield return null;
         else
         {
             dashCooldownState = dashCooldownTime;
             float startTime = Time.time;
             Debug.Log("Dashou");
+            GameState.isPlayerDashing = true;
 
             while(Time.time < startTime + dashTime)
             {
@@ -179,6 +180,10 @@ public class Movimento : MonoBehaviour
 
                 yield return null;
             }
+            
+            
+            GameState.isPlayerDashing = false;
+            Debug.Log("Terminou Dash");
         }
     }
 }

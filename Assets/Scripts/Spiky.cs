@@ -13,7 +13,7 @@ public class Spiky : MonoBehaviour
         if(other.gameObject.CompareTag("Player"))
         {
             if(health == null) health = other.transform.GetComponent<PlayerHealth>();
-            health.UpdateHealth(damageByTouch);
+            health?.UpdateHealth(damageByTouch);
         }
     }
 

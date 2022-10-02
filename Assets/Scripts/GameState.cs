@@ -11,6 +11,7 @@ public class GameState : MonoBehaviour
     public Transform playerTransform;
     static public Transform PlayerTransform => GameStateInstance.playerTransform;
     public bool isPlayerDead = false;
+    public static bool isPlayerDashing {get; set;} = false;
     public bool godMode = false;
     static public bool GodMode => GameStateInstance.godMode;
     static public void ToogleGodMode() => GameStateInstance.godMode = !GodMode;

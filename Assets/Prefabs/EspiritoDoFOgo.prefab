@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3204672943010132227}
   - component: {fileID: 3204672943010132236}
   - component: {fileID: 3204672943010132237}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: olhoDir
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -94,7 +94,7 @@ GameObject:
   - component: {fileID: 3204672943245739519}
   - component: {fileID: 3204672943245739512}
   - component: {fileID: 3204672943245739513}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,9 +181,10 @@ GameObject:
   - component: {fileID: 8012436342497829413}
   - component: {fileID: 1344046229419527113}
   - component: {fileID: 4713642499040790598}
-  m_Layer: 0
+  - component: {fileID: 8396274734462612622}
+  m_Layer: 6
   m_Name: EspiritoDoFOgo
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -277,6 +278,20 @@ MonoBehaviour:
   alive: 1
   damageStunAsync: 3
   touchDamage: -10
+--- !u!114 &8396274734462612622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3204672943901893549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a21d7c535ba96408299482cd8b33a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 3
+  health: 3
 --- !u!1 &3204672944388023213
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,7 +303,7 @@ GameObject:
   - component: {fileID: 3204672944388023212}
   - component: {fileID: 3204672944388023209}
   - component: {fileID: 3204672944388023214}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: olhoEsq
   m_TagString: Untagged
   m_Icon: {fileID: 0}

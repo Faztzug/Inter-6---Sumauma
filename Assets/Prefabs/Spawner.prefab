@@ -127,9 +127,10 @@ GameObject:
   - component: {fileID: 7349483181437073601}
   - component: {fileID: 1758790386639294765}
   - component: {fileID: 6583952916587004222}
+  - component: {fileID: 1348353415387083785}
   m_Layer: 6
   m_Name: Spawner
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -232,6 +233,20 @@ MonoBehaviour:
   - {fileID: 320250879342956146}
   - {fileID: 5804271985656767659}
   maxEnemys: 70
+--- !u!114 &1348353415387083785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789471399106001225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a21d7c535ba96408299482cd8b33a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 7
+  health: 7
 --- !u!1 &2789471399515201304
 GameObject:
   m_ObjectHideFlags: 0

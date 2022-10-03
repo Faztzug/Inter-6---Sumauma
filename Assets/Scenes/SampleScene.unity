@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -236,6 +236,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brokenObject: {fileID: 0}
   breakTime: 2
+  breakOnDashOnly: 1
 --- !u!65 &135182053
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -870,6 +871,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2711545594691814773, guid: b74a74b2d88e9ed48aec5e590d1f82a9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789471398384204105, guid: b74a74b2d88e9ed48aec5e590d1f82a9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 2789471399106001224, guid: b74a74b2d88e9ed48aec5e590d1f82a9,
         type: 3}
       propertyPath: m_RootOrder
@@ -929,6 +940,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Spawner
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789471399515201304, guid: b74a74b2d88e9ed48aec5e590d1f82a9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2789471399682272228, guid: b74a74b2d88e9ed48aec5e590d1f82a9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 8178850197732382858, guid: b74a74b2d88e9ed48aec5e590d1f82a9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b74a74b2d88e9ed48aec5e590d1f82a9, type: 3}
@@ -1606,6 +1632,7 @@ MonoBehaviour:
   MoveSpeed: 3
   RollSpeed: 8
   RollingDirection: 1
+  startRoolingOnTrigger: 0
 --- !u!1001 &1284256898
 PrefabInstance:
   m_ObjectHideFlags: 0

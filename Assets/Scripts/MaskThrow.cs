@@ -38,6 +38,7 @@ public class MaskThrow : MonoBehaviour
             maskRgbd.constraints = RigidbodyConstraints.FreezeRotationX;
             throwTimer = 0;
             maskCurScale = 1f;
+            throwCurSpeed = throwAccelaration / 2f;
         }
 
         if(onThrow)

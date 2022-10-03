@@ -375,9 +375,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mask: {fileID: 323535140421935652}
   maskMaxGrow: 2
-  throwMaxSpeed: 30
-  throwAccelaration: 10
-  throwDuration: 3
+  throwMaxSpeed: 20
+  throwAccelaration: 50
+  throwDuration: 0.5
 --- !u!114 &374411949610352336
 MonoBehaviour:
   m_ObjectHideFlags: 0

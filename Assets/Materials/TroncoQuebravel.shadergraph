@@ -8,9 +8,6 @@
         },
         {
             "m_Id": "87acf8fd649349cbbf31c83e2cd43f7b"
-        },
-        {
-            "m_Id": "34e5a6f1e2c14ddfb29663a388a5e37c"
         }
     ],
     "m_Keywords": [],
@@ -409,9 +406,6 @@
         },
         {
             "m_Id": "87acf8fd649349cbbf31c83e2cd43f7b"
-        },
-        {
-            "m_Id": "34e5a6f1e2c14ddfb29663a388a5e37c"
         }
     ]
 }
@@ -702,33 +696,6 @@
         "m_Guid": ""
     },
     "m_DefaultType": 0
-}
-
-{
-    "m_SGVersion": 1,
-    "m_Type": "UnityEditor.ShaderGraph.Internal.Vector1ShaderProperty",
-    "m_ObjectId": "34e5a6f1e2c14ddfb29663a388a5e37c",
-    "m_Guid": {
-        "m_GuidSerialized": "e6c54982-f335-4f0c-a82f-d6bed32a8c42"
-    },
-    "m_Name": "Contrast",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Contrast",
-    "m_DefaultReferenceName": "_Contrast",
-    "m_OverrideReferenceName": "",
-    "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
-    "m_Precision": 0,
-    "overrideHLSLDeclaration": false,
-    "hlslDeclarationOverride": 0,
-    "m_Hidden": false,
-    "m_Value": 4.0,
-    "m_FloatType": 1,
-    "m_RangeValues": {
-        "x": 0.0,
-        "y": 10.0
-    }
 }
 
 {

@@ -40,7 +40,7 @@ public class GameState : MonoBehaviour
         var sceneName = ob.gameObject.scene.name;
         ob.StartCoroutine(ob.LoadSceneCourotine(waitTime, sceneName));
     }
-    
+
     public static void LoadScene(float waitTime, string sceneName)
     {
         var ob = GameStateInstance;

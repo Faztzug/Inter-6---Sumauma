@@ -36,7 +36,6 @@ public class Movimento : MonoBehaviour
 
     private bool paused;
 
-
     private void Start()
     {
         controller = GetComponent<CharacterController>();

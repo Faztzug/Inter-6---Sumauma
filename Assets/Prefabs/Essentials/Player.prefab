@@ -99,6 +99,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: -1
+  knockBackForce: 100
 --- !u!65 &3439353725951663229
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -335,7 +336,11 @@ MonoBehaviour:
   backWardsMultiplier: 1
   strafeMultiplier: 1
   jumpForce: 1.8
+  allowDoubleJump: 1
   doubleJump: 1.5
+  knockBackForce: 1
+  knockBackTime: 0.5
+  knockBackCounterTime: 0
   dashSpeed: 30
   dashTime: 0.25
   dashCooldownTime: 0.75

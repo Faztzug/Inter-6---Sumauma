@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemySpawnerIA : EnemyIA
+public class EnemySpawnerIA : EnemyFireGenericIA
 {
-    [SerializeField] protected float touchDamage = -15;
-    private PlayerHealth health;
     [SerializeField] private GameObject[] enemysPrefabs;
     [SerializeField] private List<EnemyIA> enemysList;
     [SerializeField] private Transform[] spawnPoints;
@@ -69,22 +67,4 @@ public class EnemySpawnerIA : EnemyIA
         currentRotation.y = desiredRot.y;
         transform.eulerAngles = currentRotation;
     }
-    
-    void OnCollisionEnter(Collision collisionInfo)
-    {
-        if(collisionInfo.gameObject.CompareTag("Player"))
-        {
-            if(health == null) health = collisionInfo.gameObject.GetComponent<PlayerHealth>();
-            if(health != null) health.UpdateHealth(touchDamage);
-            else Debug.Log("Player Health Null?");
-        }
-    }
-
-    protected override void OnValidate()
-    {
-        base.OnValidate();
-        if(touchDamage > 0) touchDamage = -touchDamage;
-    }
-
-
 }

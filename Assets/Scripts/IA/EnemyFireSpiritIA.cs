@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyFireSpiritIA : EnemyIA
+public class EnemyFireSpiritIA : EnemyFireGenericIA
 {
-    [SerializeField] protected float touchDamage = -10;
-    private PlayerHealth health;
     protected override void AsyncUpdateIA()
     {
         base.AsyncUpdateIA();
@@ -42,21 +40,5 @@ public class EnemyFireSpiritIA : EnemyIA
         {
             Debug.LogError(gameObject.name + " OUT OF NAV MESH!");
         }
-    }
-
-    void OnCollisionEnter(Collision collisionInfo)
-    {
-        if(collisionInfo.gameObject.CompareTag("Player"))
-        {
-            if(health == null) health = collisionInfo.gameObject.GetComponent<PlayerHealth>();
-            if(health != null) health.UpdateHealth(touchDamage);
-            else Debug.Log("Player Health Null?");
-        }
-    }
-
-    protected override void OnValidate()
-    {
-        base.OnValidate();
-        if(touchDamage > 0) touchDamage = -touchDamage;
     }
 }

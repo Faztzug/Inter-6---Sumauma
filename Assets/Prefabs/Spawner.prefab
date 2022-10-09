@@ -123,11 +123,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2789471399106001224}
+  - component: {fileID: 6583952916587004222}
+  - component: {fileID: 1348353415387083785}
   - component: {fileID: 2886615385879980073}
   - component: {fileID: 7349483181437073601}
   - component: {fileID: 1758790386639294765}
-  - component: {fileID: 6583952916587004222}
-  - component: {fileID: 1348353415387083785}
   m_Layer: 6
   m_Name: Spawner
   m_TagString: Enemy
@@ -153,6 +153,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6583952916587004222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789471399106001225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29e13a74ec3be8642b5acb9a5c6e9bce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateRateRNG:
+  - 1.49
+  - 5
+  player: {fileID: 0}
+  findPlayerDistance: 60
+  minPlayerDistance: 0.1
+  state: {fileID: 0}
+  alive: 1
+  damageStunAsync: 3
+  touchDamage: -15
+  enemysPrefabs:
+  - {fileID: 3204672943901893549, guid: f3f79b373d765bc40a1ff47b28dbf82c, type: 3}
+  enemysList: []
+  spawnPoints:
+  - {fileID: 320250879342956146}
+  - {fileID: 5804271985656767659}
+  maxEnemys: 70
+--- !u!114 &1348353415387083785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2789471399106001225}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4a21d7c535ba96408299482cd8b33a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 7
+  health: 7
 --- !u!135 &2886615385879980073
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -204,49 +247,6 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &6583952916587004222
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2789471399106001225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 29e13a74ec3be8642b5acb9a5c6e9bce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  updateRateRNG:
-  - 1.49
-  - 5
-  player: {fileID: 0}
-  findPlayerDistance: 60
-  minPlayerDistance: 0.1
-  state: {fileID: 0}
-  alive: 1
-  damageStunAsync: 3
-  touchDamage: -15
-  enemysPrefabs:
-  - {fileID: 3204672943901893549, guid: f3f79b373d765bc40a1ff47b28dbf82c, type: 3}
-  enemysList: []
-  spawnPoints:
-  - {fileID: 320250879342956146}
-  - {fileID: 5804271985656767659}
-  maxEnemys: 70
---- !u!114 &1348353415387083785
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2789471399106001225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b4a21d7c535ba96408299482cd8b33a2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 7
-  health: 7
 --- !u!1 &2789471399515201304
 GameObject:
   m_ObjectHideFlags: 0

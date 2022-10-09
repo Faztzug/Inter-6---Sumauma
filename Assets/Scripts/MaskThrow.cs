@@ -64,7 +64,7 @@ public class MaskThrow : MonoBehaviour
         throwCurSpeed += throwAccelaration * Time.deltaTime;
         if(throwCurSpeed > throwMaxSpeed) throwCurSpeed = throwMaxSpeed;
         maskRgbd.velocity = Vector3.Lerp(maskRgbd.velocity, throwDirection * throwCurSpeed, 2f * Time.deltaTime);
-        maskCurScale = Mathf.Lerp(maskCurScale, 1f, 0.25f * Time.deltaTime);
+        maskCurScale = Mathf.Lerp(maskCurScale, 1f, 1f * Time.deltaTime);
         mask.localScale = maskScale * maskCurScale;
         var distance = Vector3.Distance(mask.position, transform.position);
         if(distance < 1.5f) OnReatach();

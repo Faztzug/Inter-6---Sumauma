@@ -16,8 +16,8 @@ public class Movimento : MonoBehaviour
     [SerializeField] private float doubleJump = 0.5f;
     private bool podeDoubleJump = false;
     [SerializeField] private float knockBackForce = 5f;
-    [SerializeField] private float knockBackTime = 1f;
-    [SerializeField] private float knockBackCounterTime;
+    [SerializeField] private float knockBackTime = 0.5f;
+    private float knockBackCounterTime;
     public bool onKnockBack => knockBackCounterTime > 0;
     private Vector3 knockBackImpulse = Vector3.zero;
     private float knockX;

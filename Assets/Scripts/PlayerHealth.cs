@@ -96,6 +96,7 @@ public class PlayerHealth : Health
         Cursor.lockState = CursorLockMode.None;
         foreach (var item in GetComponentsInChildren<Collider>())
         {
+            if(item is CharacterController) continue;
             item.enabled = false;
         }
         foreach (var item in GetComponentsInChildren<MonoBehaviour>())

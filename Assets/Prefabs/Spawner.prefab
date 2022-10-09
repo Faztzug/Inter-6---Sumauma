@@ -175,6 +175,8 @@ MonoBehaviour:
   alive: 1
   damageStunAsync: 3
   touchDamage: -15
+  knockBackForce: 10
+  knockBackTime: 1
   enemysPrefabs:
   - {fileID: 3204672943901893549, guid: f3f79b373d765bc40a1ff47b28dbf82c, type: 3}
   enemysList: []

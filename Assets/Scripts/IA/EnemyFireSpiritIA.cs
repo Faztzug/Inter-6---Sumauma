@@ -20,7 +20,7 @@ public class EnemyFireSpiritIA : EnemyFireGenericIA
         
         distance = Vector3.Distance(pos, playerPos);
 
-
+        if(!agent.enabled) return;
         if(agent.isOnNavMesh)
         {
             if(distance > minPlayerDistance && distance < findPlayerDistance)
@@ -39,6 +39,7 @@ public class EnemyFireSpiritIA : EnemyFireGenericIA
         else
         {
             Debug.LogError(gameObject.name + " OUT OF NAV MESH!");
+            health.UpdateHealth(-0.5f);
         }
     }
 }

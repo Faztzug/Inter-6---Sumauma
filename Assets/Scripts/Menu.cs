@@ -10,6 +10,16 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Fase 1");
     }
 
+    public void JogarNovamente()
+    {
+        GameState.ReloadScene(1f);
+    }
+
+    public void VoltarMenu()
+    {
+        SceneManager.LoadScene("Menu Inicial");
+    }
+
     public void Fechar()
     {
         Application.Quit();

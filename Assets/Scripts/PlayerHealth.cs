@@ -19,7 +19,7 @@ public class PlayerHealth : Health
     //private GameState state;
     public bool dead;
 
-    //public GameObject gameOver;
+    public GameObject gameOver;
     
 
     public override void Start()
@@ -89,7 +89,7 @@ public class PlayerHealth : Health
     {
         if(GameState.IsPlayerDead) return;
         //anim.SetTrigger("Die");
-        //gameOver.SetActive(true);
+        
         if(audioSource != null) audioSource?.Play();
         GameState.IsPlayerDead = true;
         Time.timeScale = 1f;
@@ -104,7 +104,7 @@ public class PlayerHealth : Health
             if(item == this || item is Movimento || item is GameState) continue;
             item.enabled = false;
         }
-        GameState.ReloadScene(5f);
+        gameOver.SetActive(true);
         //state.playerDead = true;
         //this.gameObject.SetActive(false);
     }

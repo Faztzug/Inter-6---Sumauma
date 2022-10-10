@@ -8,7 +8,7 @@ public class MaskDamage : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) 
     {
-        if(other.gameObject.CompareTag("Enemy"))
+        if(other.gameObject.CompareTag("Enemy") && transform.parent == null)
         {
             if(other.gameObject.TryGetComponent<Health>(out Health enemyHeatlh))
             {

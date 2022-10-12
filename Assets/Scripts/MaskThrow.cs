@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
+using DG.Tweening;
 
 public class MaskThrow : MonoBehaviour
 {
@@ -18,7 +20,8 @@ public class MaskThrow : MonoBehaviour
     private float throwTimer;
     private Vector3 throwDirection;
     private bool onThrow;
-
+    private TrailRenderer trail;
+    private float trailTime;
     private void Start() 
     {
         maskLocalPos = mask.localPosition;
@@ -26,6 +29,9 @@ public class MaskThrow : MonoBehaviour
         MaskDamage = mask.GetComponent<MaskDamage>();
         maskScale = mask.localScale;
         maskCurScale = 1f;
+        trail = mask.GetComponent<TrailRenderer>();
+        trail.emitting = false;
+        trailTime = trail.time;
     }
 
     private void Update() 
@@ -43,6 +49,8 @@ public class MaskThrow : MonoBehaviour
 
         if(onThrow)
         {
+            trail.time = trailTime;
+            trail.emitting = true;
             throwTimer += 1 * Time.deltaTime;
             if(throwTimer < throwDuration) OnThrowing();
             else OnComingBack();
@@ -78,5 +86,6 @@ public class MaskThrow : MonoBehaviour
         mask.localRotation = new Quaternion(0,0,0,0);
         maskRgbd.constraints = RigidbodyConstraints.FreezeAll;
         mask.localScale = maskScale;
+        trail.DOTime(0, 0.5f).OnComplete(() => trail.emitting = false);
     }
 }

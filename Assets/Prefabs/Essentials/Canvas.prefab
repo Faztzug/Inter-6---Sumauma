@@ -810,6 +810,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   healthBar: {fileID: 2838026321314682378}
+  gameOver: {fileID: 1773922482036918163}
 --- !u!1 &2838026322498593435
 GameObject:
   m_ObjectHideFlags: 0

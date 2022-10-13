@@ -12,7 +12,7 @@ public class Menu : MonoBehaviour
 
     public void JogarNovamente()
     {
-        GameState.ReloadScene(1f);
+        GameState.ReloadScene(0);
     }
 
     public void VoltarMenu()

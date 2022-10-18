@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 using DG.Tweening;
+using UnityEngine.VFX;
 
 public class MaskThrow : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class MaskThrow : MonoBehaviour
     private float throwTimer;
     private Vector3 throwDirection;
     private bool onThrow;
-    private TrailRenderer trail;
+    [SerializeField] private TrailRenderer[] trails;
+    [SerializeField] private VisualEffect trailVFX;
     private float trailTime;
     private void Start() 
     {
@@ -29,9 +31,12 @@ public class MaskThrow : MonoBehaviour
         MaskDamage = mask.GetComponent<MaskDamage>();
         maskScale = mask.localScale;
         maskCurScale = 1f;
-        trail = mask.GetComponent<TrailRenderer>();
-        trail.emitting = false;
-        trailTime = trail.time;
+        foreach (var trail in trails)
+        {
+            trail.emitting = false;
+            trailTime = trail.time;
+        }
+        trailVFX.Stop();
     }
 
     private void Update() 
@@ -45,12 +50,17 @@ public class MaskThrow : MonoBehaviour
             throwTimer = 0;
             maskCurScale = 1f;
             throwCurSpeed = throwAccelaration / 2f;
+            trailVFX.Play();
         }
 
         if(onThrow)
         {
-            trail.time = trailTime;
-            trail.emitting = true;
+            foreach (var trail in trails)
+            {
+                trail.time = trailTime;
+                trail.emitting = true;
+            }
+            
             throwTimer += 1 * Time.deltaTime;
             if(throwTimer < throwDuration) OnThrowing();
             else OnComingBack();
@@ -86,6 +96,12 @@ public class MaskThrow : MonoBehaviour
         mask.localRotation = new Quaternion(0,0,0,0);
         maskRgbd.constraints = RigidbodyConstraints.FreezeAll;
         mask.localScale = maskScale;
-        trail.DOTime(0, 0.5f).OnComplete(() => trail.emitting = false);
+        foreach (var trail in trails) trail.DOTime(0, 0.5f).OnComplete(() => EndTrail(trail));
+    }
+
+    private void EndTrail(TrailRenderer trail)
+    {
+        trail.emitting = false;
+        trailVFX.Stop();
     }
 }

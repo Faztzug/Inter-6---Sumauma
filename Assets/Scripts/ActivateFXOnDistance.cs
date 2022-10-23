@@ -18,7 +18,8 @@ public class ActivateFXOnDistance : MonoBehaviour
         if(this == null || GameState.PlayerTransform == null) return;
         var distance = Vector3.Distance(this.transform.position, GameState.PlayerTransform.position);
         gameObject.SetActive(distance < distanceToActive);
-        await Task.Delay(Mathf.RoundToInt(updateInterval * 1000));
+        var delayRNG = Random.Range(updateInterval * 1f, updateInterval * 1.25f);
+        await Task.Delay(Mathf.RoundToInt(delayRNG * 1000));
         UpdateStateAsync();
     }
 }

@@ -20,46 +20,51 @@ public class Rola : MonoBehaviour
     private bool moving;
     private Vector3 RollSpeedVector;
     private Rigidbody rgbd;
+    private Vector3 fowardDirection;
+    [SerializeField] private int addForcePower = 50;
 
     void Start()
     {
+        fowardDirection = transform.forward;
         if(!startRoolingOnTrigger) StartRooling();
     }
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player")) {StartRooling(); 
-        Debug.Log("ROLLINGGG");}
+        if(other.CompareTag("Player")) {StartRooling(); }
     }
 
     private void StartRooling()
     {
+        Debug.Log("ROLLINGGG  " + name);
         rgbd = GetComponent<Rigidbody>();
-        MoveSpeedVector = transform.forward * MoveSpeed;
+        MoveSpeedVector = fowardDirection * MoveSpeed;
         if(RollingDirection == Direction.Foward) 
         {
-            rgbd.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+            rgbd.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
             RollSpeedVector = new Vector3(RollSpeed, 0, 0);
         }
         if(RollingDirection == Direction.Right)
         {
-            rgbd.constraints = RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX;
+            rgbd.constraints = RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationX;
             RollSpeedVector = new Vector3(0, 0, RollSpeed);
         }
         if(RollingDirection == Direction.Around)
         {
-            rgbd.constraints =  RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
+            rgbd.constraints =  RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationZ;
             RollSpeedVector = new Vector3(0, RollSpeed, 0);
         }
         moving = true;
+        // rgbd.angularDrag = 0;
+        // rgbd.drag = 0;
+        // rgbd.angularVelocity = RollSpeedVector;
+        // rgbd.velocity = MoveSpeedVector;
     }
 
     private void FixedUpdate()
     {
         if(!moving) return;
-        rgbd.angularDrag = 0;
-        rgbd.drag = 0;
-        rgbd.angularVelocity = RollSpeedVector;
-        rgbd.velocity = MoveSpeedVector;
+        rgbd.AddForce(MoveSpeedVector * addForcePower, ForceMode.Impulse);
+        rgbd.AddTorque(RollSpeedVector * addForcePower, ForceMode.Impulse);
     }
 }

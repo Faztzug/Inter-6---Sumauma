@@ -211,7 +211,6 @@ public class Movimento : MonoBehaviour
         {
             dashCooldownState = dashCooldownTime;
             float startTime = Time.time;
-            Debug.Log("Dashou");
             GameState.isPlayerDashing = true;
 
             while(Time.time < startTime + dashTime)
@@ -223,7 +222,6 @@ public class Movimento : MonoBehaviour
             
             
             GameState.isPlayerDashing = false;
-            Debug.Log("Terminou Dash");
         }
     }
 }

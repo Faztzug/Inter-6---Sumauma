@@ -32,6 +32,7 @@ public class GameState : MonoBehaviour
         cinemachineFreeLook.Follow = playerTransform;
         cinemachineFreeLook.LookAt = playerLookAt;
         gameState = this;
+        Application.targetFrameRate = 60;
     }
 
     public static void ReloadScene(float waitTime)

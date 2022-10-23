@@ -10,6 +10,7 @@ public class MaskThrow : MonoBehaviour
     [SerializeField] private Transform mask;
     private MaskDamage MaskDamage;
     [SerializeField] private float maskMaxGrow = 1.5f;
+    private Quaternion maskRotation;
     private Vector3 maskScale;
     private float maskCurScale;
     private Vector3 maskLocalPos;
@@ -31,6 +32,7 @@ public class MaskThrow : MonoBehaviour
         MaskDamage = mask.GetComponent<MaskDamage>();
         maskScale = mask.localScale;
         maskCurScale = 1f;
+        maskRotation = mask.localRotation;
         foreach (var trail in trails)
         {
             trail.emitting = false;
@@ -45,7 +47,7 @@ public class MaskThrow : MonoBehaviour
         {
             onThrow = true;
             mask.parent = null;
-            throwDirection = mask.forward;
+            throwDirection = transform.forward;
             maskRgbd.constraints = RigidbodyConstraints.FreezeRotationX;
             throwTimer = 0;
             maskCurScale = 1f;
@@ -96,6 +98,7 @@ public class MaskThrow : MonoBehaviour
         mask.localRotation = new Quaternion(0,0,0,0);
         maskRgbd.constraints = RigidbodyConstraints.FreezeAll;
         mask.localScale = maskScale;
+        mask.localRotation = maskRotation;
         foreach (var trail in trails) trail.DOTime(0, 0.5f).OnComplete(() => EndTrail(trail));
     }
 

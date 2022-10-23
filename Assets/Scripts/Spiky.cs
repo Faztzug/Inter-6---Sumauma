@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))] [RequireComponent(typeof(Collider))]
 public class Spiky : MonoBehaviour
 {
-    [SerializeField] private float damageByTouch;
+    public float damageByTouch;
     private PlayerHealth health;
     protected Movimento playerMove;
 

@@ -85,7 +85,7 @@ public class Movimento : MonoBehaviour
             podeDoubleJump = true;
             //anim.SetBool("isJumping", false);
 
-            if (Input.GetButtonDown("Jump") && !GameState.IsPlayerDead && !onKnockBack)
+            if (Input.GetButtonDown("Jump") && !GameState.IsPlayerDead && !onKnockBack && !GameState.onCutscene)
             {
                 gravityAcceleration = jumpForce;
                 //anim.SetBool("isJumping", true);
@@ -97,7 +97,7 @@ public class Movimento : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump") && podeDoubleJump && allowDoubleJump 
             && gravityAcceleration < jumpForce * doubleJump && !GameState.IsPlayerDead
-            && !onKnockBack)
+            && !onKnockBack && !GameState.onCutscene)
             {
                 gravityAcceleration = jumpForce * doubleJump;
                 podeDoubleJump = false;
@@ -107,7 +107,7 @@ public class Movimento : MonoBehaviour
 
         DashUpdate();
 
-        if(onKnockBack)
+        if(onKnockBack || GameState.onCutscene)
         {
             vertical = Vector3.zero;
             horizontal = Vector3.zero;
@@ -180,7 +180,7 @@ public class Movimento : MonoBehaviour
 
     private void DashUpdate()
     {
-        if (Input.GetButtonDown("Dash") && !GameState.IsPlayerDead && !onKnockBack)
+        if (Input.GetButtonDown("Dash") && !GameState.IsPlayerDead && !onKnockBack && !GameState.onCutscene)
         {
             StartCoroutine(Dash());
         }

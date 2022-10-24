@@ -20,6 +20,10 @@ public class GameState : MonoBehaviour
         set => GameStateInstance.isPlayerDead = value;
     }
     public Transform playerLookAt;
+    static public bool onCutscene;
+    static public bool skipCutscene;
+    private Camera mainCamera;
+    private Camera cutsceneCamera;
     private static GameState gameState;
     private GameState() { }
 
@@ -27,6 +31,15 @@ public class GameState : MonoBehaviour
 
     private void Awake()
     {
+        mainCamera = Camera.main;
+        var cutSceneGOCam = GameObject.FindGameObjectWithTag("CutsceneCamera");
+        if(cutSceneGOCam != null)
+        {
+            Debug.Log("Found");
+            cutsceneCamera = cutSceneGOCam.GetComponent<Camera>();
+            var cutSceneAnim = cutSceneGOCam.GetComponent<Animator>();
+            cutSceneGOCam.SetActive(cutSceneAnim != null && cutSceneAnim.runtimeAnimatorController != null);
+        }
         mainCanvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<MainCanvas>();
         cinemachineFreeLook = GameObject.FindObjectOfType<CinemachineFreeLook>();
         cinemachineFreeLook.Follow = playerTransform;
@@ -46,6 +59,20 @@ public class GameState : MonoBehaviour
     {
         var ob = GameStateInstance;
         ob.StartCoroutine(ob.LoadSceneCourotine(waitTime, sceneName));
+    }
+
+    public static void SetCutsceneCamera()
+    {
+        gameState.mainCamera.gameObject.SetActive(false);
+        gameState.cutsceneCamera?.gameObject.SetActive(true);
+        onCutscene = true;
+    }
+
+    public static void SetMainCamera()
+    {
+        gameState.cutsceneCamera?.gameObject.SetActive(false);
+        gameState.mainCamera.gameObject.SetActive(true);
+        onCutscene = false;
     }
 
     IEnumerator LoadSceneCourotine(float waitTime, string sceneName)

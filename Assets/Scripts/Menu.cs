@@ -7,7 +7,7 @@ public class Menu : MonoBehaviour
 {
     public void Jogar()
     {
-        SceneManager.LoadScene("Fase 1");
+        JogarFase1();
     }
 
     public void JogarFase1()

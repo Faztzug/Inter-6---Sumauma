@@ -51,7 +51,7 @@ public class EnemyIA : MonoBehaviour
         {
             stunTimerAsync--;
         }
-        else  AsyncUpdateIA();
+        else if(!GameState.onCutscene) AsyncUpdateIA();
         
         updateRate = Random.Range(updateRateRNG[0], updateRateRNG[1]);
 

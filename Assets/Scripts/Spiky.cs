@@ -15,6 +15,7 @@ public class Spiky : MonoBehaviour
         {
             if(health == null) health = other.transform.GetComponent<PlayerHealth>();
             if(playerMove == null) playerMove = other.gameObject.GetComponent<Movimento>();
+            if(playerMove.onKnockBack) return;
             health?.UpdateHealth(damageByTouch);
             playerMove?.KnockBack(this.transform.position);
         }

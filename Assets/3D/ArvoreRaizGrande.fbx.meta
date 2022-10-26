@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6e073ad5f8cc77945b10b09c5ca740c7
+guid: 04e73fd9d46a82042af1512008aec0a2
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert5
-    second: {fileID: 2100000, guid: 35be633787bc8bf42b963284245a0c89, type: 2}
+      name: lambert1
+    second: {fileID: 2100000, guid: 45e22f0d2d36f6a4f9bb3311238835ec, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -40,15 +40,15 @@ ModelImporter:
     isReadable: 0
   meshes:
     lODScreenPercentages: []
-    globalScale: 100
+    globalScale: 200
     meshCompression: 0
     addColliders: 0
     useSRGBMaterialColor: 1
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
@@ -93,7 +93,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 100
+    globalScale: 200
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

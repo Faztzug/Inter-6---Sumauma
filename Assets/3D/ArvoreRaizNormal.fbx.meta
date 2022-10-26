@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6e073ad5f8cc77945b10b09c5ca740c7
+guid: 645493a1b5782a941a9564e8d28cf181
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: lambert5
-    second: {fileID: 2100000, guid: 35be633787bc8bf42b963284245a0c89, type: 2}
+      name: lambert1
+    second: {fileID: 2100000, guid: 6368c34a4bd78b94e94dba2249974f6c, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -47,8 +47,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 0
-    importLights: 0
+    importCameras: 1
+    importLights: 1
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0

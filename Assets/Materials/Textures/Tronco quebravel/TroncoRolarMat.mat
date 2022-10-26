@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: TroncoQMat
+  m_Name: TroncoRolarMat
   m_Shader: {fileID: -6465566751694194690, guid: e75c95814d346d94d8644779aac1cdcf,
     type: 3}
   m_ValidKeywords: []
@@ -55,7 +55,7 @@ Material:
     - _Contrast: 0
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _SmoothStrength: 0.8
+    - _SmoothStrength: 2
     m_Colors:
     - _Color: {r: 0.9056604, g: 0.2018906, b: 0.1153435, a: 1}
   m_BuildTextureStacks: []

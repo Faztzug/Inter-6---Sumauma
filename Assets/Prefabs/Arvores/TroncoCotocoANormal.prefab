@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1662974564532434209}
   - component: {fileID: 3526571154706252267}
   - component: {fileID: 4098317649301955476}
+  - component: {fileID: 1829860800032916374}
   m_Layer: 0
   m_Name: TroncoCotocoANormal
   m_TagString: Untagged
@@ -110,3 +111,16 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1
+--- !u!65 &1829860800032916374
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3166058815599173694}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1855476, y: 0.6704812, z: 1.0344226}
+  m_Center: {x: 0, y: 0.33903897, z: -0.0040438473}

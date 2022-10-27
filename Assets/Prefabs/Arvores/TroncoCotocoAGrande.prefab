@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6763380454025928454}
   - component: {fileID: 8806980358581644236}
   - component: {fileID: 302584311769212662}
+  - component: {fileID: 7358985234820325902}
   m_Layer: 0
   m_Name: TroncoCotocoAGrande
   m_TagString: Untagged
@@ -110,3 +111,16 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1
+--- !u!65 &7358985234820325902
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7005438872443570713}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.1517549, y: 1.353672, z: 2.0767293}
+  m_Center: {x: 0.04364258, y: 0.68443274, z: 0.02205944}

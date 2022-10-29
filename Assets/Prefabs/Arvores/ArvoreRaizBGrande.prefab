@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3561527355457303978}
   - component: {fileID: 1624076579712696672}
   - component: {fileID: 7605047653911411057}
+  - component: {fileID: 2047162628270003577}
   m_Layer: 0
   m_Name: ArvoreRaizBGrande
   m_TagString: Untagged
@@ -109,3 +110,17 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1
+--- !u!136 &2047162628270003577
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 975343209819480245}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 2.944038
+  m_Height: 37.650757
+  m_Direction: 1
+  m_Center: {x: 0.050192833, y: 18.226028, z: 0.4465556}

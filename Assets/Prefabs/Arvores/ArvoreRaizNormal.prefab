@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 2631437408203840335}
   - component: {fileID: 243274818554359685}
   - component: {fileID: 7406257901333443024}
+  - component: {fileID: 3543861345054036239}
   m_Layer: 0
   m_Name: ArvoreRaizNormal
   m_TagString: Untagged
@@ -109,3 +110,17 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1
+--- !u!136 &3543861345054036239
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1756603246921993808}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.3579304
+  m_Height: 15.97378
+  m_Direction: 1
+  m_Center: {x: 0.16955733, y: 7.728628, z: 0.31866264}

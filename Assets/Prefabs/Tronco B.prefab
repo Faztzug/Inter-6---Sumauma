@@ -75,9 +75,9 @@ GameObject:
   - component: {fileID: 5531963234967722490}
   - component: {fileID: 5917482050226814655}
   - component: {fileID: 9128591184743697852}
-  - component: {fileID: 5922432329513176844}
   - component: {fileID: 8804566191454859461}
   - component: {fileID: 2618003536585681841}
+  - component: {fileID: 5244703711818920329}
   m_Layer: 0
   m_Name: pCylinder2
   m_TagString: Untagged
@@ -152,20 +152,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5922432329513176844
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1178810500584471232}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6099800089077584851, guid: 6e073ad5f8cc77945b10b09c5ca740c7, type: 3}
 --- !u!54 &8804566191454859461
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -195,3 +181,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageByTouch: -20
+--- !u!65 &5244703711818920329
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1178810500584471232}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.694818, y: 2.8349304, z: 2.3497913}
+  m_Center: {x: 0, y: 0, z: 0.0000019073486}

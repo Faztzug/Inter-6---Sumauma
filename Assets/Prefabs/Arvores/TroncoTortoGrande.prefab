@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5579698757354468879}
   - component: {fileID: 7677482039869555397}
   - component: {fileID: 52075376443925068}
+  - component: {fileID: 5263831079750966923}
   m_Layer: 0
   m_Name: TroncoTortoGrande
   m_TagString: Untagged
@@ -62,7 +63,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4125471728267972529, guid: 9b2ff0bf4b028e349944c5ce59dd53c4, type: 3}
+  - {fileID: 2100000, guid: 35ee96417f82e284cae0afceaed3dec3, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -109,3 +110,17 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1
+--- !u!64 &5263831079750966923
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8181660965703672592}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6099800089077584851, guid: 9b2ff0bf4b028e349944c5ce59dd53c4, type: 3}

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1715722408560729421}
   - component: {fileID: 4373687651795364648}
   - component: {fileID: 8665259970310329881}
+  - component: {fileID: 2945561260432494821}
   m_Layer: 0
   m_Name: Flame01
   m_TagString: Untagged
@@ -4874,3 +4875,28 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!205 &2945561260432494821
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2632197028531735115}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0, y: 0, z: 3.875002}
+  m_Size: 20
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.3786552
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 3439872201750538598}
+  - screenRelativeHeight: 0.3
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.1
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1

@@ -102,6 +102,7 @@ public class PlayerHealth : Health
             if(item == this || item is Movimento || item is GameState) continue;
             item.enabled = false;
         }
+        GameState.mainCanvas.ResumeGame();
         GameState.mainCanvas.gameOver.SetActive(true);
     }
 }

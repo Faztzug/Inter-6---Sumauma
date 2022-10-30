@@ -43,7 +43,7 @@ public class MaskThrow : MonoBehaviour
 
     private void Update() 
     {
-        if(Input.GetButtonDown("Mask") && !onThrow)
+        if(Input.GetButtonDown("Mask") && !onThrow && !GameState.IsPlayerDead && !GameState.isGamePaused)
         {
             onThrow = true;
             mask.parent = null;

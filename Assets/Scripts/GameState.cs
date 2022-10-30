@@ -11,14 +11,15 @@ public class GameState : MonoBehaviour
     public Transform playerTransform;
     static public Transform PlayerTransform => GameStateInstance.playerTransform;
     public bool isPlayerDead = false;
-    public static bool isPlayerDashing {get; set;} = false;
-    public bool godMode = false;
-    static public bool GodMode => GameStateInstance.godMode;
-    static public void ToogleGodMode() => GameStateInstance.godMode = !GodMode;
     static public bool IsPlayerDead {
         get => GameStateInstance.isPlayerDead;
         set => GameStateInstance.isPlayerDead = value;
     }
+    public static bool isPlayerDashing {get; set;} = false;
+    public static bool isGamePaused {get; set;} = false;
+    public bool godMode = false;
+    static public bool GodMode => GameStateInstance.godMode;
+    static public void ToogleGodMode() => GameStateInstance.godMode = !GodMode;
     public Transform playerLookAt;
     static public bool onCutscene;
     static public bool skipCutscene;
@@ -55,7 +56,7 @@ public class GameState : MonoBehaviour
         ob.StartCoroutine(ob.LoadSceneCourotine(waitTime, sceneName));
     }
 
-    public static void LoadScene(float waitTime, string sceneName)
+    public static void LoadScene(string sceneName, float waitTime = 0)
     {
         var ob = GameStateInstance;
         ob.StartCoroutine(ob.LoadSceneCourotine(waitTime, sceneName));

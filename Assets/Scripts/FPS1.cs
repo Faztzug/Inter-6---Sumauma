@@ -13,7 +13,6 @@ public class FPS1 : MonoBehaviour
         InvokeRepeating(nameof(CalcularFPS), 0, 1f);
     }
 
-    // Update is called once per frame
     private void CalcularFPS()
     {
         textMesh.text = (1f / Time.deltaTime).ToString("FPS 00");

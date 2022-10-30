@@ -24,6 +24,7 @@ public class GameState : MonoBehaviour
     static public bool onCutscene;
     static public bool skipCutscene;
     private Camera mainCamera;
+    static public Camera MainCamera { get => gameState.mainCamera; }
     private Camera cutsceneCamera;
     private static GameState gameState;
     private GameState() { }
@@ -34,19 +35,30 @@ public class GameState : MonoBehaviour
     {
         mainCamera = Camera.main;
         var cutSceneGOCam = GameObject.FindGameObjectWithTag("CutsceneCamera");
-        if(cutSceneGOCam != null)
-        {
-            Debug.Log("Found");
-            cutsceneCamera = cutSceneGOCam.GetComponent<Camera>();
-            var cutSceneAnim = cutSceneGOCam.GetComponent<Animator>();
-            cutSceneGOCam.SetActive(cutSceneAnim != null && cutSceneAnim.runtimeAnimatorController != null);
-        }
         mainCanvas = GameObject.FindGameObjectWithTag("Canvas").GetComponent<MainCanvas>();
         cinemachineFreeLook = GameObject.FindObjectOfType<CinemachineFreeLook>();
         cinemachineFreeLook.Follow = playerTransform;
         cinemachineFreeLook.LookAt = playerLookAt;
         gameState = this;
         Application.targetFrameRate = 60;
+        if(cutSceneGOCam != null)
+        {
+            cutsceneCamera = cutSceneGOCam.GetComponent<Camera>();
+            var cutSceneAnim = cutSceneGOCam.GetComponent<Animator>();
+            if(cutSceneAnim != null 
+            && cutSceneAnim.runtimeAnimatorController != null
+            && cutSceneAnim.GetCurrentAnimatorClipInfo(0)[0].clip.length > 1)
+            {
+                SetMainCamera();
+                SetCutsceneCamera();
+            }
+            else
+            {
+                SetCutsceneCamera();
+                SetMainCamera();
+            }
+        }
+        mainCanvas.ResumeGame();
     }
 
     public static void ReloadScene(float waitTime)

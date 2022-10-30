@@ -39,7 +39,7 @@ public class EnemyFireSpiritIA : EnemyFireGenericIA
         else
         {
             Debug.LogError(gameObject.name + " OUT OF NAV MESH!");
-            health.UpdateHealth(-0.5f);
+            health?.UpdateHealth(-0.5f);
         }
     }
 }

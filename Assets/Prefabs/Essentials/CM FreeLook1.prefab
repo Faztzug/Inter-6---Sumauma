@@ -539,11 +539,11 @@ MonoBehaviour:
   m_SplineCurvature: 0.2
   m_Orbits:
   - m_Height: 7
+    m_Radius: 10
+  - m_Height: 4
     m_Radius: 12
-  - m_Height: 2.5
-    m_Radius: 14
-  - m_Height: 0.4
-    m_Radius: 13
+  - m_Height: 2
+    m_Radius: 11
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 5148455907256163559}

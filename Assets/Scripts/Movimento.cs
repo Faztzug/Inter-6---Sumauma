@@ -47,7 +47,7 @@ public class Movimento : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>();
-        cam = Camera.main;
+        cam = GameState.MainCamera;
         Application.targetFrameRate = 60;
         //anim = GetComponentInChildren<Animator>();
     }

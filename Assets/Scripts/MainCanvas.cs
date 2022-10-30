@@ -34,6 +34,7 @@ public class MainCanvas : MonoBehaviour
 
     public void PauseGame()
     {
+        Cursor.lockState = CursorLockMode.None;
         pauseMenu.SetActive(true);
         pauseMainMenu.SetActive(true);
         Time.timeScale = 0f;
@@ -42,6 +43,7 @@ public class MainCanvas : MonoBehaviour
 
     public void ResumeGame()
     {
+        Cursor.lockState = CursorLockMode.Locked;
         pauseMenu.SetActive(false);
         pauseSettingsMenu.SetActive(false);
         Time.timeScale = 1f;

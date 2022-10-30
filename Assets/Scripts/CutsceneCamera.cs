@@ -7,8 +7,8 @@ public class CutsceneCamera : StateMachineBehaviour
     // OnStateEnter is called when a transition starts and the state machine starts to evaluate this state
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       if(!GameState.skipCutscene) GameState.SetCutsceneCamera();
-	   else GameState.SetMainCamera();
+        if(!GameState.skipCutscene) GameState.SetCutsceneCamera();
+	    else GameState.SetMainCamera();
     }
 
     // OnStateUpdate is called on each Update frame between OnStateEnter and OnStateExit callbacks
@@ -20,7 +20,7 @@ public class CutsceneCamera : StateMachineBehaviour
     // OnStateExit is called when a transition ends and the state machine finishes evaluating this state
     override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-       GameState.SetMainCamera();
+        GameState.SetMainCamera();
     }
 
     // OnStateMove is called right after Animator.OnAnimatorMove()

@@ -103,6 +103,7 @@ public class PlayerHealth : Health
             item.enabled = false;
         }
         GameState.mainCanvas.ResumeGame();
+        Cursor.lockState = CursorLockMode.None;
         GameState.mainCanvas.gameOver.SetActive(true);
     }
 }

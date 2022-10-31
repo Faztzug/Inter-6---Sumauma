@@ -92,7 +92,7 @@ public class Movimento : MonoBehaviour
             {
                 gravityAcceleration = jumpForce;
                 jumpSound.PlayOn(audioSource);
-                //anim.SetBool("isJumping", true);
+                anim.SetTrigger("Jump");
             }
             else gravityAcceleration = -gravity * 10f * Time.deltaTime;
 
@@ -106,6 +106,7 @@ public class Movimento : MonoBehaviour
                 gravityAcceleration = jumpForce * doubleJump;
                 podeDoubleJump = false;
                 jumpSound.PlayOn(audioSource);
+                anim.SetTrigger("Jump");
             }
             gravityAcceleration -= gravity * Time.deltaTime;
         }

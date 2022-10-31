@@ -7,6 +7,7 @@ using UnityEngine.VFX;
 
 public class MaskThrow : MonoBehaviour
 {
+    [SerializeField] private Transform maskParent;
     [SerializeField] private Transform mask;
     private MaskDamage MaskDamage;
     [SerializeField] private float maskMaxGrow = 1.5f;
@@ -93,7 +94,7 @@ public class MaskThrow : MonoBehaviour
     private void OnReatach()
     {
         onThrow = false;
-        mask.parent = this.transform;
+        mask.parent = maskParent;
         mask.localPosition = maskLocalPos;
         mask.localRotation = new Quaternion(0,0,0,0);
         maskRgbd.constraints = RigidbodyConstraints.FreezeAll;

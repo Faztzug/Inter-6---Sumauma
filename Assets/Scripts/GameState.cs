@@ -27,6 +27,7 @@ public class GameState : MonoBehaviour
     static public Camera MainCamera { get => gameState.mainCamera; }
     private Camera cutsceneCamera;
     private static GameState gameState;
+    [SerializeField] private GameObject GenericAudioSourcePrefab;
     private GameState() { }
 
     public static GameState GameStateInstance => gameState;
@@ -93,5 +94,13 @@ public class GameState : MonoBehaviour
         yield return new WaitForSecondsRealtime(waitTime);
 
         SceneManager.LoadScene(sceneName);
+    }
+
+    public static void InstantiateSound(Sound sound, Vector3 position, float destroyTime = 10f)
+    {
+        var AudioObject = GameObject.Instantiate(gameState.GenericAudioSourcePrefab, position, Quaternion.identity);
+        var audioSource = AudioObject.GetComponent<AudioSource>();
+        sound.PlayOn(audioSource);
+        Destroy(AudioObject, destroyTime);
     }
 }

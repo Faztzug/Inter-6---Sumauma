@@ -16,6 +16,8 @@ public class PlayerHealth : Health
     [SerializeField] float fallingDeathHeight = -1000;
     public bool IsMaxHealth => health >= maxHealth;
     public AudioSource audioSource;
+    public Sound deathSound;
+    public Sound[] damageSounds;
     //private GameState state;
     public bool dead;
     
@@ -66,6 +68,11 @@ public class PlayerHealth : Health
         //if(health < maxHealth && item != null) item.DestroyItem();
          
         base.UpdateHealth(value);
+        if(value < -5)
+        {
+            var index = Random.Range(0, damageSounds.Length);
+            damageSounds[index].PlayOn(audioSource);
+        }
         bar.fillAmount = health / maxHealth;
 
         // var hpPorcentage = Mathf.Abs(health / maxHealth);
@@ -88,7 +95,7 @@ public class PlayerHealth : Health
         if(GameState.IsPlayerDead) return;
         //anim.SetTrigger("Die");
         
-        if(audioSource != null) audioSource?.Play();
+        if(audioSource != null) deathSound.PlayOn(audioSource);
         GameState.IsPlayerDead = true;
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.None;

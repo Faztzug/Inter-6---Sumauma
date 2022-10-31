@@ -5,6 +5,13 @@ using UnityEngine;
 public class MaskDamage : MonoBehaviour
 {
     [SerializeField] private float damage;
+    private AudioSource audioSource;
+    public Sound[] hitSounds;
+
+    private void Start() 
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void OnCollisionEnter(Collision other) 
     {
@@ -12,6 +19,8 @@ public class MaskDamage : MonoBehaviour
         {
             if(other.gameObject.TryGetComponent<Health>(out Health enemyHeatlh))
             {
+                var index = Random.Range(0, hitSounds.Length);
+                hitSounds[index].PlayOn(audioSource);
                 enemyHeatlh.UpdateHealth(damage);
             }
             Debug.Log("BODY?? " + (other.gameObject.GetComponent<Rigidbody>() != null));

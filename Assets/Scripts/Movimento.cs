@@ -32,14 +32,16 @@ public class Movimento : MonoBehaviour
     [SerializeField] private Transform rotateObj;
     private CharacterController controller;
     private Camera cam;
-    //private Animator anim;
+    private Animator anim;
 
     [Header("Gravity Values")]
     [SerializeField] private float gravity = 1f;
     private float gravityAcceleration;
     
-    // [Header("Audio")]
-    // [SerializeField] private AudioSource audioSource;
+    [Header("Audio")]
+    private AudioSource audioSource;
+    [SerializeField] Sound dashSound;
+    [SerializeField] Sound jumpSound;
     // [SerializeField] private AudioClip passosClip;
 
     private bool paused;
@@ -49,7 +51,8 @@ public class Movimento : MonoBehaviour
         controller = GetComponent<CharacterController>();
         cam = GameState.MainCamera;
         Application.targetFrameRate = 60;
-        //anim = GetComponentInChildren<Animator>();
+        anim = GetComponentInChildren<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -88,6 +91,7 @@ public class Movimento : MonoBehaviour
             if (Input.GetButtonDown("Jump") && !GameState.IsPlayerDead && !onKnockBack && !GameState.onCutscene)
             {
                 gravityAcceleration = jumpForce;
+                jumpSound.PlayOn(audioSource);
                 //anim.SetBool("isJumping", true);
             }
             else gravityAcceleration = -gravity * 10f * Time.deltaTime;
@@ -101,6 +105,7 @@ public class Movimento : MonoBehaviour
             {
                 gravityAcceleration = jumpForce * doubleJump;
                 podeDoubleJump = false;
+                jumpSound.PlayOn(audioSource);
             }
             gravityAcceleration -= gravity * Time.deltaTime;
         }
@@ -157,7 +162,7 @@ public class Movimento : MonoBehaviour
         controller.Move(movement);
         
         var velocitylAbs = Mathf.Abs(vertical.magnitude) + Mathf.Abs(horizontal.magnitude);
-        //anim.SetFloat("Movement", velocitylAbs);
+        anim.SetFloat("Movement", velocitylAbs);
 
         //anim.SetFloat("Velocidade", Mathf.Abs((vertical.magnitude * currentSpeed) / runSpeed));
 
@@ -209,6 +214,7 @@ public class Movimento : MonoBehaviour
         if(dashCooldownState > 0f) yield return null;
         else
         {
+            dashSound.PlayOn(audioSource);
             dashCooldownState = dashCooldownTime;
             float startTime = Time.time;
             GameState.isPlayerDashing = true;

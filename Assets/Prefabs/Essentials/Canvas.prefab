@@ -3374,7 +3374,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1432286794040027916
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3393,7 +3393,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 15, y: 25}
-  m_SizeDelta: {x: 158, y: 86.3812}
+  m_SizeDelta: {x: 158, y: 120}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4697710169585850965
 CanvasRenderer:
@@ -3423,8 +3423,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "WASD = Andar\nEspa\xE7o = Pulo\n2x Espa\xE7o = Pulo duplo\nCtrl = Dash\nShift
-    = Correr\nMouse = Movimento de c\xE2mera\n[  = God mode"
+  m_text: "WASD ou \u2191\u2193\u2192\u2190 = Andar\nEspa\xE7o = Pulo\nCtrl = Dash\nShift
+    = Correr\nMouse = Camera\nMouse Click = Mascara"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4d094f0e0dbe306499d983c193471427, type: 2}
   m_sharedMaterial: {fileID: -6205122931613662003, guid: 4d094f0e0dbe306499d983c193471427,
@@ -3452,7 +3452,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
+  m_fontSize: 14.8
   m_fontSizeBase: 35.53
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3460,7 +3460,7 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0

@@ -195,6 +195,7 @@ public class Movimento : MonoBehaviour
     {
         if (Input.GetButtonDown("Dash") && !GameState.IsPlayerDead && !onKnockBack && !GameState.onCutscene)
         {
+            anim.SetTrigger("Dash");
             StartCoroutine(Dash());
         }
         dashCooldownState -= 1f * Time.deltaTime;

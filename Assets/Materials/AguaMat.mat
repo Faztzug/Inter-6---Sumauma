@@ -43,8 +43,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
-    - _RippleDensity: 7
-    - _RippleSlimness: 5
+    - _RippleDensity: 35
+    - _RippleSlimness: 9
     - _RippleSpeed: 1
     - _SrcBlend: 1
     - _Surface: 0
@@ -54,8 +54,8 @@ Material:
     - _ZWrite: 1
     - _ZWriteControl: 0
     m_Colors:
-    - _BaseColor: {r: 0.34803307, g: 0.6025087, b: 0.745283, a: 0}
-    - _RippleColor: {r: 0.7137255, g: 1.6, b: 2, a: 0}
+    - _BaseColor: {r: 0.09838911, g: 0.25473273, b: 0.31132078, a: 0}
+    - _RippleColor: {r: 0.22873142, g: 0.50484544, b: 0.62975407, a: 0}
   m_BuildTextureStacks: []
 --- !u!114 &9096674294723295131
 MonoBehaviour:

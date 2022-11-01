@@ -165,23 +165,30 @@ public class Movimento : MonoBehaviour
         var velocitylAbs = Mathf.Abs(vertical.magnitude) + Mathf.Abs(horizontal.magnitude);
         anim.SetFloat("Movement", velocitylAbs);
 
+        if (Input.GetButton("Sprint"))
+        {
+            //Debug.Log("Correu");
+            anim.SetBool("Correndo", true);
+        }
+        else anim.SetBool("Correndo", false);
+        
         //anim.SetFloat("Velocidade", Mathf.Abs((vertical.magnitude * currentSpeed) / runSpeed));
 
-        //if(Input.GetAxis("Horizontal") >= 0) anim.SetFloat("Strafe", (horizontal.magnitude * currentSpeed) / runSpeed);
-        //else if(Input.GetAxis("Horizontal") < 0) anim.SetFloat("Strafe", (-horizontal.magnitude * currentSpeed) / runSpeed);
+            //if(Input.GetAxis("Horizontal") >= 0) anim.SetFloat("Strafe", (horizontal.magnitude * currentSpeed) / runSpeed);
+            //else if(Input.GetAxis("Horizontal") < 0) anim.SetFloat("Strafe", (-horizontal.magnitude * currentSpeed) / runSpeed);
 
-        //Audio
-        // if((velocitylAbs > 0.1) && controller.isGrounded)
-        // {
-        //     if(audioSource.isPlaying == false)
-        //     {
-        //         audioSource.PlayOneShot(passosClip);
-        //     }
-        // }
-        // else
-        // {
-        //     audioSource.Stop();
-        // }
+            //Audio
+            // if((velocitylAbs > 0.1) && controller.isGrounded)
+            // {
+            //     if(audioSource.isPlaying == false)
+            //     {
+            //         audioSource.PlayOneShot(passosClip);
+            //     }
+            // }
+            // else
+            // {
+            //     audioSource.Stop();
+            // }
     }
 
     private void DashUpdate()

@@ -13,7 +13,7 @@ public class HealthItem : Item
             var porcent = ammount / 100f;
             var value = hp.maxHealth * porcent;
             hp.UpdateHealth(value);
-            Destroy(this.gameObject);
+            DestroyItem();
         }
     }
 }

@@ -6,10 +6,26 @@ using UnityEngine;
 public class Spiky : MonoBehaviour
 {
     public float damageByTouch;
+    [SerializeField] private bool damageOnTrigger;
     private PlayerHealth health;
     protected Movimento playerMove;
 
     private void OnCollisionEnter(Collision other)
+    {
+        DoDamage(other.gameObject);
+    }
+
+    private void OnCollisionStay(Collision other) 
+    {
+        DoDamage(other.gameObject);
+    }
+
+    private void OnTriggerEnter(Collider other) 
+    {
+        if(damageOnTrigger) DoDamage(other.gameObject);
+    }
+
+    private void DoDamage(GameObject other)
     {
         if(other.gameObject.CompareTag("Player"))
         {

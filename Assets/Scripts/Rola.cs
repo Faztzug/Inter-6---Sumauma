@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using DG.Tweening;
 
 public enum Direction
 {
@@ -21,11 +22,16 @@ public class Rola : MonoBehaviour
     private Vector3 RollSpeedVector;
     private Rigidbody rgbd;
     private Vector3 fowardDirection;
+    private Quaternion startRotation;
+    private Tween fixRotationTween;
     [SerializeField] private int addForcePower = 50;
 
     void Start()
     {
+        rgbd = GetComponent<Rigidbody>();
+        rgbd.isKinematic = true;
         fowardDirection = transform.forward;
+        startRotation = transform.rotation;
         if(!startRoolingOnTrigger) StartRooling();
     }
 
@@ -37,7 +43,7 @@ public class Rola : MonoBehaviour
     private void StartRooling()
     {
         Debug.Log("ROLLINGGG  " + name);
-        rgbd = GetComponent<Rigidbody>();
+        rgbd.isKinematic = false;
         MoveSpeedVector = fowardDirection * MoveSpeed;
         if(RollingDirection == Direction.Foward) 
         {
@@ -63,7 +69,11 @@ public class Rola : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(!moving) return;
+        if(!moving) 
+        {
+            if(transform.rotation != startRotation) transform.rotation = startRotation;
+            return;
+        }
         rgbd.AddForce(MoveSpeedVector * addForcePower, ForceMode.Impulse);
         rgbd.AddTorque(RollSpeedVector * addForcePower, ForceMode.Impulse);
     }

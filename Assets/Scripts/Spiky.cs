@@ -7,8 +7,16 @@ public class Spiky : MonoBehaviour
 {
     public float damageByTouch;
     [SerializeField] private bool damageOnTrigger;
+    [SerializeField] private bool resetDoubleJumpOnTouch;
+    [SerializeField] private bool knockBackOnlyUp;
     private PlayerHealth health;
     protected Movimento playerMove;
+    private float DamageCoolDown = 0.5f;
+
+    private void Update() 
+    {
+        DamageCoolDown -= Time.deltaTime;
+    }
 
     private void OnCollisionEnter(Collision other)
     {
@@ -31,9 +39,17 @@ public class Spiky : MonoBehaviour
         {
             if(health == null) health = other.transform.GetComponent<PlayerHealth>();
             if(playerMove == null) playerMove = other.gameObject.GetComponent<Movimento>();
-            if(playerMove?.onKnockBack == true) return;
+            if(playerMove?.onKnockBack == true || DamageCoolDown > 0) return;
+            DamageCoolDown = 0.5f;
             health?.UpdateHealth(damageByTouch);
-            playerMove?.KnockBack(this.transform.position);
+            var knockPos = knockBackOnlyUp ? Vector3.zero : this.transform.position;
+            if(resetDoubleJumpOnTouch && playerMove != null) 
+            {
+                playerMove?.KnockBack(this.transform.position, 2f);
+                playerMove.allowDoubleJump = true;
+                playerMove?.ResetKnockBackTimer();
+            }
+            else playerMove?.KnockBack(this.transform.position);
         }
     }
 

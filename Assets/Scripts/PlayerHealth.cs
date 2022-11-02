@@ -67,12 +67,12 @@ public class PlayerHealth : Health
     {
         //if(health < maxHealth && item != null) item.DestroyItem();
          
-        base.UpdateHealth(value);
-        if(value < -5)
+        if(value < -5 && !GameState.IsPlayerDead)
         {
             var index = Random.Range(0, damageSounds.Length);
             damageSounds[index].PlayOn(audioSource);
         }
+        base.UpdateHealth(value);
         bar.fillAmount = health / maxHealth;
 
         // var hpPorcentage = Mathf.Abs(health / maxHealth);

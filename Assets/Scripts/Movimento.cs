@@ -12,7 +12,7 @@ public class Movimento : MonoBehaviour
     [SerializeField] [Range(0.5f,1f)] private float backWardsMultiplier = 0.5f;
     [SerializeField] [Range(0.5f,1f)] private float strafeMultiplier = 0.9f;
     [SerializeField] private float jumpForce = 10f;
-    [SerializeField] private bool allowDoubleJump = true;
+    public bool allowDoubleJump = true;
     [SerializeField] private float doubleJump = 0.5f;
     private bool podeDoubleJump = false;
     [SerializeField] private float knockBackForce = 5f;
@@ -207,14 +207,20 @@ public class Movimento : MonoBehaviour
         Debug.Log("BOING");
     }
 
-    public void KnockBack(Vector3 enemyPos)
+    public void KnockBack(Vector3 enemyPos, float modifyForce = 0f)
     {
         knockBackCounterTime = knockBackTime;
         var vectorDistance =  this.transform.position - enemyPos;
         var knockBackDir = vectorDistance.normalized;
         knockBackDir.y += 2f;
-        knockBackImpulse = knockBackDir * knockBackForce;
+        var curKnockForce = knockBackForce + modifyForce;
+        knockBackImpulse = knockBackDir * curKnockForce;
         //ImpulseJump(knockBackForce);
+    }
+
+    public void ResetKnockBackTimer()
+    {
+        knockBackCounterTime = 0;
     }
 
     IEnumerator Dash()

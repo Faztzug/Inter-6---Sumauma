@@ -28,6 +28,7 @@ public class MaskThrow : MonoBehaviour
     [SerializeField] private TrailRenderer[] trails;
     [SerializeField] private VisualEffect trailVFX;
     private float trailTime;
+    Tween localPosTween;
     private void Start() 
     {
         maskLocalPos = mask.localPosition;
@@ -48,6 +49,7 @@ public class MaskThrow : MonoBehaviour
     {
         if(Input.GetButtonDown("Mask") && !onThrow && !GameState.IsPlayerDead && !GameState.isGamePaused)
         {
+            localPosTween?.Kill();
             onThrow = true;
             mask.parent = null;
             throwDirection = transform.forward;
@@ -101,7 +103,7 @@ public class MaskThrow : MonoBehaviour
         onThrow = false;
         mask.parent = maskParent;
         //mask.localPosition = maskLocalPos;
-        mask.DOLocalMove(maskLocalPos, 0.1f).OnComplete(() => maskRgbd.constraints = RigidbodyConstraints.FreezeAll);
+        localPosTween = mask.DOLocalMove(maskLocalPos, 0.1f).OnComplete(() => maskRgbd.constraints = RigidbodyConstraints.FreezeAll);
         //mask.localRotation = new Quaternion(0,0,0,0);
         mask.DOLocalRotate(maskRotation.eulerAngles, 0.1f);
         //mask.localScale = maskScale;
@@ -112,6 +114,7 @@ public class MaskThrow : MonoBehaviour
 
     private void EndTrail(TrailRenderer trail)
     {
+        if(onThrow) return;
         trail.emitting = false;
         trailVFX.Stop();
     }

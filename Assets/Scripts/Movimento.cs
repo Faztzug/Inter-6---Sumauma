@@ -165,9 +165,8 @@ public class Movimento : MonoBehaviour
         var velocitylAbs = Mathf.Abs(vertical.magnitude) + Mathf.Abs(horizontal.magnitude);
         anim.SetFloat("Movement", velocitylAbs);
 
-        if (Input.GetButton("Sprint"))
+        if (velocitylAbs > 0.1f && Input.GetButton("Sprint"))
         {
-            //Debug.Log("Correu");
             anim.SetBool("Correndo", true);
         }
         else anim.SetBool("Correndo", false);
@@ -195,7 +194,6 @@ public class Movimento : MonoBehaviour
     {
         if (Input.GetButtonDown("Dash") && !GameState.IsPlayerDead && !onKnockBack && !GameState.onCutscene)
         {
-            anim.SetTrigger("Dash");
             StartCoroutine(Dash());
         }
         dashCooldownState -= 1f * Time.deltaTime;
@@ -229,6 +227,7 @@ public class Movimento : MonoBehaviour
         if(dashCooldownState > 0f) yield return null;
         else
         {
+            anim.SetTrigger("Dash");
             dashSound.PlayOn(audioSource);
             dashCooldownState = dashCooldownTime;
             float startTime = Time.time;

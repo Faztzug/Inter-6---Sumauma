@@ -1535,6 +1535,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageByTouch: -10
+  damageOnTrigger: 0
+  resetDoubleJumpOnTouch: 0
+  knockBackOnlyUp: 0
 --- !u!136 &956736539
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -2158,10 +2161,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4981651764065274255, guid: 1e23e5d97ead41f49b1d9e1b4e01b243,
+    - target: {fileID: 128654556, guid: 1e23e5d97ead41f49b1d9e1b4e01b243, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 323535140421935652, guid: 1e23e5d97ead41f49b1d9e1b4e01b243,
         type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 1.5
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 323535140421935652, guid: 1e23e5d97ead41f49b1d9e1b4e01b243,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.124
+      objectReference: {fileID: 0}
+    - target: {fileID: 3365830879998883699, guid: 1e23e5d97ead41f49b1d9e1b4e01b243,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4846241635644836803, guid: 1e23e5d97ead41f49b1d9e1b4e01b243,
+        type: 3}
+      propertyPath: m_Layer
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4981651764726837376, guid: 1e23e5d97ead41f49b1d9e1b4e01b243,
         type: 3}

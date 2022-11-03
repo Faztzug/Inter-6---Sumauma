@@ -17,8 +17,10 @@ public class MaskThrow : MonoBehaviour
     private Vector3 maskLocalPos;
     private Rigidbody maskRgbd;
     [SerializeField] private float throwMaxSpeed;
+    [SerializeField] private float comeBackMaxSpeed;
     private float throwCurSpeed;
     [SerializeField] private float throwAccelaration;
+    [SerializeField] private float comeBackAccelaration;
     [SerializeField] private float throwDuration;
     private float throwTimer;
     private Vector3 throwDirection;
@@ -75,18 +77,21 @@ public class MaskThrow : MonoBehaviour
         throwCurSpeed += throwAccelaration * Time.deltaTime;
         if(throwCurSpeed > throwMaxSpeed) throwCurSpeed = throwMaxSpeed;
         maskRgbd.velocity = throwDirection * throwCurSpeed;
-        maskCurScale = Mathf.Lerp(maskCurScale, maskMaxGrow, 1 * Time.deltaTime);
+
+        maskCurScale = Mathf.Lerp(maskCurScale, maskMaxGrow, 0.8f * Time.deltaTime);
         mask.localScale = maskScale * maskCurScale;
     }
     private void OnComingBack()
     {
         var vectorDistance = transform.position - mask.position;
         throwDirection = vectorDistance.normalized;
-        throwCurSpeed += throwAccelaration * Time.deltaTime;
-        if(throwCurSpeed > throwMaxSpeed) throwCurSpeed = throwMaxSpeed;
+        throwCurSpeed += comeBackAccelaration * Time.deltaTime;
+        if(throwCurSpeed > comeBackMaxSpeed) throwCurSpeed = comeBackMaxSpeed;
         maskRgbd.velocity = Vector3.Lerp(maskRgbd.velocity, throwDirection * throwCurSpeed, 2f * Time.deltaTime);
-        maskCurScale = Mathf.Lerp(maskCurScale, 1f, 1f * Time.deltaTime);
+
+        maskCurScale = Mathf.Lerp(maskCurScale, 1f, 0.8f * Time.deltaTime);
         mask.localScale = maskScale * maskCurScale;
+
         var distance = Vector3.Distance(mask.position, transform.position);
         if(distance < 1.5f) OnReatach();
     }
@@ -95,11 +100,13 @@ public class MaskThrow : MonoBehaviour
     {
         onThrow = false;
         mask.parent = maskParent;
-        mask.localPosition = maskLocalPos;
-        mask.localRotation = new Quaternion(0,0,0,0);
-        maskRgbd.constraints = RigidbodyConstraints.FreezeAll;
-        mask.localScale = maskScale;
-        mask.localRotation = maskRotation;
+        //mask.localPosition = maskLocalPos;
+        mask.DOLocalMove(maskLocalPos, 0.1f).OnComplete(() => maskRgbd.constraints = RigidbodyConstraints.FreezeAll);
+        //mask.localRotation = new Quaternion(0,0,0,0);
+        mask.DOLocalRotate(maskRotation.eulerAngles, 0.1f);
+        //mask.localScale = maskScale;
+        mask.DOScale(maskScale, 0.1f);
+        //mask.localRotation = maskRotation;
         foreach (var trail in trails) trail.DOTime(0, 0.5f).OnComplete(() => EndTrail(trail));
     }
 

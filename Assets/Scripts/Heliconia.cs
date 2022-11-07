@@ -11,8 +11,8 @@ public class Heliconia : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            heliconia.SetActive(true);
-            Item.SetActive(false);
+            heliconia.SetActive(false);
+            Item.SetActive(true);
         }
     }
 }

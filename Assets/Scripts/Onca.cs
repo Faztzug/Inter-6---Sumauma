@@ -11,8 +11,8 @@ public class Onca : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            onca.SetActive(true);
-            Item.SetActive(false);
+            onca.SetActive(false);
+            Item.SetActive(true);
         }
     }
 }

@@ -32,6 +32,9 @@ public class GameState : MonoBehaviour
 
     public static GameState GameStateInstance => gameState;
 
+    public GameObject Heliconia;
+    public GameObject Onca;
+
     private void Awake()
     {
         mainCamera = Camera.main;
@@ -60,6 +63,14 @@ public class GameState : MonoBehaviour
             }
         }
         mainCanvas.ResumeGame();
+    }
+
+    public void Update()
+    {
+        if (Heliconia.active && Onca.active)
+        {
+            SceneManager.LoadScene("Fase 2");
+        }
     }
 
     public static void ReloadScene(float waitTime)

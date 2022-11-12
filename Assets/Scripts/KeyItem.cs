@@ -4,8 +4,8 @@ using UnityEngine;
 
 public enum Colectables
 {
-    Animal1,
-    Planta1,
+    Onca,
+    Heliconia,
     Animal2,
     Planta2,
     Animal3,

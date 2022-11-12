@@ -62,12 +62,12 @@ SpriteAtlas:
   - {fileID: 21300000, guid: ee315bce2dca4d840a63278680d5698e, type: 3}
   - {fileID: 21300000, guid: dc925c4f83c41344bbc9c411524d4ee3, type: 3}
   m_PackedSpriteNamesToIndex:
-  - IMG_0120
-  - IMG_0119
-  - IMG_0118
-  - IMG_0116
-  - IMG_0117
-  - IMG_0121
+  - BotoON
+  - Planta3ON
+  - OncaON
+  - AcaiON
+  - HelocioniaON
+  - AraraOn
   m_RenderDataMap: {}
   m_Tag: Animais
   m_IsVariant: 0

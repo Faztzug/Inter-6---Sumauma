@@ -32,8 +32,8 @@ public class GameState : MonoBehaviour
 
     public static GameState GameStateInstance => gameState;
 
-    public GameObject Heliconia;
-    public GameObject Onca;
+    public bool heliconiaColetada;
+    public bool oncaColetada;
 
     private void Awake()
     {
@@ -67,7 +67,7 @@ public class GameState : MonoBehaviour
 
     public void Update()
     {
-        if (Heliconia.active && Onca.active)
+        if (heliconiaColetada && oncaColetada && SceneManager.GetActiveScene().name == "Fase 1")
         {
             SceneManager.LoadScene("Fase 2");
         }

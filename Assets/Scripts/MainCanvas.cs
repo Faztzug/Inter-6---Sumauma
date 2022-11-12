@@ -8,6 +8,7 @@ public class MainCanvas : MonoBehaviour
     public Image healthBar;
     public GameObject gameOver;
     public GameObject pauseMenu;
+    public GameObject book;
     public GameObject pauseMainMenu;
     public GameObject pauseSettingsMenu;
 
@@ -37,6 +38,7 @@ public class MainCanvas : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         pauseMenu.SetActive(true);
         pauseMainMenu.SetActive(true);
+        book.SetActive(true);
         Time.timeScale = 0f;
         GameState.isGamePaused = true;
     }
@@ -46,6 +48,7 @@ public class MainCanvas : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         pauseMenu.SetActive(false);
         pauseSettingsMenu.SetActive(false);
+        book.SetActive(false);
         Time.timeScale = 1f;
         GameState.isGamePaused = false;
     }

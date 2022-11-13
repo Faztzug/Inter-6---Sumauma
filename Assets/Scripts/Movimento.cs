@@ -15,7 +15,9 @@ public class Movimento : MonoBehaviour
     public bool allowDoubleJump = true;
     [SerializeField] private float doubleJump = 0.5f;
     private bool podeDoubleJump = false;
+    [SerializeField] private Transform playerMiddle;
     [SerializeField] private float knockBackForce = 5f;
+    [SerializeField] private float knockUpForce = 2f;
     [SerializeField] private float knockBackTime = 0.5f;
     private float knockBackCounterTime;
     public bool onKnockBack => knockBackCounterTime > 0;
@@ -208,11 +210,14 @@ public class Movimento : MonoBehaviour
     public void KnockBack(Vector3 enemyPos, float modifyForce = 0f)
     {
         knockBackCounterTime = knockBackTime;
-        var vectorDistance =  this.transform.position - enemyPos;
+        var vectorDistance =  playerMiddle.position - enemyPos;
         var knockBackDir = vectorDistance.normalized;
-        knockBackDir.y += 2f;
         var curKnockForce = knockBackForce + modifyForce;
+        knockBackDir.y += knockUpForce;
+        Debug.Log("DIR " + knockBackDir.ToString());
         knockBackImpulse = knockBackDir * curKnockForce;
+        Debug.Log(curKnockForce);
+        Debug.Log("IMPULSE " + knockBackImpulse.ToString());
         //ImpulseJump(knockBackForce);
     }
 

@@ -131,7 +131,9 @@ MonoBehaviour:
   brokenObject: {fileID: 2038824652245042237, guid: 1bc077a4d426cee43b9d25ca48733175,
     type: 3}
   breakTime: 0
-  breakOnDashOnly: 1
+  breakOnTouch: 0
+  breakOnDash: 1
+  breakOnMask: 1
   breakSound:
     clip: {fileID: 8300000, guid: f386aaf605241ca4ca9c33f441a4bc5b, type: 3}
     name: LogBreak

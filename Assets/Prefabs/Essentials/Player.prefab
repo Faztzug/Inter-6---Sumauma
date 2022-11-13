@@ -692,8 +692,14 @@ MonoBehaviour:
   playerLookAt: {fileID: 4981651764065274255}
   GenericAudioSourcePrefab: {fileID: 2334749048543388953, guid: 75ecb85e8bc728d408ef76c6108d57fc,
     type: 3}
-  Heliconia: {fileID: 0}
-  Onca: {fileID: 0}
+  saveData:
+    unlockLevelsTo: 1
+    heliconiaColetada: 0
+    oncaColetada: 0
+    planta2: 0
+    animal2: 0
+    planta3: 0
+    animal3: 0
 --- !u!82 &4045199953686460968
 AudioSource:
   m_ObjectHideFlags: 0
@@ -993,6 +999,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a2cf5a56e8e942042bf685bfafce29de,
+        type: 3}
+      propertyPath: m_TagString
+      value: Mask
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a2cf5a56e8e942042bf685bfafce29de, type: 3}

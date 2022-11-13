@@ -2098,6 +2098,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d92588e397732248ae2594974fe2912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fase1Button: {fileID: 0}
+  fase2Button: {fileID: 0}
+  fase3Button: {fileID: 0}
 --- !u!1 &2050334746613501522
 GameObject:
   m_ObjectHideFlags: 0
@@ -2130,7 +2133,7 @@ RectTransform:
   - {fileID: 6651034826133323121}
   - {fileID: 2029578761}
   m_Father: {fileID: 2838026322387692010}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -2438,12 +2441,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1432286794040027916}
   - {fileID: 6744441974301858040}
   - {fileID: 2290282150405613146}
   - {fileID: 2838026322498593434}
   - {fileID: 8213270808411309113}
   - {fileID: 1538343365225349459}
-  - {fileID: 1432286794040027916}
   - {fileID: 254048219370352050}
   - {fileID: 1482092479704188267}
   - {fileID: 421113143}
@@ -2471,9 +2474,7 @@ MonoBehaviour:
   healthBar: {fileID: 2838026321314682378}
   gameOver: {fileID: 1773922482036918163}
   pauseMenu: {fileID: 2050334746613501522}
-  book: {fileID: 4869694522617292168}
-  pauseMainMenu: {fileID: 6520009910544763749}
-  pauseSettingsMenu: {fileID: 2029578760}
+  book: {fileID: 1253787921574892999}
   planta: {fileID: 2074033781993438671}
   animal: {fileID: 2990393184737972795}
   spriteAnimal1ON: {fileID: 1917598467, guid: e01218d1086805043a093fad74d2361f, type: 3}
@@ -2581,7 +2582,7 @@ RectTransform:
   - {fileID: 2838026322686630775}
   - {fileID: 2838026321314682379}
   m_Father: {fileID: 2838026322387692010}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3042,7 +3043,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2838026322387692010}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -3114,13 +3115,13 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4869694522617292168}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 2.3499994}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 233351755353051213}
   m_Father: {fileID: 2838026322387692010}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -3140,15 +3141,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pages:
-  - {fileID: 6520009910544763749}
-  - {fileID: 2029578760}
-  - {fileID: 8697518725179930753}
+  - {fileID: 4092817408742220855, guid: e91e5f40bfb4cd042a098fb2623a60a9, type: 3}
+  - {fileID: 5605250253649422514, guid: db6dadaf2ac1cf843862b8fb0c486a38, type: 3}
+  - {fileID: 8408716056701765819, guid: e990bbab33608ff44a68540db9190e08, type: 3}
   - {fileID: 279822922286762444, guid: 9c2af8c6fd407f9499c8b19e45a0560b, type: 3}
   - {fileID: 282637964126255092, guid: 03f12cb56c73fbe4782de5b0b2a26d18, type: 3}
-  - {fileID: 165665448}
-  - {fileID: 421113142}
-  - {fileID: 1773922482036918163}
-  - {fileID: 1773922482036918163}
   - {fileID: 282637964126255092, guid: 03f12cb56c73fbe4782de5b0b2a26d18, type: 3}
   leftPageHolder: {fileID: 7829574634231906590}
   rightPageHolder: {fileID: 7528441642602817432}
@@ -3568,7 +3565,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &6651034826133323121
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3622,7 +3619,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2838026322387692010}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -3979,12 +3976,12 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2838026322387692010}
-  m_RootOrder: 5
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 15, y: 25}
-  m_SizeDelta: {x: 158, y: 120}
+  m_AnchoredPosition: {x: 15, y: 15}
+  m_SizeDelta: {x: 280, y: 60}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &4697710169585850965
 CanvasRenderer:
@@ -4014,8 +4011,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "WASD ou \u2191\u2193\u2192\u2190 = Andar\nEspa\xE7o = Pulo\nCtrl = Dash\nShift
-    = Correr\nMouse = Camera\nMouse Click = Ataque"
+  m_text: "Aperte ESC para abrir o Menu e as Instru\xE7\xF5es"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4d094f0e0dbe306499d983c193471427, type: 2}
   m_sharedMaterial: {fileID: -6205122931613662003, guid: 4d094f0e0dbe306499d983c193471427,
@@ -4043,14 +4039,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 14.8
+  m_fontSize: 24.7
   m_fontSizeBase: 35.53
   m_fontWeight: 400
   m_enableAutoSizing: 1
   m_fontSizeMin: 12
-  m_fontSizeMax: 72
+  m_fontSizeMax: 85.76
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 1024
   m_textAlignment: 65535
   m_characterSpacing: 0

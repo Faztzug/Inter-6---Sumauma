@@ -8,9 +8,9 @@ public class MainCanvas : MonoBehaviour
     public Image healthBar;
     public GameObject gameOver;
     public GameObject pauseMenu;
-    public GameObject book;
-    public GameObject pauseMainMenu;
-    public GameObject pauseSettingsMenu;
+    public Book book;
+    // public GameObject pauseMainMenu;
+    // public GameObject pauseSettingsMenu;
     [SerializeField] private Image planta;
     [SerializeField] private Image animal;
 
@@ -62,8 +62,9 @@ public class MainCanvas : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.None;
         pauseMenu.SetActive(true);
-        pauseMainMenu.SetActive(true);
-        book.SetActive(true);
+        // pauseMainMenu.SetActive(true);
+        book.ResetPagesToStart();
+        book.gameObject.SetActive(true);
         Time.timeScale = 0f;
         GameState.isGamePaused = true;
     }
@@ -72,21 +73,21 @@ public class MainCanvas : MonoBehaviour
     {
         Cursor.lockState = CursorLockMode.Locked;
         pauseMenu.SetActive(false);
-        pauseSettingsMenu.SetActive(false);
-        book.SetActive(false);
+        // pauseSettingsMenu.SetActive(false);
+        book.gameObject.SetActive(false);
         Time.timeScale = 1f;
         GameState.isGamePaused = false;
     }
 
     public void OpenOptions()
     {
-        pauseSettingsMenu.SetActive(true);
-        pauseMainMenu.SetActive(false);
+        // pauseSettingsMenu.SetActive(true);
+        // pauseMainMenu.SetActive(false);
     }
     public void CloseOptions()
     {
-        pauseSettingsMenu.SetActive(false);
-        pauseMainMenu.SetActive(true);
+        // pauseSettingsMenu.SetActive(false);
+        // pauseMainMenu.SetActive(true);
     }
 
     public void VoltarMenu()

@@ -33,6 +33,11 @@ public class Book : MonoBehaviour
 
     private void Start() 
     {
+        ResetPagesToStart();
+    }
+
+    public void ResetPagesToStart()
+    {
         currentPages = new int[2]{0,1};
         InstantiatePage(WichPage.Both);
     }

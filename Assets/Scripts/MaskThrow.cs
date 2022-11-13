@@ -43,6 +43,7 @@ public class MaskThrow : MonoBehaviour
             trailTime = trail.time;
         }
         trailVFX.Stop();
+        maskRgbd.constraints = RigidbodyConstraints.FreezeAll;
     }
 
     private void Update() 

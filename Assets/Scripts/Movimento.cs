@@ -160,7 +160,7 @@ public class Movimento : MonoBehaviour
 
         movement.y = gravityAcceleration * Time.deltaTime * speed;
         
-        controller.Move(movement);
+        if(!GameState.isGamePaused) controller.Move(movement);
         
         var velocitylAbs = Mathf.Abs(vertical.magnitude) + Mathf.Abs(horizontal.magnitude);
         anim.SetFloat("Movement", velocitylAbs);

@@ -236,7 +236,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brokenObject: {fileID: 0}
   breakTime: 0.2
-  breakOnDashOnly: 0
+  breakOnTouch: 1
+  breakOnDash: 1
+  breakOnMask: 1
   breakSound:
     clip: {fileID: 0}
     name: 
@@ -2161,10 +2163,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 128654556, guid: 1e23e5d97ead41f49b1d9e1b4e01b243, type: 3}
-      propertyPath: m_Layer
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 323535140421935652, guid: 1e23e5d97ead41f49b1d9e1b4e01b243,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2179,11 +2177,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4846241635644836803, guid: 1e23e5d97ead41f49b1d9e1b4e01b243,
-        type: 3}
-      propertyPath: m_Layer
-      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4981651764726837376, guid: 1e23e5d97ead41f49b1d9e1b4e01b243,
         type: 3}

@@ -48,7 +48,7 @@ ModelImporter:
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0
-    generateSecondaryUV: 0
+    generateSecondaryUV: 1
     useFileUnits: 1
     keepQuads: 0
     weldVertices: 1
@@ -89,17 +89,17 @@ ModelImporter:
       scale: {x: 1, y: 1, z: 1}
     - name: imagePlane4
       parentName: ModeloPlayer(Clone)
-      position: {x: 0.08248013, y: 0.012599999, z: 0}
+      position: {x: 8.2480135, y: 1.26, z: 0}
       rotation: {x: -0, y: -0.7071068, z: 0, w: 0.7071068}
       scale: {x: 1, y: 1, z: 1}
     - name: imagePlane3
       parentName: ModeloPlayer(Clone)
-      position: {x: -0, y: 0.012599999, z: -0.08692999}
+      position: {x: -0, y: 1.26, z: -8.693}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: pCube12
       parentName: ModeloPlayer(Clone)
-      position: {x: -0, y: 0.009849309, z: -0.00064561074}
+      position: {x: -0, y: 0.98493093, z: -0.06456107}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     armTwist: 0.5
@@ -109,7 +109,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-    globalScale: 0.7
+    globalScale: 70
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 1

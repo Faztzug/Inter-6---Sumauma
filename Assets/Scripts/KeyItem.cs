@@ -29,7 +29,8 @@ public class KeyItem : Item
         if(info.gameObject.CompareTag("Player"))
         {
             Debug.Log("Colected: " + itemType + " " + itemEnum);
-            Destroy(this.gameObject);
+            GameState.ItemColected(itemEnum, itemType);
+            DestroyItem();
         }
     }
 

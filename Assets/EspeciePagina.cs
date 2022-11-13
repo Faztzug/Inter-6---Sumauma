@@ -13,7 +13,7 @@ public class EspeciePagina : MonoBehaviour
 
     void Start()
     {
-        coletado = true;
+        coletado = GameState.GetColectableSaveState(especie);
         imageObj.SetActive(true);
         tituloObj.SetActive(coletado);
         textoObj.SetActive(coletado);

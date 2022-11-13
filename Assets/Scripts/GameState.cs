@@ -31,9 +31,12 @@ public class GameState : MonoBehaviour
     private GameState() { }
 
     public static GameState GameStateInstance => gameState;
+    public SaveData saveData;
+    public static SaveData SaveData { get => gameState.saveData; set => gameState.saveData = value; }
+    public static SaveManager saveManager = new SaveManager();
 
-    public bool heliconiaColetada;
-    public bool oncaColetada;
+    public static bool animalColetadoNaFase;
+    public static bool plantaColetadaNaFase;
 
     private void Awake()
     {
@@ -44,6 +47,9 @@ public class GameState : MonoBehaviour
         cinemachineFreeLook.Follow = playerTransform;
         cinemachineFreeLook.LookAt = playerLookAt;
         gameState = this;
+        animalColetadoNaFase = false;
+        plantaColetadaNaFase = false;
+        SaveData = saveManager.LoadGame();
         Application.targetFrameRate = 60;
         if(cutSceneGOCam != null)
         {
@@ -63,15 +69,106 @@ public class GameState : MonoBehaviour
             }
         }
         mainCanvas.ResumeGame();
+        mainCanvas.GetColectableImages();
+    }
+    public static void ItemColected(Colectables item, ColectableType itemType)
+    {
+        switch (itemType)
+        {
+            case ColectableType.Animal:
+            animalColetadoNaFase = true;
+            break;
+            case ColectableType.Planta:
+            plantaColetadaNaFase = true;
+            break;
+        }
+        switch (item)
+        {
+            case Colectables.Heliconia:
+            SaveData.heliconiaColetada = true;
+            break;
+            case Colectables.Onca:
+            SaveData.oncaColetada = true;
+            break;
+            case Colectables.Planta2:
+            SaveData.planta2 = true;
+            break;
+            case Colectables.Animal2:
+            SaveData.animal2 = true;
+            break;
+            case Colectables.Planta3:
+            SaveData.planta3 = true;
+            break;
+            case Colectables.Animal3:
+            SaveData.animal3 = true;
+            break;
+        }
+        saveManager.SaveGame(SaveData);
+        mainCanvas.GetColectableImages();
+        gameState.CheckEndStage();
     }
 
-    public void Update()
+    public static bool GetColectableSaveState(Colectables item)
     {
-        if (heliconiaColetada && oncaColetada && SceneManager.GetActiveScene().name == "Fase 1")
+        switch (item)
         {
-            SceneManager.LoadScene("Fase 2");
+            case Colectables.Heliconia:
+            return SaveData.heliconiaColetada;
+
+            case Colectables.Onca:
+            return SaveData.oncaColetada;
+
+
+            case Colectables.Planta2:
+            return SaveData.planta2;
+
+            case Colectables.Animal2:
+            return SaveData.animal2;
+
+            
+            case Colectables.Planta3:
+            return SaveData.planta3;
+
+            case Colectables.Animal3:
+            return SaveData.animal3;
+        }
+        return false;
+    }
+
+    public void CheckEndStage()
+    {
+        if(!animalColetadoNaFase || !plantaColetadaNaFase) return;
+
+        if (GetSceneName() == "Fase 1")
+        {
+            if(saveData.unlockLevelsTo < 2)
+            {
+                saveData.unlockLevelsTo = 2;
+                saveManager.SaveGame(saveData);
+            }
+            LoadScene("Fase 2");
+        }
+        if (GetSceneName() == "Fase 2")
+        {
+            if(saveData.unlockLevelsTo < 3)
+            {
+                saveData.unlockLevelsTo = 3;
+                saveManager.SaveGame(saveData);
+            }
+            LoadScene("Fase 3");
+        }
+        if (GetSceneName() == "Fase 3")
+        {
+            if(saveData.unlockLevelsTo < 4)
+            {
+                saveData.unlockLevelsTo = 4;
+                saveManager.SaveGame(saveData);
+            }
+            LoadScene("Menu inicial");
         }
     }
+
+    public static string GetSceneName() => SceneManager.GetActiveScene().name;
 
     public static void ReloadScene(float waitTime)
     {

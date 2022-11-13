@@ -11,11 +11,36 @@ public class MainCanvas : MonoBehaviour
     public GameObject book;
     public GameObject pauseMainMenu;
     public GameObject pauseSettingsMenu;
+    [SerializeField] private Image planta;
+    [SerializeField] private Image animal;
+
+    [SerializeField] private Sprite spriteAnimal1ON;
+    [SerializeField] private Sprite spriteAnimal1OFF;
+
+    [SerializeField] private Sprite spritePlanta1ON;
+    [SerializeField] private Sprite spritePlanta1OFF;
+
+    [SerializeField] private Sprite spriteAnimal2ON;
+    [SerializeField] private Sprite spriteAnimal2OFF;
+
+    [SerializeField] private Sprite spritePlanta2ON;
+    [SerializeField] private Sprite spritePlanta2OFF;
+
+    [SerializeField] private Sprite spriteAnimal3ON;
+    [SerializeField] private Sprite spriteAnimal3OFF;
+
+    [SerializeField] private Sprite spritePlanta3ON;
+    [SerializeField] private Sprite spritePlanta3OFF;
 
     private void Awake() 
     {
         gameOver.SetActive(false);
         pauseMenu.SetActive(false);
+    }
+
+    private void Start()
+    {
+        GetColectableImages();
     }
 
     void Update()
@@ -67,5 +92,33 @@ public class MainCanvas : MonoBehaviour
     public void VoltarMenu()
     {
         GameState.LoadScene("Menu inicial");
+    }
+
+    public void GetColectableImages()
+    {
+        if(GameState.GetSceneName() == "Fase 1")
+        {
+            if(GameState.animalColetadoNaFase) animal.sprite = spriteAnimal1ON;
+            else animal.sprite = spriteAnimal1OFF;
+
+            if(GameState.plantaColetadaNaFase) planta.sprite = spritePlanta1ON;
+            else planta.sprite = spritePlanta1OFF;
+        }
+        else if(GameState.GetSceneName() == "Fase 2")
+        {
+            if(GameState.animalColetadoNaFase) animal.sprite = spriteAnimal2ON;
+            else animal.sprite = spriteAnimal2OFF;
+
+            if(GameState.plantaColetadaNaFase) planta.sprite = spritePlanta2ON;
+            else planta.sprite = spritePlanta2OFF;
+        }
+        else if(GameState.GetSceneName() == "Fase 3")
+        {
+            if(GameState.animalColetadoNaFase) animal.sprite = spriteAnimal3ON;
+            else animal.sprite = spriteAnimal3OFF;
+
+            if(GameState.plantaColetadaNaFase) planta.sprite = spritePlanta3ON;
+            else planta.sprite = spritePlanta3OFF;
+        }
     }
 }

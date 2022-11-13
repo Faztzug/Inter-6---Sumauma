@@ -2,9 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
+    [SerializeField] private Button fase1Button;
+    [SerializeField] private Button fase2Button;
+    [SerializeField] private Button fase3Button;
+
+    private void Start() 
+    {
+        SetFasesButtonsState();
+    }
+
     public void Jogar()
     {
         JogarFase1();
@@ -41,5 +51,15 @@ public class Menu : MonoBehaviour
     public void Fechar()
     {
         Application.Quit();
+    }
+
+    private void SetFasesButtonsState()
+    {
+        var saveManager = new SaveManager();
+        var levelsUnlocked = saveManager.LoadGame().unlockLevelsTo;
+        Debug.Log(levelsUnlocked);
+        if(fase1Button != null) fase1Button.interactable = true;
+        if(fase2Button != null) fase2Button.interactable = levelsUnlocked >= 2;
+        if(fase3Button != null) fase3Button.interactable = levelsUnlocked >= 3;
     }
 }

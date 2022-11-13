@@ -110,6 +110,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageByTouch: -10
+  damageOnTrigger: 0
+  resetDoubleJumpOnTouch: 0
+  knockBackOnlyUp: 0
 --- !u!1 &2083148874135191101
 GameObject:
   m_ObjectHideFlags: 0

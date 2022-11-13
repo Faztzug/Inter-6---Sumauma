@@ -13,6 +13,7 @@ public class Menu : MonoBehaviour
     private void Start() 
     {
         SetFasesButtonsState();
+        if(SceneManager.GetActiveScene().name == "Menu Inicial") ResetCheckPoint();
     }
 
     public void Jogar()
@@ -57,9 +58,15 @@ public class Menu : MonoBehaviour
     {
         var saveManager = new SaveManager();
         var levelsUnlocked = saveManager.LoadGame().unlockLevelsTo;
-        Debug.Log(levelsUnlocked);
         if(fase1Button != null) fase1Button.interactable = true;
         if(fase2Button != null) fase2Button.interactable = levelsUnlocked >= 2;
         if(fase3Button != null) fase3Button.interactable = levelsUnlocked >= 3;
+    }
+
+    private void ResetCheckPoint()
+    {
+        var saveManager = new SaveManager();
+        var saveData = saveManager.LoadGame();
+        saveManager.ResetCheckPointValue(saveData);
     }
 }

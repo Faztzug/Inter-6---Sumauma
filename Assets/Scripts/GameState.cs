@@ -71,6 +71,17 @@ public class GameState : MonoBehaviour
         mainCanvas.ResumeGame();
         mainCanvas.GetColectableImages();
     }
+    private void Start() 
+    {
+        var checkpoint = 
+        new Vector3(saveData.checkpointPosition[0], saveData.checkpointPosition[1], saveData.checkpointPosition[2]);
+        Debug.Log(checkpoint.ToString());
+        if(checkpoint != Vector3.zero)
+        {
+            Debug.Log("GO TO BRAZIL");
+            playerTransform.GetComponent<Movimento>().GoToCheckPoint(checkpoint);
+        } 
+    }
     public static void ItemColected(Colectables item, ColectableType itemType)
     {
         switch (itemType)
@@ -138,6 +149,8 @@ public class GameState : MonoBehaviour
     public void CheckEndStage()
     {
         if(!animalColetadoNaFase || !plantaColetadaNaFase) return;
+        saveManager.ResetCheckPointValue(SaveData);
+        SaveData = saveManager.LoadGame();
 
         if (GetSceneName() == "Fase 1")
         {
@@ -195,6 +208,13 @@ public class GameState : MonoBehaviour
         gameState.cutsceneCamera?.gameObject.SetActive(false);
         gameState.mainCamera.gameObject.SetActive(true);
         onCutscene = false;
+    }
+
+    public static void SetCheckPoint(Vector3 position)
+    {
+        SaveData.checkpointPosition = new float[3]{position.x, position.y, position.z};
+        saveManager.SaveGame(SaveData);
+        Debug.Log(string.Join(", ", SaveData.checkpointPosition));
     }
 
     IEnumerator LoadSceneCourotine(float waitTime, string sceneName)

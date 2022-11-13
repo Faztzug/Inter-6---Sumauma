@@ -46,6 +46,9 @@ public class Movimento : MonoBehaviour
     [SerializeField] Sound jumpSound;
     // [SerializeField] private AudioClip passosClip;
 
+    private Vector3 checkpointPosition;
+    private int tryGoCheckPointTimes = 5;
+
     private bool paused;
 
     private void Start()
@@ -59,7 +62,7 @@ public class Movimento : MonoBehaviour
 
     private void Update()
     {
-        if (!paused)
+        if (!GameState.isGamePaused)
         {
             Movement();
             Animations();
@@ -78,6 +81,16 @@ public class Movimento : MonoBehaviour
 
     private void MoveInput()
     {
+        if(checkpointPosition != Vector3.zero && tryGoCheckPointTimes > 0) 
+        {
+            Debug.Log("Going to BRAZIL " + checkpointPosition.ToString());
+            transform.position = Vector3.zero;
+            controller.Move(checkpointPosition);
+            transform.position = checkpointPosition;
+            tryGoCheckPointTimes--;
+            if(tryGoCheckPointTimes <= 0) checkpointPosition = Vector3.zero;
+            return;
+        }
         var camRot = cam.transform.rotation;
         var newCamRot = new Quaternion(0, camRot.y, 0, camRot.w);
         cam.transform.rotation = newCamRot;
@@ -172,24 +185,6 @@ public class Movimento : MonoBehaviour
             anim.SetBool("Correndo", true);
         }
         else anim.SetBool("Correndo", false);
-        
-        //anim.SetFloat("Velocidade", Mathf.Abs((vertical.magnitude * currentSpeed) / runSpeed));
-
-            //if(Input.GetAxis("Horizontal") >= 0) anim.SetFloat("Strafe", (horizontal.magnitude * currentSpeed) / runSpeed);
-            //else if(Input.GetAxis("Horizontal") < 0) anim.SetFloat("Strafe", (-horizontal.magnitude * currentSpeed) / runSpeed);
-
-            //Audio
-            // if((velocitylAbs > 0.1) && controller.isGrounded)
-            // {
-            //     if(audioSource.isPlaying == false)
-            //     {
-            //         audioSource.PlayOneShot(passosClip);
-            //     }
-            // }
-            // else
-            // {
-            //     audioSource.Stop();
-            // }
     }
 
     private void DashUpdate()
@@ -214,16 +209,17 @@ public class Movimento : MonoBehaviour
         var knockBackDir = vectorDistance.normalized;
         var curKnockForce = knockBackForce + modifyForce;
         knockBackDir.y += knockUpForce;
-        Debug.Log("DIR " + knockBackDir.ToString());
         knockBackImpulse = knockBackDir * curKnockForce;
-        Debug.Log(curKnockForce);
-        Debug.Log("IMPULSE " + knockBackImpulse.ToString());
-        //ImpulseJump(knockBackForce);
     }
 
     public void ResetKnockBackTimer()
     {
         knockBackCounterTime = 0;
+    }
+
+    public void GoToCheckPoint(Vector3 position)
+    {
+        checkpointPosition = position;
     }
 
     IEnumerator Dash()

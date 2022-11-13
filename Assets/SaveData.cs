@@ -45,6 +45,12 @@ public class SaveManager
         Debug.LogError("No save data to delete.");
         return new SaveData();
     }
+
+    public void ResetCheckPointValue(SaveData saveData)
+    {
+        saveData.checkpointPosition = new float[3]{0,0,0};
+        SaveGame(saveData);
+    }
 }
 
 [Serializable]
@@ -57,4 +63,11 @@ public class SaveData
     public bool animal2;
     public bool planta3;
     public bool animal3;
+    public float[] checkpointPosition = new float[3]{0,0,0};
+
+    public SaveData()
+    {
+        unlockLevelsTo = 1;
+        checkpointPosition = new float[3]{0,0,0};
+    }
 }

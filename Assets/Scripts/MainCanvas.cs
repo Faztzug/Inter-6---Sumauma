@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class MainCanvas : MonoBehaviour
 {
+    public GameObject alma1;
+    public GameObject alma2;
+
     public Image healthBar;
     public GameObject gameOver;
     public GameObject pauseMenu;
@@ -99,10 +102,17 @@ public class MainCanvas : MonoBehaviour
     {
         if(GameState.GetSceneName() == "Fase 1")
         {
-            if(GameState.animalColetadoNaFase) animal.sprite = spriteAnimal1ON;
+            if (GameState.animalColetadoNaFase)
+            { animal.sprite = spriteAnimal1ON;
+                alma1.SetActive(true);
+            }
             else animal.sprite = spriteAnimal1OFF;
 
-            if(GameState.plantaColetadaNaFase) planta.sprite = spritePlanta1ON;
+            if (GameState.plantaColetadaNaFase)
+            {
+                planta.sprite = spritePlanta1ON;
+                alma2.SetActive(true);
+            }
             else planta.sprite = spritePlanta1OFF;
         }
         else if(GameState.GetSceneName() == "Fase 2")

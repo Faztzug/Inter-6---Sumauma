@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3941525866348088
+--- !u!1001 &9141667627120940190
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,12 +10,12 @@ PrefabInstance:
     - target: {fileID: 279822922286762444, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
       propertyPath: m_Name
-      value: EspeciePaginaOnca
+      value: EspeciePaginaHeliconia
       objectReference: {fileID: 0}
     - target: {fileID: 1122056600407121455, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: -10
+      value: -10.000015
       objectReference: {fileID: 0}
     - target: {fileID: 1122056600407121455, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
@@ -36,17 +36,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 544f69625ad309243b42283d863e0c37,
+      objectReference: {fileID: 21300000, guid: 395cd901554f49341ba9b1b840c3aa2a,
         type: 3}
-    - target: {fileID: 3910315247475605380, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
-        type: 3}
-      propertyPath: m_Name
-      value: Titulo
-      objectReference: {fileID: 0}
     - target: {fileID: 5879372081233594317, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
       propertyPath: m_text
-      value: "On\xE7a Pintada"
+      value: "Helic\xF4nia"
       objectReference: {fileID: 0}
     - target: {fileID: 5879372081233594317, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
@@ -56,27 +51,26 @@ PrefabInstance:
     - target: {fileID: 7460091244461239503, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
       propertyPath: m_text
-      value: "Um animal mundialmente conhecido devido sua beleza \xFAnica com suas
-        manchas pretas ao longo do seu corpo, sua velocidade surpreendente e o maior
-        carn\xEDvoro da Am\xE9rica do Sul. Por\xE9m com a expans\xE3o do agroneg\xF3cio
-        e queimadas seu habitat foi sendo cada vez mais destru\xEDdo e ela est\xE1
-        correndo grande risco de extin\xE7\xE3o, fazendo com que um grande s\xEDmbolo
-        brasileiro desapare\xE7a para sempre."
+      value: "uma planta bem bonita com cores fortes e que pode ser encontrada ao
+        longo de toda a Amaz\xF4nia. Essas plantas podem ser cultivadas facilmente,
+        por n\xE3o precisarem de aduba\xE7\xE3o nem de podas, precisando dar acesso
+        apenas a luz solar e espa\xE7o entre as demais plantas. Seu florescimento
+        \xE9 maior durante o ver\xE3o devido \xE0 alta temperatura."
       objectReference: {fileID: 0}
     - target: {fileID: 7460091244461239503, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
       propertyPath: m_fontSize
-      value: 22.95
+      value: 26.25
       objectReference: {fileID: 0}
     - target: {fileID: 7460091244461239503, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
-      propertyPath: m_fontSizeMin
-      value: 8
+      propertyPath: m_fontSizeBase
+      value: 26
       objectReference: {fileID: 0}
-    - target: {fileID: 7624674305506812372, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
+    - target: {fileID: 7460091244461239503, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
-      propertyPath: m_Color.a
-      value: 0
+      propertyPath: m_enableAutoSizing
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8072300359523650601, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}

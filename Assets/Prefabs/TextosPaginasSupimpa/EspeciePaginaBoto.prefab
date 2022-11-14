@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3941525866348088
+--- !u!1001 &8566143374031157090
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 279822922286762444, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
       propertyPath: m_Name
-      value: EspeciePaginaOnca
+      value: EspeciePaginaBoto
       objectReference: {fileID: 0}
     - target: {fileID: 1122056600407121455, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
@@ -36,17 +36,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 544f69625ad309243b42283d863e0c37,
+      objectReference: {fileID: 21300000, guid: bfdaa6100ed56344aa5cdc846e93079a,
         type: 3}
-    - target: {fileID: 3910315247475605380, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
-        type: 3}
-      propertyPath: m_Name
-      value: Titulo
-      objectReference: {fileID: 0}
     - target: {fileID: 5879372081233594317, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
       propertyPath: m_text
-      value: "On\xE7a Pintada"
+      value: Boto cor de rosa
       objectReference: {fileID: 0}
     - target: {fileID: 5879372081233594317, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
@@ -56,27 +51,16 @@ PrefabInstance:
     - target: {fileID: 7460091244461239503, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
       propertyPath: m_text
-      value: "Um animal mundialmente conhecido devido sua beleza \xFAnica com suas
-        manchas pretas ao longo do seu corpo, sua velocidade surpreendente e o maior
-        carn\xEDvoro da Am\xE9rica do Sul. Por\xE9m com a expans\xE3o do agroneg\xF3cio
-        e queimadas seu habitat foi sendo cada vez mais destru\xEDdo e ela est\xE1
-        correndo grande risco de extin\xE7\xE3o, fazendo com que um grande s\xEDmbolo
-        brasileiro desapare\xE7a para sempre."
+      value: "muito conhecido pelo folclore brasileiro, tem sua lenda um lado tanto
+        ruim, pois dizem que esse animal se transformava em um homem para atrair
+        mulheres e depois ele as abandonava voltando para o rio em sua forma predominante.
+        Esse animal mesmo sendo muito grande ele \xE9 muito flex\xEDvel, o que ajuda
+        em sua movimenta\xE7\xE3o e na ca\xE7a a presas. "
       objectReference: {fileID: 0}
     - target: {fileID: 7460091244461239503, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
       propertyPath: m_fontSize
-      value: 22.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 7460091244461239503, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
-        type: 3}
-      propertyPath: m_fontSizeMin
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7624674305506812372, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
+      value: 25.95
       objectReference: {fileID: 0}
     - target: {fileID: 8072300359523650601, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}

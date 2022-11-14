@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &3941525866348088
+--- !u!1001 &6864386039348557859
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,7 +10,7 @@ PrefabInstance:
     - target: {fileID: 279822922286762444, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
       propertyPath: m_Name
-      value: EspeciePaginaOnca
+      value: EspeciePaginaArara
       objectReference: {fileID: 0}
     - target: {fileID: 1122056600407121455, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
@@ -36,17 +36,12 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 544f69625ad309243b42283d863e0c37,
+      objectReference: {fileID: 21300000, guid: dc925c4f83c41344bbc9c411524d4ee3,
         type: 3}
-    - target: {fileID: 3910315247475605380, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
-        type: 3}
-      propertyPath: m_Name
-      value: Titulo
-      objectReference: {fileID: 0}
     - target: {fileID: 5879372081233594317, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
       propertyPath: m_text
-      value: "On\xE7a Pintada"
+      value: Arara azul
       objectReference: {fileID: 0}
     - target: {fileID: 5879372081233594317, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
@@ -56,27 +51,16 @@ PrefabInstance:
     - target: {fileID: 7460091244461239503, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
       propertyPath: m_text
-      value: "Um animal mundialmente conhecido devido sua beleza \xFAnica com suas
-        manchas pretas ao longo do seu corpo, sua velocidade surpreendente e o maior
-        carn\xEDvoro da Am\xE9rica do Sul. Por\xE9m com a expans\xE3o do agroneg\xF3cio
-        e queimadas seu habitat foi sendo cada vez mais destru\xEDdo e ela est\xE1
-        correndo grande risco de extin\xE7\xE3o, fazendo com que um grande s\xEDmbolo
-        brasileiro desapare\xE7a para sempre."
+      value: "uma esp\xE9cie de beleza \xFAnica devido sua forte cor azul e penas
+        longas, mas infelizmente est\xE1 correndo grande risco de extin\xE7\xE3o,
+        em seu caso o maior fator \xE9 pelo tr\xE1fico desses animais e as queimadas
+        em seu habitat. Assim como para outros animais, foi criado um projeto para
+        tomar conta dessa esp\xE9cie e garantir que o pior n\xE3o aconte\xE7a."
       objectReference: {fileID: 0}
     - target: {fileID: 7460091244461239503, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}
       propertyPath: m_fontSize
-      value: 22.95
-      objectReference: {fileID: 0}
-    - target: {fileID: 7460091244461239503, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
-        type: 3}
-      propertyPath: m_fontSizeMin
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 7624674305506812372, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
-        type: 3}
-      propertyPath: m_Color.a
-      value: 0
+      value: 26.25
       objectReference: {fileID: 0}
     - target: {fileID: 8072300359523650601, guid: 9c2af8c6fd407f9499c8b19e45a0560b,
         type: 3}

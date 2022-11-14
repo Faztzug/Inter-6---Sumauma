@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8789301926673907068}
   - component: {fileID: 2231282797898909074}
   - component: {fileID: 7146662742758392882}
+  - component: {fileID: 608503954611491753}
   m_Layer: 0
   m_Name: TocoQueimado
   m_TagString: Untagged
@@ -120,7 +121,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3697494233910635627}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 3.1341658, y: 1.9854511, z: 2.7956128}
@@ -138,3 +139,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageBySec: -25
+--- !u!65 &608503954611491753
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3697494233910635627}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.56, y: 1.73, z: 2.46}
+  m_Center: {x: -0.013921739, y: 1.0071537, z: 0.07947087}

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8667669700046921930}
   - component: {fileID: 1899146216330355762}
   - component: {fileID: 4316077247611475904}
+  - component: {fileID: 3919376479103552095}
   m_Layer: 0
   m_Name: TroncoCotocoAQueimado
   m_TagString: Untagged
@@ -123,8 +124,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.1517549, y: 1.353672, z: 2.0767293}
-  m_Center: {x: 0.04364258, y: 0.68443274, z: 0.02205944}
+  m_Size: {x: 1.8990078, y: 1.353672, z: 1.7874756}
+  m_Center: {x: 0.057032585, y: 0.68443274, z: -0.0021514893}
 --- !u!114 &4316077247611475904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -138,3 +139,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageBySec: -25
+--- !u!65 &3919376479103552095
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2108547701764049957}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.36, y: 1.51259, z: 2.2}
+  m_Center: {x: 0.04364264, y: 0.70072776, z: 0.02205944}

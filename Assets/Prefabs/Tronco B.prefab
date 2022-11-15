@@ -129,9 +129,9 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 35be633787bc8bf42b963284245a0c89, type: 2}
+  - {fileID: 2100000, guid: 96f4e7385632b884282618f4ed631291, type: 2}
   - {fileID: 5775865398287329665, guid: 6e073ad5f8cc77945b10b09c5ca740c7, type: 3}
-  - {fileID: 6034957751646507721, guid: 6e073ad5f8cc77945b10b09c5ca740c7, type: 3}
+  - {fileID: 2100000, guid: b3d47ef83a9e50f419904f98506efd28, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,6 +183,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageByTouch: -20
   damageOnTrigger: 1
+  resetDoubleJumpOnTouch: 0
+  knockBackOnlyUp: 0
 --- !u!65 &5244703711818920329
 BoxCollider:
   m_ObjectHideFlags: 0

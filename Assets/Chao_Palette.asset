@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Chao_Palette
   m_EditorClassIdentifier: 
   PaletteLayers:
-  - {fileID: 8574412962073106934, guid: 7943b866c7d471641938a432503da65b, type: 2}
-  - {fileID: 8574412962073106934, guid: 101b7338106fddc4d8e6949f181db20f, type: 2}
+  - {fileID: 8574412962073106934, guid: 19b6bf5f473b1444897afee0e671ce28, type: 2}
+  - {fileID: 8574412962073106934, guid: 9b7e3c5e0a949c54f8ac4863e111ca13, type: 2}

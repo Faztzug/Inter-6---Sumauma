@@ -131,6 +131,7 @@ GameObject:
   - component: {fileID: 9124585402896376299}
   - component: {fileID: 8346622565533813889}
   - component: {fileID: 9008806222508692972}
+  - component: {fileID: 3625540914866984882}
   m_Layer: 0
   m_Name: TroncoTortoQueimado
   m_TagString: Untagged
@@ -244,3 +245,16 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 6099800089077584851, guid: 70afa03a78a259140a0dea158c5c1b3c, type: 3}
+--- !u!65 &3625540914866984882
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7323405379930800190}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.8205442, y: 7.6, z: 4.5}
+  m_Center: {x: -2.0016596, y: 3.4659634, z: -0.0000020266557}

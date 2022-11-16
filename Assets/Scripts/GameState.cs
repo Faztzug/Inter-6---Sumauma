@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Playables;
 
 public class GameState : MonoBehaviour
 {
@@ -51,19 +52,21 @@ public class GameState : MonoBehaviour
         plantaColetadaNaFase = false;
         SaveData = saveManager.LoadGame();
         Application.targetFrameRate = 60;
+        Debug.Log("HAS CUTSCENE CAM? " + cutSceneGOCam != null);
         if(cutSceneGOCam != null)
         {
             cutsceneCamera = cutSceneGOCam.GetComponent<Camera>();
-            var cutSceneAnim = cutSceneGOCam.GetComponent<Animator>();
-            if(cutSceneAnim != null 
-            && cutSceneAnim.runtimeAnimatorController != null
-            && cutSceneAnim.GetCurrentAnimatorClipInfo(0)[0].clip.length > 1)
+            var timelineAnim = cutSceneGOCam.GetComponent<PlayableDirector>();
+            if(timelineAnim != null && timelineAnim.duration > 1f)
             {
                 SetMainCamera();
                 SetCutsceneCamera();
+                Debug.Log("duration " + timelineAnim.duration);
+                StartCoroutine(EndCutsceneOnTime((float)timelineAnim.duration));
             }
             else
             {
+                Debug.Log("empty clip");
                 SetCutsceneCamera();
                 SetMainCamera();
             }
@@ -75,10 +78,8 @@ public class GameState : MonoBehaviour
     {
         var checkpoint = 
         new Vector3(saveData.checkpointPosition[0], saveData.checkpointPosition[1], saveData.checkpointPosition[2]);
-        Debug.Log(checkpoint.ToString());
         if(checkpoint != Vector3.zero)
         {
-            Debug.Log("GO TO BRAZIL");
             playerTransform.GetComponent<Movimento>().GoToCheckPoint(checkpoint);
         } 
     }
@@ -205,6 +206,7 @@ public class GameState : MonoBehaviour
 
     public static void SetMainCamera()
     {
+        Debug.Log("Set Main Camera");
         gameState.cutsceneCamera?.gameObject.SetActive(false);
         gameState.mainCamera.gameObject.SetActive(true);
         onCutscene = false;
@@ -222,6 +224,13 @@ public class GameState : MonoBehaviour
         yield return new WaitForSecondsRealtime(waitTime);
 
         SceneManager.LoadScene(sceneName);
+    }
+
+    IEnumerator EndCutsceneOnTime(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        Debug.Log("End Cutscene On Time");
+        SetMainCamera();
     }
 
     public static void InstantiateSound(Sound sound, Vector3 position, float destroyTime = 10f)

@@ -2471,6 +2471,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1fb1cad94cd5d46b2780d5d6863052, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  alma1: {fileID: 0}
+  alma2: {fileID: 0}
   healthBar: {fileID: 2838026321314682378}
   gameOver: {fileID: 1773922482036918163}
   pauseMenu: {fileID: 2050334746613501522}
@@ -3106,7 +3108,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2290282150405613146
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3146,7 +3148,11 @@ MonoBehaviour:
   - {fileID: 8408716056701765819, guid: e990bbab33608ff44a68540db9190e08, type: 3}
   - {fileID: 279822922286762444, guid: 9c2af8c6fd407f9499c8b19e45a0560b, type: 3}
   - {fileID: 282637964126255092, guid: 03f12cb56c73fbe4782de5b0b2a26d18, type: 3}
-  - {fileID: 282637964126255092, guid: 03f12cb56c73fbe4782de5b0b2a26d18, type: 3}
+  - {fileID: 9025102820207058258, guid: facc23f40d95e7c4b84d8fdcfa43fde1, type: 3}
+  - {fileID: 6674637893097452015, guid: 4346a5d641a678d409cf5321763a6f17, type: 3}
+  - {fileID: 114867060378609685, guid: be57fba679a84e149a013c4f976ab299, type: 3}
+  - {fileID: 8431635104557399726, guid: 6f03a44bc9939a346967bbc15410bd13, type: 3}
+  - {fileID: 6666293750373324138, guid: b41670c070790bf4b9b38abbe4926f10, type: 3}
   leftPageHolder: {fileID: 7829574634231906590}
   rightPageHolder: {fileID: 7528441642602817432}
   transitionPages: {fileID: 4665043402789551344}

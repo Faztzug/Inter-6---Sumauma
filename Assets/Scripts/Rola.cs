@@ -42,7 +42,6 @@ public class Rola : MonoBehaviour
 
     private void StartRooling()
     {
-        Debug.Log("ROLLINGGG  " + name);
         rgbd.isKinematic = false;
         MoveSpeedVector = fowardDirection * MoveSpeed;
         if(RollingDirection == Direction.Foward) 

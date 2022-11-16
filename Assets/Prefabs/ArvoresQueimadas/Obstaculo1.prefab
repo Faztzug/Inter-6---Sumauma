@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6651478297792557102}
   - component: {fileID: 4653845753125058697}
   - component: {fileID: 2618033568627570549}
+  - component: {fileID: 1885194568089824055}
   m_Layer: 0
   m_Name: Obstaculo1
   m_TagString: Untagged
@@ -150,6 +151,20 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.47
+  m_Height: 15.97378
+  m_Direction: 1
+  m_Center: {x: 0.16955733, y: 7.728628, z: 0.31866264}
+--- !u!136 &1885194568089824055
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8430784682162876273}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.07
   m_Height: 15.97378
   m_Direction: 1
   m_Center: {x: 0.16955733, y: 7.728628, z: 0.31866264}

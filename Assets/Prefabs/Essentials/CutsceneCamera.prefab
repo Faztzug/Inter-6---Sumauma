@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5015867623083401627}
   - component: {fileID: 5015867623083401624}
   - component: {fileID: 8860722411375353392}
+  - component: {fileID: 4240188274407728995}
   m_Layer: 0
   m_Name: CutsceneCamera
   m_TagString: CutsceneCamera
@@ -139,3 +140,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!320 &4240188274407728995
+PlayableDirector:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5015867623083401620}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_PlayableAsset: {fileID: 0}
+  m_InitialState: 1
+  m_WrapMode: 2
+  m_DirectorUpdateMode: 1
+  m_InitialTime: 0
+  m_SceneBindings:
+  - key: {fileID: -3390778476733168860, guid: e16148d6c9a83cb4f8d243a63e471bc6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5913481800610048348, guid: e16148d6c9a83cb4f8d243a63e471bc6, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 6886318851998664841, guid: e16148d6c9a83cb4f8d243a63e471bc6, type: 2}
+    value: {fileID: 8860722411375353392}
+  m_ExposedReferences:
+    m_References: []

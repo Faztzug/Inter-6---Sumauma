@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 5882187897966446098}
   - component: {fileID: 8522303578263827160}
   - component: {fileID: 8868044406924625854}
+  - component: {fileID: 6995020687667009606}
   m_Layer: 0
   m_Name: Tronco Apoiado normal
   m_TagString: Untagged
@@ -251,3 +252,16 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1
+--- !u!65 &6995020687667009606
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7873894702894486285}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.454978, y: 5.636998, z: 3.2857292}
+  m_Center: {x: 0.88927877, y: 2.7379332, z: 0.000007630288}

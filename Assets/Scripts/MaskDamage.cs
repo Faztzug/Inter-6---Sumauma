@@ -23,7 +23,6 @@ public class MaskDamage : MonoBehaviour
                 hitSounds[index].PlayOn(audioSource);
                 enemyHeatlh.UpdateHealth(damage);
             }
-            Debug.Log("BODY?? " + (other.gameObject.GetComponent<Rigidbody>() != null));
             if(other.gameObject.TryGetComponent<EnemyFireGenericIA>(out EnemyFireGenericIA enemy))
             {
                 enemy.KnockBack(this.transform.position);

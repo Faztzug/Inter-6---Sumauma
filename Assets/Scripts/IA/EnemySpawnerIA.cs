@@ -8,6 +8,7 @@ public class EnemySpawnerIA : EnemyFireGenericIA
     [SerializeField] private List<EnemyIA> enemysList;
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private int maxEnemys;
+    [SerializeField] private EnemyDrop drops;
 
     protected override void Start()
     {
@@ -34,7 +35,7 @@ public class EnemySpawnerIA : EnemyFireGenericIA
         
         distance = Vector3.Distance(pos, playerPos);
 
-        enemysList.RemoveAll(e => e.alive == false);
+        enemysList.RemoveAll(e => e == null || e.alive == false);
 
 
         if(maxEnemys >= enemysList.Count && distance < findPlayerDistance)
@@ -66,5 +67,12 @@ public class EnemySpawnerIA : EnemyFireGenericIA
         //currentRotation.y = Mathf.Lerp (currentRotation.y, desiredRot.y, Time.deltaTime * smoothness);
         currentRotation.y = desiredRot.y;
         transform.eulerAngles = currentRotation;
+    }
+
+    public override void EnemyDeath()
+    {
+        drops.Drop();
+        Debug.Log("Spawner is dead");
+        base.EnemyDeath();
     }
 }

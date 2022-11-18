@@ -54,7 +54,6 @@ public class EnemyFireGenericIA : EnemyIA
     {
         agent.enabled = false;
         grounded = false;
-        Debug.Log("KNOCK BACK");
         var vectorDistance = this.transform.position - maksPos;
         var knockBackDir = vectorDistance.normalized;
         knockBackDir.y = 0.8f;

@@ -91,6 +91,7 @@ public class EnemyIA : MonoBehaviour
             script.enabled = false;
         }
         this.StopAllCoroutines();
+        Destroy(this.gameObject);
     }
     public virtual void Stun()
     {

@@ -210,6 +210,10 @@ public class GameState : MonoBehaviour
         gameState.cutsceneCamera?.gameObject.SetActive(false);
         gameState.mainCamera.gameObject.SetActive(true);
         onCutscene = false;
+        cinemachineFreeLook.m_YAxisRecentering.RecenterNow();
+        cinemachineFreeLook.m_RecenterToTargetHeading.RecenterNow();
+        cinemachineFreeLook.m_XAxis.m_Recentering.RecenterNow();
+        cinemachineFreeLook.m_YAxis.m_Recentering.RecenterNow();
     }
 
     public static void SetCheckPoint(Vector3 position)

@@ -10,9 +10,11 @@ public class Health : MonoBehaviour
     //[SerializeField] protected AudioSource source;
     //[SerializeField] protected AudioClip damageSound;
     protected Animator anim;
+    private EnemyIA thisEnemy;
     public virtual void Start()
     {
         health = maxHealth;
+        thisEnemy = GetComponent<EnemyIA>();
         //anim = GetComponentInChildren<Animator>();
     }
 
@@ -33,6 +35,7 @@ public class Health : MonoBehaviour
 
     public virtual void DestroyCharacter()
     {
-        Destroy(this.gameObject);
+        if(thisEnemy != null) thisEnemy.EnemyDeath();
+        else Destroy(this.gameObject);
     }
 }

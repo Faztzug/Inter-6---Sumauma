@@ -161,6 +161,7 @@ GameObject:
   - component: {fileID: 4950801188838878985}
   - component: {fileID: 5323278845108279919}
   - component: {fileID: 6226711979204664243}
+  - component: {fileID: 359360000888713947}
   m_Layer: 0
   m_Name: Tronco Apoiado Queimado
   m_TagString: Untagged
@@ -277,3 +278,16 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 11.454981, y: 5.636998, z: 3.28573}
   m_Center: {x: 0.8892734, y: 2.7379327, z: -0.0000009536743}
+--- !u!114 &359360000888713947
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6896201814840774364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afb97c486e346814db9e6645c77d94f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageBySec: -25

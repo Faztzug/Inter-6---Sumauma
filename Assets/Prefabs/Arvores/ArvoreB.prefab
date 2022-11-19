@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8366237565016443749}
   - component: {fileID: 6052327677795598255}
   - component: {fileID: 4917854192378831701}
+  - component: {fileID: 7955107103614753385}
   m_Layer: 0
   m_Name: ArvoreB
   m_TagString: Untagged
@@ -98,3 +99,29 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.269016, y: 33.342785, z: 7.3750744}
   m_Center: {x: 0.4104004, y: 15.259029, z: -0.8757105}
+--- !u!205 &7955107103614753385
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5259873982561836666}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: 0.7476158, y: 15.259029, z: 0}
+  m_Size: 33.342785
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.28752246
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6052327677795598255}
+  - screenRelativeHeight: 0.028387757
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.0029991497
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 6052327677795598255}
+  m_Enabled: 1

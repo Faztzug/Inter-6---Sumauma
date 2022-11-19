@@ -88,35 +88,35 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
-  m_Name: SeeThrough
+  m_Name: Efeitos
   m_EditorClassIdentifier: 
   m_Active: 0
   settings:
-    passTag: SeeThrough
-    Event: 250
+    passTag: Efeitos
+    Event: 230
     filterSettings:
       RenderQueueType: 0
       LayerMask:
         serializedVersion: 2
-        m_Bits: 1024
+        m_Bits: 65536
       PassNames: []
     overrideMaterial: {fileID: 0}
     overrideMaterialPassIndex: 0
-    overrideDepthState: 0
+    overrideDepthState: 1
     depthCompareFunction: 4
     enableWrite: 1
     stencilSettings:
-      overrideStencilState: 1
-      stencilReference: 1
+      overrideStencilState: 0
+      stencilReference: 3
       stencilCompareFunction: 6
-      passOperation: 0
-      failOperation: 0
-      zFailOperation: 0
+      passOperation: 2
+      failOperation: 2
+      zFailOperation: 2
     cameraSettings:
       overrideCamera: 0
-      restoreCamera: 1
-      offset: {x: 0, y: 0, z: 0, w: 0}
-      cameraFieldOfView: 60
+      restoreCamera: 0
+      offset: {x: -0.84, y: 0, z: 0, w: 1}
+      cameraFieldOfView: 4
 --- !u!114 &-1878332245247344467
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,12 +198,12 @@ MonoBehaviour:
   - {fileID: -1878332245247344467}
   - {fileID: 7926159982280702309}
   - {fileID: 8543348082379826565}
-  - {fileID: -2074618725349445718}
   - {fileID: -1425543644560246337}
   - {fileID: -8983833182487463450}
-  - {fileID: 6944987786263021064}
   - {fileID: -9027449693447259169}
-  m_RendererFeatureMap: adc0de57c6d2eee565f9c1608260ff6d85a5c3fad0119076aa2f2cd7427935e3bfb92bae9b7337ece6b977a4510353830846a271988d6160dffb5d52550eb882
+  - {fileID: 6944987786263021064}
+  - {fileID: -2074618725349445718}
+  m_RendererFeatureMap: adc0de57c6d2eee565f9c1608260ff6d85a5c3fad0119076bfb92bae9b7337ece6b977a451035383dffb5d52550eb8820846a271988d6160aa2f2cd7427935e3
   m_UseNativeRenderPass: 0
   postProcessData: {fileID: 11400000, guid: 41439944d30ece34e96484bdb6645b55, type: 2}
   xrSystemData: {fileID: 11400000, guid: 60e1133243b97e347b653163a8c01b64, type: 2}

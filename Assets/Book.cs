@@ -49,7 +49,7 @@ public class Book : MonoBehaviour
         else if(Input.GetButtonDown("Left")) FlipPages(FlipDirection.Left);
     }
 
-    private async void FlipPages(FlipDirection direction)
+    public async void FlipPages(FlipDirection direction)
     {
         var newPages = new int[2]{currentPages[0],currentPages[1]};
         if(direction == FlipDirection.Right)

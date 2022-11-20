@@ -57,8 +57,24 @@ public class SaveManager
 }
 
 [Serializable]
+public enum Quality
+{
+    Low,
+    Medium,
+    High,
+}
+
+[Serializable]
 public class SaveData
 {
+    [Header("Settings")]
+    public bool mute;
+    public float sfxVolume;
+    public float musicVolume;
+    public Quality quality;
+    public bool showFPS;
+
+    [Header("GameData")]
     public int unlockLevelsTo = 1;
     public bool heliconiaColetada;
     public bool oncaColetada;
@@ -72,6 +88,12 @@ public class SaveData
 
     public SaveData()
     {
+        mute = true;
+        musicVolume = 1f;
+        sfxVolume = 1f;
+        quality = Quality.High;
+        showFPS = true;
+
         unlockLevelsTo = 1;
         checkpointPosition = new float[3]{0,0,0};
     }

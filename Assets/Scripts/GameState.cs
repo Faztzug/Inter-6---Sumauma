@@ -4,6 +4,7 @@ using UnityEngine;
 using Cinemachine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Playables;
+using System;
 
 public class GameState : MonoBehaviour
 {
@@ -35,6 +36,7 @@ public class GameState : MonoBehaviour
     public SaveData saveData;
     public static SaveData SaveData { get => gameState.saveData; set => gameState.saveData = value; }
     public static SaveManager saveManager = new SaveManager();
+    public static Action SettingsUpdated;
 
     public static bool animalColetadoNaFase;
     public static bool plantaColetadaNaFase;
@@ -75,6 +77,8 @@ public class GameState : MonoBehaviour
         }
         mainCanvas.ResumeGame();
         mainCanvas.GetColectableImages();
+        UpdateQuality();
+        SettingsUpdated?.Invoke();
     }
     private void Start() 
     {
@@ -85,6 +89,85 @@ public class GameState : MonoBehaviour
             playerTransform.GetComponent<Movimento>().GoToCheckPoint(checkpoint);
         } 
     }
+
+    public static bool KeyItemAlreadyColected(ColectableType type)
+    {
+        if (type == ColectableType.Animal) return animalColetadoNaFase;
+        else if (type == ColectableType.Planta) return plantaColetadaNaFase;
+        else return false;
+    }
+
+    public static string GetSceneName() => SceneManager.GetActiveScene().name;
+
+    public static void ReloadScene(float waitTime)
+    {
+        var ob = GameStateInstance;
+        var sceneName = ob.gameObject.scene.name;
+        ob.StartCoroutine(ob.LoadSceneCourotine(waitTime, sceneName));
+    }
+
+    public static void LoadScene(string sceneName, float waitTime = 0)
+    {
+        var ob = GameStateInstance;
+        ob.StartCoroutine(ob.LoadSceneCourotine(waitTime, sceneName));
+    }
+
+    public static void SetCutsceneCamera()
+    {
+        gameState.mainCamera.gameObject.SetActive(false);
+        gameState.cutsceneCamera?.gameObject.SetActive(true);
+        onCutscene = true;
+    }
+
+    public static void SetMainCamera()
+    {
+        Debug.Log("Set Main Camera");
+        gameState.cutsceneCamera?.gameObject.SetActive(false);
+        gameState.mainCamera.gameObject.SetActive(true);
+        onCutscene = false;
+        cinemachineFreeLook.m_YAxisRecentering.RecenterNow();
+        cinemachineFreeLook.m_RecenterToTargetHeading.RecenterNow();
+        cinemachineFreeLook.m_XAxis.m_Recentering.RecenterNow();
+        cinemachineFreeLook.m_YAxis.m_Recentering.RecenterNow();
+    }
+
+    public static void SetCheckPoint(Vector3 position)
+    {
+        SaveData.checkpointPosition = new float[3]{position.x, position.y, position.z};
+        saveManager.SaveGame(SaveData);
+        Debug.Log(string.Join(", ", SaveData.checkpointPosition));
+    }
+
+    public static void UpdateQuality()
+    {
+        if(QualitySettings.GetQualityLevel() != (int)SaveData.quality)
+        {
+            QualitySettings.SetQualityLevel((int)SaveData.quality);
+        }
+    }
+
+    IEnumerator LoadSceneCourotine(float waitTime, string sceneName)
+    {
+        yield return new WaitForSecondsRealtime(waitTime);
+
+        SceneManager.LoadScene(sceneName);
+    }
+
+    IEnumerator EndCutsceneOnTime(float waitTime)
+    {
+        yield return new WaitForSeconds(waitTime);
+        Debug.Log("End Cutscene On Time");
+        SetMainCamera();
+    }
+
+    public static void InstantiateSound(Sound sound, Vector3 position, float destroyTime = 10f)
+    {
+        var AudioObject = GameObject.Instantiate(gameState.GenericAudioSourcePrefab, position, Quaternion.identity);
+        var audioSource = AudioObject.GetComponent<AudioSource>();
+        sound.PlayOn(audioSource);
+        Destroy(AudioObject, destroyTime);
+    }
+
     public static void ItemColected(Colectables item, ColectableType itemType)
     {
         switch (itemType)
@@ -184,75 +267,5 @@ public class GameState : MonoBehaviour
             }
             LoadScene("Menu inicial");
         }
-    }
-
-    public static bool KeyItemAlreadyColected(ColectableType type)
-    {
-        if (type == ColectableType.Animal) return animalColetadoNaFase;
-        else if (type == ColectableType.Planta) return plantaColetadaNaFase;
-        else return false;
-    }
-
-    public static string GetSceneName() => SceneManager.GetActiveScene().name;
-
-    public static void ReloadScene(float waitTime)
-    {
-        var ob = GameStateInstance;
-        var sceneName = ob.gameObject.scene.name;
-        ob.StartCoroutine(ob.LoadSceneCourotine(waitTime, sceneName));
-    }
-
-    public static void LoadScene(string sceneName, float waitTime = 0)
-    {
-        var ob = GameStateInstance;
-        ob.StartCoroutine(ob.LoadSceneCourotine(waitTime, sceneName));
-    }
-
-    public static void SetCutsceneCamera()
-    {
-        gameState.mainCamera.gameObject.SetActive(false);
-        gameState.cutsceneCamera?.gameObject.SetActive(true);
-        onCutscene = true;
-    }
-
-    public static void SetMainCamera()
-    {
-        Debug.Log("Set Main Camera");
-        gameState.cutsceneCamera?.gameObject.SetActive(false);
-        gameState.mainCamera.gameObject.SetActive(true);
-        onCutscene = false;
-        cinemachineFreeLook.m_YAxisRecentering.RecenterNow();
-        cinemachineFreeLook.m_RecenterToTargetHeading.RecenterNow();
-        cinemachineFreeLook.m_XAxis.m_Recentering.RecenterNow();
-        cinemachineFreeLook.m_YAxis.m_Recentering.RecenterNow();
-    }
-
-    public static void SetCheckPoint(Vector3 position)
-    {
-        SaveData.checkpointPosition = new float[3]{position.x, position.y, position.z};
-        saveManager.SaveGame(SaveData);
-        Debug.Log(string.Join(", ", SaveData.checkpointPosition));
-    }
-
-    IEnumerator LoadSceneCourotine(float waitTime, string sceneName)
-    {
-        yield return new WaitForSecondsRealtime(waitTime);
-
-        SceneManager.LoadScene(sceneName);
-    }
-
-    IEnumerator EndCutsceneOnTime(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        Debug.Log("End Cutscene On Time");
-        SetMainCamera();
-    }
-
-    public static void InstantiateSound(Sound sound, Vector3 position, float destroyTime = 10f)
-    {
-        var AudioObject = GameObject.Instantiate(gameState.GenericAudioSourcePrefab, position, Quaternion.identity);
-        var audioSource = AudioObject.GetComponent<AudioSource>();
-        sound.PlayOn(audioSource);
-        Destroy(AudioObject, destroyTime);
     }
 }

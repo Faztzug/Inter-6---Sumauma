@@ -11,6 +11,7 @@ public class MainCanvas : MonoBehaviour
     public Image healthBar;
     public GameObject gameOver;
     public GameObject pauseMenu;
+    public GameObject fpsCounter;
     public Book book;
     // public GameObject pauseMainMenu;
     // public GameObject pauseSettingsMenu;
@@ -44,6 +45,14 @@ public class MainCanvas : MonoBehaviour
     private void Start()
     {
         GetColectableImages();
+        UpdateFPSCounterState();
+
+        GameState.SettingsUpdated += UpdateFPSCounterState;
+    }
+
+    private void OnDestroy() 
+    {
+        GameState.SettingsUpdated -= UpdateFPSCounterState;
     }
 
     void Update()
@@ -84,13 +93,17 @@ public class MainCanvas : MonoBehaviour
 
     public void OpenOptions()
     {
-        // pauseSettingsMenu.SetActive(true);
-        // pauseMainMenu.SetActive(false);
+        book.FlipPages(Book.FlipDirection.Right);
     }
     public void CloseOptions()
     {
         // pauseSettingsMenu.SetActive(false);
         // pauseMainMenu.SetActive(true);
+    }
+
+    private void UpdateFPSCounterState()
+    {
+        fpsCounter.SetActive(GameState.SaveData.showFPS);
     }
 
     public void VoltarMenu()

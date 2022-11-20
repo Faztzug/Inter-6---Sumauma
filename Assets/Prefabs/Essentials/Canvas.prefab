@@ -2476,6 +2476,7 @@ MonoBehaviour:
   healthBar: {fileID: 2838026321314682378}
   gameOver: {fileID: 1773922482036918163}
   pauseMenu: {fileID: 2050334746613501522}
+  fpsCounter: {fileID: 421113142}
   book: {fileID: 1253787921574892999}
   planta: {fileID: 2074033781993438671}
   animal: {fileID: 2990393184737972795}
@@ -3146,7 +3147,7 @@ MonoBehaviour:
   - {fileID: 4092817408742220855, guid: e91e5f40bfb4cd042a098fb2623a60a9, type: 3}
   - {fileID: 5605250253649422514, guid: db6dadaf2ac1cf843862b8fb0c486a38, type: 3}
   - {fileID: 8408716056701765819, guid: e990bbab33608ff44a68540db9190e08, type: 3}
-  - {fileID: 279822922286762444, guid: 9c2af8c6fd407f9499c8b19e45a0560b, type: 3}
+  - {fileID: 279822922286762444, guid: a64bcea8e12b67743b353af3fa4bd10b, type: 3}
   - {fileID: 282637964126255092, guid: 03f12cb56c73fbe4782de5b0b2a26d18, type: 3}
   - {fileID: 9025102820207058258, guid: facc23f40d95e7c4b84d8fdcfa43fde1, type: 3}
   - {fileID: 6674637893097452015, guid: 4346a5d641a678d409cf5321763a6f17, type: 3}

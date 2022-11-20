@@ -20,7 +20,7 @@ public class Sound
     public void Setup(AudioSource audioSource)
     {
         audioSource.clip = clip;
-        audioSource.volume = volume;
+        audioSource.volume = GameState.SaveData.mute ? 0f : volume * GameState.SaveData.sfxVolume;
         audioSource.pitch = pitch;
         audioSource.loop = loop;
         audioSource.playOnAwake = playOnAwake;
@@ -28,6 +28,7 @@ public class Sound
 
     public void PlayOn(AudioSource audioSource)
     {
+        if(GameState.SaveData.mute) return;
         Setup(audioSource);
         audioSource.PlayOneShot(clip);
     }

@@ -51,6 +51,8 @@ public class GameState : MonoBehaviour
         animalColetadoNaFase = false;
         plantaColetadaNaFase = false;
         SaveData = saveManager.LoadGame();
+        animalColetadoNaFase = SaveData.animalColetadoNaFase;
+        plantaColetadaNaFase = SaveData.plantaColetadaNaFase;
         Application.targetFrameRate = 60;
         Debug.Log("HAS CUTSCENE CAM? " + cutSceneGOCam != null);
         if(cutSceneGOCam != null)
@@ -149,9 +151,11 @@ public class GameState : MonoBehaviour
 
     public void CheckEndStage()
     {
+        SaveData.animalColetadoNaFase = animalColetadoNaFase;
+        SaveData.plantaColetadaNaFase = plantaColetadaNaFase;
+
         if(!animalColetadoNaFase || !plantaColetadaNaFase) return;
-        saveManager.ResetCheckPointValue(SaveData);
-        SaveData = saveManager.LoadGame();
+        SaveData = saveManager.ResetCheckPointValue(SaveData);
 
         if (GetSceneName() == "Fase 1")
         {
@@ -180,6 +184,13 @@ public class GameState : MonoBehaviour
             }
             LoadScene("Menu inicial");
         }
+    }
+
+    public static bool KeyItemAlreadyColected(ColectableType type)
+    {
+        if (type == ColectableType.Animal) return animalColetadoNaFase;
+        else if (type == ColectableType.Planta) return plantaColetadaNaFase;
+        else return false;
     }
 
     public static string GetSceneName() => SceneManager.GetActiveScene().name;

@@ -67,6 +67,6 @@ public class Menu : MonoBehaviour
     {
         var saveManager = new SaveManager();
         var saveData = saveManager.LoadGame();
-        saveManager.ResetCheckPointValue(saveData);
+        saveData = saveManager.ResetCheckPointValue(saveData);
     }
 }

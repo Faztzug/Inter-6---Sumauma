@@ -804,7 +804,7 @@ MonoBehaviour:
   mask: {fileID: 5191137149476524409}
   maskMaxGrow: 2.5
   throwMaxSpeed: 27
-  comeBackMaxSpeed: 35
+  comeBackMaxSpeed: 40
   throwAccelaration: 50
   comeBackAccelaration: 55
   throwDuration: 0.5
@@ -842,6 +842,8 @@ MonoBehaviour:
     - 0
     - 0
     - 0
+    animalColetadoNaFase: 0
+    plantaColetadaNaFase: 0
 --- !u!82 &4045199953686460968
 AudioSource:
   m_ObjectHideFlags: 0

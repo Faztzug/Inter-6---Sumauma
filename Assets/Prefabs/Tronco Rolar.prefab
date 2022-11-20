@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f57b864c24d7ea64885c359f79965c77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageByTouch: -10
+  damageByTouch: -20
   damageOnTrigger: 0
   resetDoubleJumpOnTouch: 0
   knockBackOnlyUp: 0

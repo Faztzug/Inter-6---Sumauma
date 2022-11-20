@@ -6,6 +6,8 @@ public class Item : MonoBehaviour
 { 
     [SerializeField] protected int ammount;
     [SerializeField] protected Sound collectSound;
+
+    protected virtual void Start() { }
     void OnTriggerEnter(Collider other)
     {
         if(other.CompareTag("Player")) CollectItem(other);

@@ -7,6 +7,7 @@ public class EnemyFireSpiritIA : EnemyFireGenericIA
     protected override void AsyncUpdateIA()
     {
         base.AsyncUpdateIA();
+        transform.GetChild(0).localPosition = Vector3.zero;
         FollowPlayer();
     }
 

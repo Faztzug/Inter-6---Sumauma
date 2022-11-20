@@ -21,7 +21,11 @@ public class KeyItem : Item
     [SerializeField] protected Colectables itemEnum;
     [SerializeField] protected ColectableType itemType;
 
-
+    protected override void Start()
+    {
+        base.Start();
+        if(GameState.KeyItemAlreadyColected(itemType)) gameObject.SetActive(false);
+    }
 
     public override void CollectItem(Collider info)
     {

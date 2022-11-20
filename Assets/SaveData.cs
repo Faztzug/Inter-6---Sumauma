@@ -46,10 +46,13 @@ public class SaveManager
         return new SaveData();
     }
 
-    public void ResetCheckPointValue(SaveData saveData)
+    public SaveData ResetCheckPointValue(SaveData saveData)
     {
         saveData.checkpointPosition = new float[3]{0,0,0};
+        saveData.animalColetadoNaFase = false;
+        saveData.plantaColetadaNaFase = false;
         SaveGame(saveData);
+        return LoadGame();
     }
 }
 
@@ -64,6 +67,8 @@ public class SaveData
     public bool planta3;
     public bool animal3;
     public float[] checkpointPosition = new float[3]{0,0,0};
+    public bool animalColetadoNaFase;
+    public bool plantaColetadaNaFase;
 
     public SaveData()
     {

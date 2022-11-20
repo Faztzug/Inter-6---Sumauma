@@ -9,10 +9,12 @@ public class EnemySpawnerIA : EnemyFireGenericIA
     [SerializeField] private Transform[] spawnPoints;
     [SerializeField] private int maxEnemys;
     [SerializeField] private EnemyDrop drops;
+    private Animator anim;
 
     protected override void Start()
     {
         base.Start();
+        anim = GetComponentInChildren<Animator>();
 
         playerPos = player.position;
         playerPos.y = 0;
@@ -46,6 +48,7 @@ public class EnemySpawnerIA : EnemyFireGenericIA
             var enemy = Instantiate(enemysPrefabs[iRngPrefab], spawnPoints[iRngPos].position, transform.rotation).GetComponent<EnemyIA>();
             enemy.ForceUpdateIA();
             enemysList.Add(enemy);
+            anim.SetTrigger("Spawn");
         }
     }
 

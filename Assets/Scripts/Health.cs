@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
     {
         health = maxHealth;
         thisEnemy = GetComponent<EnemyIA>();
-        //anim = GetComponentInChildren<Animator>();
+        if(thisEnemy != null) anim = GetComponentInChildren<Animator>();
     }
 
     public virtual void UpdateHealth(float value = 0)//, Item item = null)

@@ -63,10 +63,12 @@ public class PlayerHealth : Health
         
     }
 
+    private bool updatingHealthThisFrame;
     public override void UpdateHealth(float value = 0)//, Item item = null)
     {
         //if(health < maxHealth && item != null) item.DestroyItem();
-         
+        if (updatingHealthThisFrame) return;
+        updatingHealthThisFrame = true;
         if(value < -5 && !GameState.IsPlayerDead)
         {
             var index = Random.Range(0, damageSounds.Length);
@@ -74,6 +76,8 @@ public class PlayerHealth : Health
         }
         base.UpdateHealth(value);
         bar.fillAmount = health / maxHealth;
+
+        StartCoroutine(EndUpdateHealth());
 
         // var hpPorcentage = Mathf.Abs(health / maxHealth);
         // var chgPorcentage = Mathf.Abs(value / maxHealth);
@@ -88,6 +92,12 @@ public class PlayerHealth : Health
         //     damageEffect.weight -= chgPorcentage * effectGainMultplier;
         //     damageTime -= chgPorcentage * effectTimeMultplier;
         // }
+    }
+
+    IEnumerator EndUpdateHealth()
+    {
+        yield return new WaitForEndOfFrame();
+        updatingHealthThisFrame = false;
     }
 
     public override void DestroyCharacter()

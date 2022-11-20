@@ -6,7 +6,7 @@ using UnityEngine.AI;
 [RequireComponent(typeof(Rigidbody), typeof(NavMeshAgent))] 
 public class EnemyIA : MonoBehaviour
 {
-    [SerializeField] [Range(0,5)] protected float[] updateRateRNG = new float[2];
+    [SerializeField] [Range(0,10)] protected float[] updateRateRNG = new float[2];
     [HideInInspector] public Transform player;
     protected Vector3 pos;
     protected Vector3 playerPos;

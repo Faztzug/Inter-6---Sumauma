@@ -13,9 +13,9 @@ Material:
   m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: 2000
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 1
+  m_CustomRenderQueue: 2050
   stringTagMap: {}
   disabledShaderPasses: []
   m_SavedProperties:
@@ -47,15 +47,15 @@ Material:
     - _DrawOrder: 0
     - _DstBlend: 0
     - _Float: 0.734
-    - _FresnelPower: 0.8
+    - _FresnelPower: 0.15
     - _GlowSpread: 1
     - _InteriorSpread: 1
-    - _MoveAmount: 1
-    - _MoveDistance: 0.1
+    - _MoveAmount: 0.047
+    - _MoveDistance: 0
     - _MoveFrequency: 5
     - _MoveSpeed: 2
     - _QueueControl: 0
-    - _QueueOffset: 0
+    - _QueueOffset: 50
     - _ReceiveShadows: 1
     - _Size: 0.1
     - _SrcBlend: 1

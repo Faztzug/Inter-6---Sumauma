@@ -7,14 +7,14 @@ TerrainLayer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: TerraMolhada
-  m_DiffuseTexture: {fileID: 2800000, guid: 88c0c73fe02e8c14cb2af7810b11b71a, type: 3}
+  m_DiffuseTexture: {fileID: 2800000, guid: 6bf7eea552f2004479536a1e1c0bd131, type: 3}
   m_NormalMapTexture: {fileID: 2800000, guid: 7b9bbea20897c574ab5db3ba1f97c5db, type: 3}
   m_MaskMapTexture: {fileID: 0}
   m_TileSize: {x: 2, y: 2}
   m_TileOffset: {x: 0, y: 0}
   m_Specular: {r: 0, g: 0, b: 0, a: 0}
   m_Metallic: 0
-  m_Smoothness: 1
+  m_Smoothness: 0.5
   m_NormalScale: 8
   m_DiffuseRemapMin: {x: 0, y: 0, z: 0, w: 0}
   m_DiffuseRemapMax: {x: 1, y: 1, z: 1, w: 1}

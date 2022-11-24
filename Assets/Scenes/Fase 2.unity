@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: f4319f348b52c2c4e8866aa11b936f24,
+    type: 2}
   m_LightingSettings: {fileID: 4890085278179872738, guid: 1101679ee89266f43a19ceba05cf3859,
     type: 2}
 --- !u!196 &4
@@ -1966,6 +1967,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agua (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7834962253878069328, guid: 97d68e28af07873459e1a131d13bbd56,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7834962253878069331, guid: 97d68e28af07873459e1a131d13bbd56,
         type: 3}
       propertyPath: m_IsTrigger
@@ -3021,6 +3027,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agua (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 7834962253878069328, guid: 97d68e28af07873459e1a131d13bbd56,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7834962253878069331, guid: 97d68e28af07873459e1a131d13bbd56,
         type: 3}
       propertyPath: m_IsTrigger
@@ -3099,6 +3110,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Agua (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834962253878069328, guid: 97d68e28af07873459e1a131d13bbd56,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7834962253878069331, guid: 97d68e28af07873459e1a131d13bbd56,
         type: 3}
@@ -22123,6 +22139,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agua (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 7834962253878069328, guid: 97d68e28af07873459e1a131d13bbd56,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7834962253878069331, guid: 97d68e28af07873459e1a131d13bbd56,
         type: 3}
       propertyPath: m_IsTrigger
@@ -22832,6 +22853,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Agua (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834962253878069328, guid: 97d68e28af07873459e1a131d13bbd56,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7834962253878069331, guid: 97d68e28af07873459e1a131d13bbd56,
         type: 3}
@@ -23829,6 +23855,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Agua (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834962253878069328, guid: 97d68e28af07873459e1a131d13bbd56,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7834962253878069331, guid: 97d68e28af07873459e1a131d13bbd56,
         type: 3}
@@ -25076,6 +25107,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Agua (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834962253878069328, guid: 97d68e28af07873459e1a131d13bbd56,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7834962253878069331, guid: 97d68e28af07873459e1a131d13bbd56,
         type: 3}
@@ -27520,6 +27556,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Agua (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 7834962253878069328, guid: 97d68e28af07873459e1a131d13bbd56,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
+      objectReference: {fileID: 0}
     - target: {fileID: 7834962253878069331, guid: 97d68e28af07873459e1a131d13bbd56,
         type: 3}
       propertyPath: m_IsTrigger
@@ -29286,6 +29327,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Agua (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7834962253878069328, guid: 97d68e28af07873459e1a131d13bbd56,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 2147483647
       objectReference: {fileID: 0}
     - target: {fileID: 7834962253878069331, guid: 97d68e28af07873459e1a131d13bbd56,
         type: 3}
@@ -32963,7 +33009,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 2147483647
   m_IsActive: 1
 --- !u!4 &1644901270
 Transform:

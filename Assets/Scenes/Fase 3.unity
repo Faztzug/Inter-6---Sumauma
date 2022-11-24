@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 0.5
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.58646315, g: 0.60471225, b: 0.6509434, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: b2f1a98efccfb644f8e084200a249527, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: 8162517b6ec2309499f99e303b29f146, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -8567,37 +8567,37 @@ PrefabInstance:
     - target: {fileID: 8776855620385849511, guid: ab8a1ca624df0b549abc78e0c54b620f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.1492769
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8776855620385849511, guid: ab8a1ca624df0b549abc78e0c54b620f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8776855620385849511, guid: ab8a1ca624df0b549abc78e0c54b620f,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9.985907
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8776855620385849511, guid: ab8a1ca624df0b549abc78e0c54b620f,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.99421537
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8776855620385849511, guid: ab8a1ca624df0b549abc78e0c54b620f,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.10407315
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8776855620385849511, guid: ab8a1ca624df0b549abc78e0c54b620f,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.026401278
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8776855620385849511, guid: ab8a1ca624df0b549abc78e0c54b620f,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0027636504
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8776855620385849511, guid: ab8a1ca624df0b549abc78e0c54b620f,
         type: 3}

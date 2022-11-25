@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 8012436342497829413}
   - component: {fileID: 1344046229419527113}
   - component: {fileID: 8396274734462612622}
-  m_Layer: 6
+  m_Layer: 13
   m_Name: EspiritoDoFOgo
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -43,14 +43,14 @@ public class Spiky : MonoBehaviour
             Debug.Log("SPIKY");
             DamageCoolDown = 0.5f;
             health?.UpdateHealth(damageByTouch);
-            var knockPos = knockBackOnlyUp ? Vector3.zero : this.transform.position;
+            var knockPos = knockBackOnlyUp ? GameState.PlayerTransform.position : this.transform.position;
             if(resetDoubleJumpOnTouch && playerMove != null) 
             {
-                playerMove?.KnockBack(this.transform.position, 2f);
+                playerMove?.KnockBack(knockPos, 1f);
                 playerMove.allowDoubleJump = true;
                 playerMove?.ResetKnockBackTimer();
             }
-            else playerMove?.KnockBack(this.transform.position);
+            else playerMove?.KnockBack(knockPos);
         }
     }
 

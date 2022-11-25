@@ -69,4 +69,15 @@ public class Menu : MonoBehaviour
         var saveData = saveManager.LoadGame();
         saveData = saveManager.ResetCheckPointValue(saveData);
     }
+    
+    private void Update()
+    {
+        if(Input.GetButtonDown("GodMode"))
+        {
+            Debug.Log("UNLOCK ALL LEVELS!");
+            if(fase1Button != null) fase1Button.interactable = true;
+            if(fase2Button != null) fase2Button.interactable = true;
+            if(fase3Button != null) fase3Button.interactable = true;
+        }
+    }
 }

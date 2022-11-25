@@ -41,10 +41,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3524513217701516994}
+  - component: {fileID: 3263135537466587218}
   - component: {fileID: 1747037412819120008}
   - component: {fileID: 2961964909145197340}
   - component: {fileID: 1294041414883867302}
-  - component: {fileID: 6664711733268630673}
+  - component: {fileID: 3255196357951801279}
+  - component: {fileID: 1388320982208921884}
   m_Layer: 0
   m_Name: default
   m_TagString: Untagged
@@ -67,6 +69,29 @@ Transform:
   m_Father: {fileID: 4078469246312097690}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3263135537466587218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5647436311634281977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90509290b0c85ab4ca02352e79d5aa4f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parentPlayer: 1
+  rgbd: {fileID: 1388320982208921884}
+  dragScaleFactor: 1
+  sinkingSound:
+    clip: {fileID: 8300000, guid: f386aaf605241ca4ca9c33f441a4bc5b, type: 3}
+    name: sink
+    volume: 1
+    pitch: 1
+    loop: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
 --- !u!33 &1747037412819120008
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -130,28 +155,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 8.3762665, y: 0.46370792, z: 8.628937}
   m_Center: {x: -0.04014969, y: 0.24498701, z: 1.2549896}
---- !u!114 &6664711733268630673
-MonoBehaviour:
+--- !u!65 &3255196357951801279
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5647436311634281977}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ba78634c961e011468d229ec1cc36a7e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brokenObject: {fileID: 5647436311634281977}
-  breakTime: 2
-  breakOnTouch: 1
-  breakOnDash: 1
-  breakOnMask: 1
-  breakSound:
-    clip: {fileID: 0}
-    name: 
-    volume: 1
-    pitch: 1
-    loop: 0
-    playOnAwake: 0
-    audioSource: {fileID: 0}
+  serializedVersion: 2
+  m_Size: {x: 8.329876, y: 1.19, z: 8.656129}
+  m_Center: {x: 0.0053288937, y: 0.49, z: 1.2793733}
+--- !u!54 &1388320982208921884
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5647436311634281977}
+  serializedVersion: 2
+  m_Mass: 100
+  m_Drag: 5
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0

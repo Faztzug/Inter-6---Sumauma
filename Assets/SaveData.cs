@@ -88,7 +88,7 @@ public class SaveData
 
     public SaveData()
     {
-        mute = true;
+        mute = false;
         musicVolume = 1f;
         sfxVolume = 1f;
         quality = Quality.High;

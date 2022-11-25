@@ -724,9 +724,9 @@ MonoBehaviour:
   knockBackForce: 0.6
   knockUpForce: 3
   knockBackTime: 0.5
-  dashSpeed: 30
+  dashSpeed: 35
   dashTime: 0.25
-  dashCooldownTime: 0.75
+  dashCooldownTime: 0.7
   rotateObj: {fileID: 5283581914375384392}
   gravity: 5
   dashSound:
@@ -831,6 +831,11 @@ MonoBehaviour:
   GenericAudioSourcePrefab: {fileID: 2334749048543388953, guid: 75ecb85e8bc728d408ef76c6108d57fc,
     type: 3}
   saveData:
+    mute: 1
+    sfxVolume: 1
+    musicVolume: 1
+    quality: 2
+    showFPS: 1
     unlockLevelsTo: 1
     heliconiaColetada: 0
     oncaColetada: 0

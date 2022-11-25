@@ -158,6 +158,7 @@ public class GameState : MonoBehaviour
         yield return new WaitForSeconds(waitTime);
         Debug.Log("End Cutscene On Time");
         SetMainCamera();
+        mainCanvas.warningAnim.SetActive(true);
     }
 
     public static void InstantiateSound(Sound sound, Vector3 position, float destroyTime = 10f)

@@ -9,6 +9,7 @@ public class MainCanvas : MonoBehaviour
     public GameObject alma2;
 
     public Image healthBar;
+    public GameObject warningAnim;
     public GameObject gameOver;
     public GameObject pauseMenu;
     public GameObject fpsCounter;

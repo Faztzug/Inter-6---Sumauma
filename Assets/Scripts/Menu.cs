@@ -21,6 +21,13 @@ public class Menu : MonoBehaviour
         JogarFase1();
     }
 
+    public void NovoJogo()
+    {
+        var save = new SaveManager();
+        save.ResetData();
+        JogarFase1();
+    }
+
     public void JogarFase1()
     {
         Debug.Log("Foi fase 1");

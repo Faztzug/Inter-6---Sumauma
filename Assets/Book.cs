@@ -47,8 +47,19 @@ public class Book : MonoBehaviour
         // if(Input.GetButtonDown("Right")) Debug.Log("Right");
         // else if(Input.GetButtonDown("Left")) Debug.Log("Left");
         if(GameState.GameStateInstance != null && !GameState.isGamePaused) return;
-        if(Input.GetButtonDown("Right")) FlipPages(FlipDirection.Right);
-        else if(Input.GetButtonDown("Left")) FlipPages(FlipDirection.Left);
+        if(Input.GetButtonDown("Right")) 
+        {
+            FlipPages(FlipDirection.Right);
+            return;
+        }
+        if(Input.GetButtonDown("Left")) 
+        {
+            FlipPages(FlipDirection.Left);
+            return;
+        }
+
+        if(Input.GetAxisRaw("Flip") > 0) FlipPages(FlipDirection.Right);
+        else if(Input.GetAxisRaw("Flip") < 0) FlipPages(FlipDirection.Left);
     }
 
     public void FlipToPage(int leftPage)

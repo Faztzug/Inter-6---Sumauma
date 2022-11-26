@@ -144,7 +144,7 @@ public class Movimento : MonoBehaviour
         }
         cam.transform.rotation = camRot;
         rotateObj.position = transform.position + movement;
-        if(Input.GetButton("Sprint")) currentSpeed += runAccelaration * Time.deltaTime;
+        if(Input.GetButton("Sprint") || Input.GetAxisRaw("Sprint") != 0) currentSpeed += runAccelaration * Time.deltaTime;
         else currentSpeed -= runAccelaration * Time.deltaTime;
 
         movement = movement * Time.deltaTime;

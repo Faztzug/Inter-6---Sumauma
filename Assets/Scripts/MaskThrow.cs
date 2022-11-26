@@ -9,6 +9,7 @@ public class MaskThrow : MonoBehaviour
 {
     [SerializeField] private Transform maskParent;
     [SerializeField] private Transform mask;
+    private Collider[] maskColliders;
     private MaskDamage MaskDamage;
     [SerializeField] private float maskMaxGrow = 1.5f;
     private Quaternion maskRotation;
@@ -28,11 +29,13 @@ public class MaskThrow : MonoBehaviour
     [SerializeField] private TrailRenderer[] trails;
     [SerializeField] private VisualEffect trailVFX;
     private float trailTime;
-    Tween localPosTween;
+    private Tween localPosTween;
+    
     private void Start() 
     {
         maskLocalPos = mask.localPosition;
         maskRgbd = mask.GetComponent<Rigidbody>();
+        maskColliders = mask.GetComponentsInChildren<Collider>();
         MaskDamage = mask.GetComponent<MaskDamage>();
         maskScale = mask.localScale;
         maskCurScale = 1f;
@@ -42,6 +45,7 @@ public class MaskThrow : MonoBehaviour
             trail.emitting = false;
             trailTime = trail.time;
         }
+        foreach (var col in maskColliders) col.enabled = true;
         trailVFX.Stop();
         maskRgbd.constraints = RigidbodyConstraints.FreezeAll;
     }
@@ -59,6 +63,8 @@ public class MaskThrow : MonoBehaviour
             maskCurScale = 1f;
             throwCurSpeed = throwAccelaration / 2f;
             trailVFX.Play();
+            StopAllCoroutines();
+            foreach (var col in maskColliders) col.enabled = true;
         }
 
         if(onThrow)
@@ -97,6 +103,7 @@ public class MaskThrow : MonoBehaviour
 
         var distance = Vector3.Distance(mask.position, transform.position);
         if(distance < 1.5f) OnReatach();
+        StartCoroutine(ComeOverHere());
     }
 
     private void OnReatach()
@@ -111,6 +118,20 @@ public class MaskThrow : MonoBehaviour
         mask.DOScale(maskScale, 0.1f);
         //mask.localRotation = maskRotation;
         foreach (var trail in trails) trail.DOTime(0, 0.5f).OnComplete(() => EndTrail(trail));
+        StopAllCoroutines();
+        foreach (var col in maskColliders) col.enabled = true;
+    }
+
+    IEnumerator ComeOverHere()
+    {
+        yield return new WaitForSecondsRealtime(5f);
+        foreach (var col in maskColliders) col.enabled = false;
+
+
+        yield return new WaitForSecondsRealtime(0.2f);
+        foreach (var col in maskColliders) col.enabled = true;
+
+        StartCoroutine(ComeOverHere());
     }
 
     private void EndTrail(TrailRenderer trail)

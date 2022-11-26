@@ -719,7 +719,7 @@ MonoBehaviour:
   strafeMultiplier: 1
   jumpForce: 2.75
   allowDoubleJump: 1
-  doubleJump: 1.8
+  doubleJump: 1.2
   playerMiddle: {fileID: 3711937139597399921}
   knockBackForce: 0.6
   knockUpForce: 3

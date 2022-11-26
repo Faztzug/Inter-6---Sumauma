@@ -44,13 +44,28 @@ public class Book : MonoBehaviour
 
     private void Update() 
     {
-        if(!GameState.isGamePaused || inTransition) return;
+        // if(Input.GetButtonDown("Right")) Debug.Log("Right");
+        // else if(Input.GetButtonDown("Left")) Debug.Log("Left");
+        if(GameState.GameStateInstance != null && !GameState.isGamePaused) return;
         if(Input.GetButtonDown("Right")) FlipPages(FlipDirection.Right);
         else if(Input.GetButtonDown("Left")) FlipPages(FlipDirection.Left);
     }
 
+    public void FlipToPage(int leftPage)
+    {
+        if(inTransition) return;
+        if(leftPage % 2 != 0) leftPage++;
+        if(currentPages[0] == leftPage) return; 
+        var direction = leftPage > currentPages[0] ? FlipDirection.Right : FlipDirection.Left;
+        Debug.Log(direction.ToString());
+        if(direction == FlipDirection.Right) currentPages = new int[2]{leftPage-2,leftPage-1};
+        else currentPages = new int[2]{leftPage+2,leftPage+3};
+        FlipPages(direction);
+    }
+
     public async void FlipPages(FlipDirection direction)
     {
+        if(inTransition) return;
         var newPages = new int[2]{currentPages[0],currentPages[1]};
         if(direction == FlipDirection.Right)
         {

@@ -6,44 +6,35 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-    [SerializeField] private Button fase1Button;
-    [SerializeField] private Button fase2Button;
-    [SerializeField] private Button fase3Button;
 
     private void Start() 
     {
-        SetFasesButtonsState();
         if(SceneManager.GetActiveScene().name == "Menu Inicial") ResetCheckPoint();
     }
 
     public void Jogar()
     {
-        JogarFase1();
+        SceneManager.LoadScene("Fase 1");
     }
 
     public void NovoJogo()
     {
         var save = new SaveManager();
         save.ResetData();
-        JogarFase1();
-    }
-
-    public void JogarFase1()
-    {
-        Debug.Log("Foi fase 1");
         SceneManager.LoadScene("Fase 1");
     }
 
-    public void JogarFase2()
+    public void FlipBookRight()
     {
-        Debug.Log("Foi fase 2");
-        SceneManager.LoadScene("Fase 2");
+        MenuInicial.book.FlipPages(Book.FlipDirection.Right);
     }
-
-    public void JogarFase3()
+    public void FlipBookInstructions()
     {
-        Debug.Log("Foi fase 3");
-        SceneManager.LoadScene("Fase 3");
+        MenuInicial.book.FlipToPage(4);
+    }
+    public void FlipBookBack()
+    {
+        MenuInicial.book.FlipToPage(0);
     }
 
     public void JogarNovamente()
@@ -61,30 +52,10 @@ public class Menu : MonoBehaviour
         Application.Quit();
     }
 
-    private void SetFasesButtonsState()
-    {
-        var saveManager = new SaveManager();
-        var levelsUnlocked = saveManager.LoadGame().unlockLevelsTo;
-        if(fase1Button != null) fase1Button.interactable = true;
-        if(fase2Button != null) fase2Button.interactable = levelsUnlocked >= 2;
-        if(fase3Button != null) fase3Button.interactable = levelsUnlocked >= 3;
-    }
-
     private void ResetCheckPoint()
     {
         var saveManager = new SaveManager();
         var saveData = saveManager.LoadGame();
         saveData = saveManager.ResetCheckPointValue(saveData);
-    }
-    
-    private void Update()
-    {
-        if(Input.GetButtonDown("GodMode"))
-        {
-            Debug.Log("UNLOCK ALL LEVELS!");
-            if(fase1Button != null) fase1Button.interactable = true;
-            if(fase2Button != null) fase2Button.interactable = true;
-            if(fase3Button != null) fase3Button.interactable = true;
-        }
     }
 }

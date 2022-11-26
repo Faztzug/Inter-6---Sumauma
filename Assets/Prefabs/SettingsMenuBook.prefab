@@ -2537,6 +2537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f69f605c20ae41f4da819a870094eb69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isInGame: 1
   mute: {fileID: 5818311147608342416}
   music: {fileID: 5941372840395268225}
   sfx: {fileID: 8050408784988964654}

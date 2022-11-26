@@ -682,7 +682,7 @@ CharacterController:
   m_Height: 1.9
   m_Radius: 0.48
   m_SlopeLimit: 45
-  m_StepOffset: 0.3
+  m_StepOffset: 0.4
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 1.05, z: 0}
@@ -849,6 +849,7 @@ MonoBehaviour:
     - 0
     animalColetadoNaFase: 0
     plantaColetadaNaFase: 0
+    jumpCutscene: 0
 --- !u!82 &4045199953686460968
 AudioSource:
   m_ObjectHideFlags: 0

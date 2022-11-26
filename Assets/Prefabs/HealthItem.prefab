@@ -4836,6 +4836,7 @@ GameObject:
   - component: {fileID: 7045931822665792421}
   - component: {fileID: 7065745331213609858}
   - component: {fileID: 8960299334979251384}
+  - component: {fileID: 4404438611922457692}
   m_Layer: 0
   m_Name: HealthItem
   m_TagString: Untagged
@@ -4975,6 +4976,19 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     audioSource: {fileID: 0}
+--- !u!135 &4404438611922457692
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5730396739286511920}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.8
+  m_Center: {x: 0.35, y: 0.93, z: -0.71}
 --- !u!1001 &1742587691015275251
 PrefabInstance:
   m_ObjectHideFlags: 0

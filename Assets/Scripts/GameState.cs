@@ -57,11 +57,12 @@ public class GameState : MonoBehaviour
         plantaColetadaNaFase = SaveData.plantaColetadaNaFase;
         Application.targetFrameRate = 60;
         Debug.Log("HAS CUTSCENE CAM? " + cutSceneGOCam != null);
+        
         if(cutSceneGOCam != null)
         {
             cutsceneCamera = cutSceneGOCam.GetComponent<Camera>();
             var timelineAnim = cutSceneGOCam.GetComponent<PlayableDirector>();
-            if(timelineAnim != null && timelineAnim.duration > 1f)
+            if(timelineAnim != null && timelineAnim.duration > 1f && !SaveData.jumpCutscene)
             {
                 SetMainCamera();
                 SetCutsceneCamera();
@@ -75,10 +76,13 @@ public class GameState : MonoBehaviour
                 SetMainCamera();
             }
         }
+
+        saveData.jumpCutscene = false;
         mainCanvas.ResumeGame();
         mainCanvas.GetColectableImages();
         UpdateQuality();
         SettingsUpdated?.Invoke();
+        saveManager.SaveGame(saveData);
     }
     private void Start() 
     {
@@ -103,6 +107,8 @@ public class GameState : MonoBehaviour
     {
         var ob = GameStateInstance;
         var sceneName = ob.gameObject.scene.name;
+        SaveData.jumpCutscene = true;
+        saveManager.SaveGame(SaveData);
         ob.StartCoroutine(ob.LoadSceneCourotine(waitTime, sceneName));
     }
 

@@ -86,6 +86,9 @@ public class SaveData
     public bool animalColetadoNaFase;
     public bool plantaColetadaNaFase;
 
+    [Header("Cutscene")]
+    public bool jumpCutscene;
+
     public SaveData()
     {
         mute = false;

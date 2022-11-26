@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8963019049923055646}
-  - component: {fileID: 8963019049923055641}
   - component: {fileID: 6552066391539594116}
+  - component: {fileID: 8963019049923055641}
   m_Layer: 3
   m_Name: MusicPlayer
   m_TagString: Untagged
@@ -33,6 +33,26 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6552066391539594116
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963019049923055640}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bced0f23d434e04580eed3f6f81adc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  musicSound:
+    clip: {fileID: 8300000, guid: a7fe5a841a87556498411eb3cead2ae6, type: 3}
+    name: fogoMix
+    volume: 1
+    pitch: 1
+    loop: 1
+    playOnAwake: 1
+    audioSource: {fileID: 0}
 --- !u!82 &8963019049923055641
 AudioSource:
   m_ObjectHideFlags: 0
@@ -129,23 +149,3 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &6552066391539594116
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8963019049923055640}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8bced0f23d434e04580eed3f6f81adc6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  musicSound:
-    clip: {fileID: 8300000, guid: a7fe5a841a87556498411eb3cead2ae6, type: 3}
-    name: fogoMix
-    volume: 1
-    pitch: 1
-    loop: 1
-    playOnAwake: 1
-    audioSource: {fileID: 0}

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Trampolim : MonoBehaviour
 {
     [SerializeField] private float force;
+    [SerializeField] Sound boingSound;
+    [SerializeField] AudioSource audioSource;
 
     private void OnTriggerEnter(Collider other) 
     {
@@ -12,6 +14,7 @@ public class Trampolim : MonoBehaviour
         {
             var moveScript =  other.gameObject.GetComponent<Movimento>();
             moveScript.ImpulseJump(force);
+            boingSound.PlayOn(audioSource);
         }
     }
 }

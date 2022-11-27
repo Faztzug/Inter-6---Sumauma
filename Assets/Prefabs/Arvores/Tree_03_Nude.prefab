@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 374030195237337118}
   - component: {fileID: 2509671793064987860}
   - component: {fileID: 3825157604512256082}
+  - component: {fileID: 7530400196911266593}
   m_Layer: 0
   m_Name: Tree_03_Nude
   m_TagString: Untagged
@@ -98,3 +99,28 @@ CapsuleCollider:
   m_Height: 21.79493
   m_Direction: 1
   m_Center: {x: 0.01, y: 10.578724, z: -0.1}
+--- !u!205 &7530400196911266593
+LODGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4167194436051889409}
+  serializedVersion: 2
+  m_LocalReferencePoint: {x: -0.45068073, y: 10.578724, z: -0.17721558}
+  m_Size: 21.79493
+  m_FadeMode: 0
+  m_AnimateCrossFading: 0
+  m_LastLODIsBillboard: 0
+  m_LODs:
+  - screenRelativeHeight: 0.020947874
+    fadeTransitionWidth: 0
+    renderers:
+    - renderer: {fileID: 2509671793064987860}
+  - screenRelativeHeight: 0.015575994
+    fadeTransitionWidth: 0
+    renderers: []
+  - screenRelativeHeight: 0.010956863
+    fadeTransitionWidth: 0
+    renderers: []
+  m_Enabled: 1

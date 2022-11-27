@@ -19,7 +19,7 @@ public class MusicPlayer : MonoBehaviour
         audioSource.Play();
         CurrentPlaying = musicSound.clip;
         
-        GameState.SettingsUpdated += UpdateVolume;
+        GameState.OnSettingsUpdated += UpdateVolume;
     }
 
     public void UpdateVolume()
@@ -36,6 +36,6 @@ public class MusicPlayer : MonoBehaviour
 
     private void OnDestroy() 
     {
-        GameState.SettingsUpdated -= UpdateVolume;
+        GameState.OnSettingsUpdated -= UpdateVolume;
     }
 }

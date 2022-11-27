@@ -377,6 +377,9 @@ MonoBehaviour:
     name: CheckPoint
     volume: 1
     pitch: 1
+    pitchRNG:
+    - 0
+    - 0
     loop: 0
     playOnAwake: 0
     audioSource: {fileID: 0}
@@ -603,7 +606,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 87382b52671cdb940bc8c5470ef7d1eb, type: 2}
+      objectReference: {fileID: 2100000, guid: c88756374705acd4cac47930e4bbe25e, type: 2}
     - target: {fileID: 919132149155446097, guid: 1d676aeefe15fd741aa3d7341221cb62,
         type: 3}
       propertyPath: m_Name

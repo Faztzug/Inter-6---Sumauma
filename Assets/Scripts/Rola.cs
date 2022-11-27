@@ -25,6 +25,7 @@ public class Rola : MonoBehaviour
     private Quaternion startRotation;
     private Tween fixRotationTween;
     [SerializeField] private int addForcePower = 50;
+    [SerializeField] private AudioSource audioSource;
 
     void Start()
     {
@@ -42,6 +43,7 @@ public class Rola : MonoBehaviour
 
     private void StartRooling()
     {
+        if(audioSource != null) audioSource.Play();
         rgbd.isKinematic = false;
         MoveSpeedVector = fowardDirection * MoveSpeed;
         if(RollingDirection == Direction.Foward) 

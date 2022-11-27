@@ -135,10 +135,13 @@ MonoBehaviour:
   breakOnDash: 1
   breakOnMask: 1
   breakSound:
-    clip: {fileID: 8300000, guid: f386aaf605241ca4ca9c33f441a4bc5b, type: 3}
+    clip: {fileID: 8300000, guid: 685bc62bdd394834d93e46083c649e4e, type: 3}
     name: LogBreak
     volume: 1
     pitch: 1
+    pitchRNG:
+    - 0
+    - 0
     loop: 0
     playOnAwake: 0
     audioSource: {fileID: 0}

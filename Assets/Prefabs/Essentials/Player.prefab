@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 128654557}
   - component: {fileID: 128654558}
   - component: {fileID: 1391995443418274384}
+  - component: {fileID: 3094083889250971102}
   m_Layer: 3
   m_Name: TrailVFX
   m_TagString: Untagged
@@ -210,6 +211,102 @@ TrailRenderer:
   m_MinVertexDistance: 0.3
   m_Autodestruct: 0
   m_Emitting: 1
+--- !u!82 &3094083889250971102
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 128654556}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 61316f493a94e0c4c87c2f28a847f1a6, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 50
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1413782308
 GameObject:
   m_ObjectHideFlags: 0
@@ -734,6 +831,9 @@ MonoBehaviour:
     name: Dash
     volume: 1
     pitch: 1
+    pitchRNG:
+    - 0
+    - 0
     loop: 0
     playOnAwake: 0
     audioSource: {fileID: 0}
@@ -742,6 +842,9 @@ MonoBehaviour:
     name: Jump
     volume: 1
     pitch: 1
+    pitchRNG:
+    - 0
+    - 0
     loop: 0
     playOnAwake: 0
     audioSource: {fileID: 0}
@@ -769,6 +872,9 @@ MonoBehaviour:
     name: death
     volume: 1
     pitch: 1
+    pitchRNG:
+    - 0
+    - 0
     loop: 0
     playOnAwake: 0
     audioSource: {fileID: 0}
@@ -777,6 +883,9 @@ MonoBehaviour:
     name: PlayerDamage1
     volume: 1
     pitch: 1
+    pitchRNG:
+    - 0
+    - 0
     loop: 0
     playOnAwake: 0
     audioSource: {fileID: 0}
@@ -784,6 +893,9 @@ MonoBehaviour:
     name: PlayerDamage2
     volume: 1
     pitch: 1
+    pitchRNG:
+    - 0
+    - 0
     loop: 0
     playOnAwake: 0
     audioSource: {fileID: 0}
@@ -812,6 +924,18 @@ MonoBehaviour:
   - {fileID: 3740232610994307936}
   - {fileID: 1391995443418274384}
   trailVFX: {fileID: 128654557}
+  maskSound:
+    clip: {fileID: 8300000, guid: 6b4d459977a0c8241a48d91c4a7f364b, type: 3}
+    name: mask
+    volume: 1
+    pitch: 1
+    pitchRNG:
+    - -0.06
+    - 0.1
+    loop: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  audioSource: {fileID: 4045199953686460968}
 --- !u!114 &374411949610352336
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1360,7 +1484,7 @@ TrailRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4846241635644836803}
-  m_Enabled: 0
+  m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -1483,11 +1607,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: -1
+  audioSource: {fileID: 417262803}
   hitSounds:
   - clip: {fileID: 8300000, guid: 61316f493a94e0c4c87c2f28a847f1a6, type: 3}
     name: MaskHit1
     volume: 1
     pitch: 1
+    pitchRNG:
+    - -0.09
+    - 0.16
     loop: 0
     playOnAwake: 0
     audioSource: {fileID: 0}
@@ -1495,6 +1623,26 @@ MonoBehaviour:
     name: MaskHit2
     volume: 1
     pitch: 1
+    pitchRNG:
+    - -0.06
+    - 0.12
+    loop: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  hitSounds2:
+  - clip: {fileID: 8300000, guid: 67cfcdd296df8c4478d3c9c8c8434a55, type: 3}
+    name: hit 2.1
+    volume: 1
+    pitch: 0
+    pitchRNG: []
+    loop: 0
+    playOnAwake: 0
+    audioSource: {fileID: 0}
+  - clip: {fileID: 8300000, guid: 20aa6a3efed5c73468aceaa9c150eb1c, type: 3}
+    name: hit 2.2
+    volume: 1
+    pitch: 0
+    pitchRNG: []
     loop: 0
     playOnAwake: 0
     audioSource: {fileID: 0}

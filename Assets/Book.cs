@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Threading.Tasks;
 using DG.Tweening;
+using UnityEngine.UI;
 
 public class Book : MonoBehaviour
 {
@@ -30,6 +31,8 @@ public class Book : MonoBehaviour
     private int[] currentPages = new int[2]{0,0};
     private bool inTransition;
     [SerializeField] float rotationTime = 1f;
+    [SerializeField] Sound flipSound;
+    [SerializeField] AudioSource audioSource;
 
     private void Start() 
     {
@@ -112,6 +115,8 @@ public class Book : MonoBehaviour
 
         if(currentTransitionLeftPageGO) Destroy(currentTransitionLeftPageGO);
         if(currentTransitionRightPageGO) Destroy(currentTransitionRightPageGO);
+
+        flipSound.PlayOn(audioSource);
 
         var rotateTo = Vector3.zero;
         WichPage firstPage = WichPage.Both;

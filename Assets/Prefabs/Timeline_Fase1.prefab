@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1743272265942648496}
+  - component: {fileID: 2487437932944289568}
   m_Layer: 0
   m_Name: Timeline_Fase1
   m_TagString: Untagged
@@ -31,3 +32,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2487437932944289568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3349277714308673934}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 903c24e995d1b1843b2beb8d75fb9729, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -36,7 +36,8 @@ public class GameState : MonoBehaviour
     public SaveData saveData;
     public static SaveData SaveData { get => gameState.saveData; set => gameState.saveData = value; }
     public static SaveManager saveManager = new SaveManager();
-    public static Action SettingsUpdated;
+    public static Action OnSettingsUpdated;
+    public static Action OnCutsceneEnd;
 
     public static bool animalColetadoNaFase;
     public static bool plantaColetadaNaFase;
@@ -81,7 +82,7 @@ public class GameState : MonoBehaviour
         mainCanvas.ResumeGame();
         mainCanvas.GetColectableImages();
         UpdateQuality();
-        SettingsUpdated?.Invoke();
+        OnSettingsUpdated?.Invoke();
         saveManager.SaveGame(saveData);
     }
     private void Start() 
@@ -165,6 +166,7 @@ public class GameState : MonoBehaviour
         Debug.Log("End Cutscene On Time");
         SetMainCamera();
         mainCanvas.warningAnim.SetActive(true);
+        OnCutsceneEnd?.Invoke();
     }
 
     public static void InstantiateSound(Sound sound, Vector3 position, float destroyTime = 10f)

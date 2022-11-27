@@ -48,12 +48,12 @@ public class MainCanvas : MonoBehaviour
         GetColectableImages();
         UpdateFPSCounterState();
 
-        GameState.SettingsUpdated += UpdateFPSCounterState;
+        GameState.OnSettingsUpdated += UpdateFPSCounterState;
     }
 
     private void OnDestroy() 
     {
-        GameState.SettingsUpdated -= UpdateFPSCounterState;
+        GameState.OnSettingsUpdated -= UpdateFPSCounterState;
     }
 
     void Update()

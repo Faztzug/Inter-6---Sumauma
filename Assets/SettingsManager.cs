@@ -27,13 +27,13 @@ public class SettingsManager : MonoBehaviour
         fps.isOn = data.showFPS;
 
         if(isInGame) GameState.OnSettingsUpdated += SettingsHasUpdated;
-        else MenuInicial.SettingsUpdated += SettingsHasUpdated;
+        else MenuInicial.OnSettingsUpdated += SettingsHasUpdated;
     }
     public void UpdateSave()
     {
         saveManager.SaveGame(GetSaveData());
         if(isInGame) GameState.OnSettingsUpdated?.Invoke();
-        else MenuInicial.SettingsUpdated?.Invoke();
+        else MenuInicial.OnSettingsUpdated?.Invoke();
     }
     public void MuteChanged(bool value)
     {
@@ -71,6 +71,6 @@ public class SettingsManager : MonoBehaviour
     private void OnDestroy() 
     {
         if(isInGame) GameState.OnSettingsUpdated -= SettingsHasUpdated;
-        else MenuInicial.SettingsUpdated -= SettingsHasUpdated;
+        else MenuInicial.OnSettingsUpdated -= SettingsHasUpdated;
     }
 }

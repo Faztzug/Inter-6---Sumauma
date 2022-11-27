@@ -76,6 +76,7 @@ public class MainCanvas : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         pauseMenu.SetActive(true);
         // pauseMainMenu.SetActive(true);
+        book.gameObject.SetActive(true);
         book.ResetPagesToStart();
         book.gameObject.SetActive(true);
         Time.timeScale = 0f;

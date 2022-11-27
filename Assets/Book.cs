@@ -4,6 +4,7 @@ using UnityEngine;
 using System.Threading.Tasks;
 using DG.Tweening;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class Book : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class Book : MonoBehaviour
         Left,
         Both,
     }
+    [SerializeField] private Button rightButton;
+    [SerializeField] private Button leftButton;
     [SerializeField] private List<GameObject> pages;
     [SerializeField] private RectTransform leftPageHolder;
     [SerializeField] private RectTransform rightPageHolder;
@@ -33,10 +36,15 @@ public class Book : MonoBehaviour
     [SerializeField] float rotationTime = 1f;
     [SerializeField] Sound flipSound;
     [SerializeField] AudioSource audioSource;
+    private EventSystem eventSystem => EventSystem.current;
+    private int horizontalRaw;
+    private int verticalRaw;
+    private GameObject lastSelected;
 
     private void Start() 
     {
         ResetPagesToStart();
+        UpdateButtons();
     }
 
     public void ResetPagesToStart()
@@ -50,19 +58,43 @@ public class Book : MonoBehaviour
         // if(Input.GetButtonDown("Right")) Debug.Log("Right");
         // else if(Input.GetButtonDown("Left")) Debug.Log("Left");
         if(GameState.GameStateInstance != null && !GameState.isGamePaused) return;
+
+        // if(Input.GetAxisRaw("Horizontal") != 0 || Input.GetAxisRaw("Vertical") != 0)
+        // {
+        //     return;
+        // }
+
+        // if(eventSystem.currentSelectedGameObject != null) lastSelected = eventSystem.currentSelectedGameObject;
+        // else if(lastSelected != null) eventSystem.SetSelectedGameObject(lastSelected);
+
         if(Input.GetButtonDown("Right")) 
         {
-            FlipPages(FlipDirection.Right);
+            rightButton.onClick?.Invoke();
+            //FlipPages(FlipDirection.Right);
             return;
         }
         if(Input.GetButtonDown("Left")) 
         {
-            FlipPages(FlipDirection.Left);
+            leftButton.onClick?.Invoke();
+            //FlipPages(FlipDirection.Left);
             return;
         }
 
-        if(Input.GetAxisRaw("Flip") > 0) FlipPages(FlipDirection.Right);
-        else if(Input.GetAxisRaw("Flip") < 0) FlipPages(FlipDirection.Left);
+        // if(Input.GetAxisRaw("Flip") > 0) FlipPages(FlipDirection.Right);
+        // else if(Input.GetAxisRaw("Flip") < 0) FlipPages(FlipDirection.Left);
+        
+        if(eventSystem.currentSelectedGameObject != null) return;
+        if(eventSystem.currentSelectedGameObject == null)
+        {
+            var selectable = GetComponentInChildren<Selectable>();
+            if(selectable != null) eventSystem.SetSelectedGameObject(selectable.gameObject);
+        }
+    }
+
+    private void UpdateButtons()
+    {
+        rightButton.interactable = currentPages[1] < pages.Count - 2;
+        leftButton.interactable = currentPages[0] > 1;
     }
 
     public void FlipToPage(int leftPage)
@@ -77,6 +109,8 @@ public class Book : MonoBehaviour
         FlipPages(direction);
     }
 
+    public void FlipRight() => FlipPages(FlipDirection.Right);
+    public void FlipLeft() => FlipPages(FlipDirection.Left);
     public async void FlipPages(FlipDirection direction)
     {
         if(inTransition) return;
@@ -160,6 +194,7 @@ public class Book : MonoBehaviour
 
         inTransition = false;
         transitionPages.gameObject.SetActive(false);
+        UpdateButtons();
     }
 
     private void InstantiatePage(WichPage wichPage)
@@ -183,5 +218,7 @@ public class Book : MonoBehaviour
                 currentRightPageGO.SetActive(true);
             }
         }
+        var selectable = GetComponentInChildren<Selectable>();
+        if(selectable != null) eventSystem.SetSelectedGameObject(selectable.gameObject);
     }
 }

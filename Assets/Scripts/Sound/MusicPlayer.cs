@@ -19,11 +19,13 @@ public class MusicPlayer : MonoBehaviour
         audioSource.Play();
         CurrentPlaying = musicSound.clip;
         
-        GameState.OnSettingsUpdated += UpdateVolume;
+        if(GameState.GameStateInstance != null) GameState.OnSettingsUpdated += UpdateVolume;
+        if(MenuInicial.MenuInicialInstance != null) MenuInicial.OnSettingsUpdated += UpdateVolume;
     }
 
     public void UpdateVolume()
     {
+        if(!this.gameObject) return;
         if(GameState.GameStateInstance != null)
         {
             audioSource.volume = GameState.SaveData.mute ? 0f : musicSound.volume * GameState.SaveData.musicVolume;

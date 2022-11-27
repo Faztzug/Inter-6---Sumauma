@@ -21,7 +21,7 @@ public class MenuInicial : MonoBehaviour
     public SaveData saveData;
     public static SaveData SaveData { get => menuInicial.saveData; set => menuInicial.saveData = value; }
     public static SaveManager saveManager = new SaveManager();
-    public static Action SettingsUpdated;
+    public static Action OnSettingsUpdated;
 
     private void Awake()
     {
@@ -34,7 +34,7 @@ public class MenuInicial : MonoBehaviour
         saveData.jumpCutscene = false;
         saveData = saveManager.ResetCheckPointValue(saveData);
         UpdateQuality();
-        SettingsUpdated?.Invoke();
+        OnSettingsUpdated?.Invoke();
         saveManager.SaveGame(saveData);
     }
     private void Start() 

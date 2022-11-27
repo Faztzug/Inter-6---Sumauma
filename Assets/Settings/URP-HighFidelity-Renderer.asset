@@ -90,10 +90,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b3d386ba5cd94485973aee1479b272e, type: 3}
   m_Name: Efeitos
   m_EditorClassIdentifier: 
-  m_Active: 0
+  m_Active: 1
   settings:
     passTag: Efeitos
-    Event: 230
+    Event: 1000
     filterSettings:
       RenderQueueType: 0
       LayerMask:
@@ -104,19 +104,19 @@ MonoBehaviour:
     overrideMaterialPassIndex: 0
     overrideDepthState: 1
     depthCompareFunction: 4
-    enableWrite: 1
+    enableWrite: 0
     stencilSettings:
-      overrideStencilState: 0
-      stencilReference: 3
-      stencilCompareFunction: 6
-      passOperation: 2
-      failOperation: 2
-      zFailOperation: 2
+      overrideStencilState: 1
+      stencilReference: 1
+      stencilCompareFunction: 3
+      passOperation: 0
+      failOperation: 0
+      zFailOperation: 1
     cameraSettings:
       overrideCamera: 0
-      restoreCamera: 0
-      offset: {x: -0.84, y: 0, z: 0, w: 1}
-      cameraFieldOfView: 4
+      restoreCamera: 1
+      offset: {x: -47.55, y: -19.63, z: 0, w: 1}
+      cameraFieldOfView: 128.8
 --- !u!114 &-1878332245247344467
 MonoBehaviour:
   m_ObjectHideFlags: 0

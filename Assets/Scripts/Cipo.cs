@@ -10,6 +10,17 @@ public class Cipo : MonoBehaviour
     [SerializeField] private float maxRotation = 0.5f;
     [SerializeField] private float damage = 30f;
     private bool positiveRot = true;
+    private bool PositiveRot 
+    {
+        get => positiveRot;
+        set 
+        {
+            if(positiveRot != value) sound.PlayOn(audioSource);
+            positiveRot = value;
+        }
+    }
+    [SerializeField] private Sound sound;
+    [SerializeField] private AudioSource audioSource;
 
     void Start()
     {
@@ -26,9 +37,9 @@ public class Cipo : MonoBehaviour
     private void Update() 
     {
         var rot = rootVine.localRotation;
-        if(rot.z > maxRotation) positiveRot = false;
-        if(rot.z < -maxRotation) positiveRot = true;
-        var rotSpeed = positiveRot ? rotationSpeed : -rotationSpeed; 
+        if(rot.z > maxRotation) PositiveRot = false;
+        if(rot.z < -maxRotation) PositiveRot = true;
+        var rotSpeed = PositiveRot ? rotationSpeed : -rotationSpeed; 
         rot.z += (rotSpeed) * Time.deltaTime;
         rootVine.localRotation = rot;
     }

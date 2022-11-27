@@ -12,6 +12,7 @@ public class EnemyFireGenericIA : EnemyIA
     [SerializeField] private float knockBackTime = 0.5f;
     private float knockBackCounterTime;
     public bool onKnockBack => knockBackCounterTime > 0;
+    [SerializeField] private Sound hitPlayerSound;
 
     protected virtual void OnCollisionEnter(Collision collisionInfo)
     {
@@ -24,6 +25,8 @@ public class EnemyFireGenericIA : EnemyIA
                 if(playerMove.onKnockBack || GameState.IsPlayerDead) return;
                 health.UpdateHealth(touchDamage);
                 playerMove.KnockBack(this.transform.position);
+                hitPlayerSound.PlayOn(audioSource);
+                Debug.Log("Played Hit " + audioSource.isPlaying);
             }
             else Debug.Log("Player Health Null?");
         }

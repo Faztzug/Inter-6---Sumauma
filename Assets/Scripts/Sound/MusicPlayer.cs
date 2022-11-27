@@ -24,7 +24,14 @@ public class MusicPlayer : MonoBehaviour
 
     public void UpdateVolume()
     {
-        audioSource.volume = GameState.SaveData.mute ? 0f : musicSound.volume * GameState.SaveData.musicVolume;
+        if(GameState.GameStateInstance != null)
+        {
+            audioSource.volume = GameState.SaveData.mute ? 0f : musicSound.volume * GameState.SaveData.musicVolume;
+        }
+        else if(MenuInicial.MenuInicialInstance != null)
+        {
+            audioSource.volume = MenuInicial.SaveData.mute ? 0f : musicSound.volume * MenuInicial.SaveData.musicVolume;
+        }
     }
 
     private void OnDestroy() 

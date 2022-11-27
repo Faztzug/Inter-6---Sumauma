@@ -22,6 +22,8 @@ public class EnemyIA : MonoBehaviour
     [SerializeField] protected int damageStunAsync = 3;
     protected int stunTimerAsync;
     protected float outlineMaxThickness;
+    [SerializeField] protected Sound[] damageSounds;
+    protected AudioSource audioSource;
 
     protected virtual void Start() 
     {
@@ -30,6 +32,7 @@ public class EnemyIA : MonoBehaviour
         player = GameState.PlayerTransform;
         agent = GetComponent<NavMeshAgent>();
         rgbd = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
         rgbd.maxAngularVelocity = 0;
         distance = Mathf.Infinity;
         //anim = GetComponent<Animator>();
@@ -92,6 +95,19 @@ public class EnemyIA : MonoBehaviour
         }
         this.StopAllCoroutines();
         Destroy(this.gameObject);
+    }
+
+    public void TookDamage()
+    {
+        StartCoroutine(PlayDamageSound());
+    }
+
+    IEnumerator PlayDamageSound()
+    {
+        yield return new WaitForEndOfFrame();
+        var index = Random.Range(0, damageSounds.Length);
+        damageSounds[index].Setup(audioSource);
+        audioSource.Play();
     }
     public virtual void Stun()
     {

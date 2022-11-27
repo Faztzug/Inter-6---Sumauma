@@ -30,6 +30,8 @@ public class MaskThrow : MonoBehaviour
     [SerializeField] private VisualEffect trailVFX;
     private float trailTime;
     private Tween localPosTween;
+    [SerializeField] Sound maskSound;
+    [SerializeField] AudioSource audioSource;
     
     private void Start() 
     {
@@ -52,7 +54,7 @@ public class MaskThrow : MonoBehaviour
 
     private void Update() 
     {
-        if(Input.GetButtonDown("Mask") && !onThrow && !GameState.IsPlayerDead && !GameState.isGamePaused)
+        if(Input.GetButtonDown("Mask") && !onThrow && !GameState.IsPlayerDead && !GameState.isGamePaused && !GameState.onCutscene)
         {
             localPosTween?.Kill();
             onThrow = true;
@@ -65,6 +67,7 @@ public class MaskThrow : MonoBehaviour
             trailVFX.Play();
             StopAllCoroutines();
             foreach (var col in maskColliders) col.enabled = true;
+            maskSound.PlayOn(audioSource);
         }
 
         if(onThrow)

@@ -23,7 +23,7 @@ public class GameState : MonoBehaviour
     static public bool GodMode => GameStateInstance.godMode;
     static public void ToogleGodMode() => GameStateInstance.godMode = !GodMode;
     public Transform playerLookAt;
-    static public bool onCutscene;
+    static public bool isOnCutscene;
     static public bool skipCutscene;
     private Camera mainCamera;
     static public Camera MainCamera { get => gameState.mainCamera; }
@@ -75,6 +75,7 @@ public class GameState : MonoBehaviour
                 Debug.Log("empty clip");
                 SetCutsceneCamera();
                 SetMainCamera();
+                OnCutsceneEnd?.Invoke();
             }
         }
 
@@ -93,6 +94,15 @@ public class GameState : MonoBehaviour
         {
             playerTransform.GetComponent<Movimento>().GoToCheckPoint(checkpoint);
         } 
+    }
+
+    private void Update()
+    {
+        if(isOnCutscene && Input.GetButtonDown("Pause"))
+        {
+            StartCoroutine(EndCutsceneOnTime(0f));
+            mainCanvas.ResumeGame();
+        }
     }
 
     public static bool KeyItemAlreadyColected(ColectableType type)
@@ -123,7 +133,7 @@ public class GameState : MonoBehaviour
     {
         gameState.mainCamera.gameObject.SetActive(false);
         gameState.cutsceneCamera?.gameObject.SetActive(true);
-        onCutscene = true;
+        isOnCutscene = true;
     }
 
     public static void SetMainCamera()
@@ -131,7 +141,7 @@ public class GameState : MonoBehaviour
         Debug.Log("Set Main Camera");
         gameState.cutsceneCamera?.gameObject.SetActive(false);
         gameState.mainCamera.gameObject.SetActive(true);
-        onCutscene = false;
+        isOnCutscene = false;
         cinemachineFreeLook.m_YAxisRecentering.RecenterNow();
         cinemachineFreeLook.m_RecenterToTargetHeading.RecenterNow();
         cinemachineFreeLook.m_XAxis.m_Recentering.RecenterNow();
@@ -162,11 +172,15 @@ public class GameState : MonoBehaviour
 
     IEnumerator EndCutsceneOnTime(float waitTime)
     {
+        yield return new WaitForEndOfFrame();
+        mainCanvas.ResumeGame();
         yield return new WaitForSeconds(waitTime);
+        if (!isOnCutscene) yield break;
         Debug.Log("End Cutscene On Time");
         SetMainCamera();
         mainCanvas.warningAnim.SetActive(true);
         OnCutsceneEnd?.Invoke();
+        mainCanvas.ResumeGame();
     }
 
     public static void InstantiateSound(Sound sound, Vector3 position, float destroyTime = 10f)

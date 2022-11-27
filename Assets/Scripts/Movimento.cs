@@ -103,7 +103,7 @@ public class Movimento : MonoBehaviour
             podeDoubleJump = true;
             //anim.SetBool("isJumping", false);
 
-            if (Input.GetButtonDown("Jump") && !GameState.IsPlayerDead && !onKnockBack && !GameState.onCutscene)
+            if (Input.GetButtonDown("Jump") && !GameState.IsPlayerDead && !onKnockBack && !GameState.isOnCutscene)
             {
                 gravityAcceleration = jumpForce;
                 jumpSound.PlayOn(audioSource);
@@ -116,7 +116,7 @@ public class Movimento : MonoBehaviour
         {
             if (Input.GetButtonDown("Jump") && podeDoubleJump && allowDoubleJump 
             && gravityAcceleration < jumpForce * doubleJump && !GameState.IsPlayerDead
-            && !onKnockBack && !GameState.onCutscene)
+            && !onKnockBack && !GameState.isOnCutscene)
             {
                 gravityAcceleration = jumpForce * doubleJump;
                 podeDoubleJump = false;
@@ -128,7 +128,7 @@ public class Movimento : MonoBehaviour
 
         DashUpdate();
 
-        if(onKnockBack || GameState.onCutscene)
+        if(onKnockBack || GameState.isOnCutscene)
         {
             vertical = Vector3.zero;
             horizontal = Vector3.zero;
@@ -180,7 +180,7 @@ public class Movimento : MonoBehaviour
         var velocitylAbs = Mathf.Abs(vertical.magnitude) + Mathf.Abs(horizontal.magnitude);
         anim.SetFloat("Movement", velocitylAbs);
 
-        if (velocitylAbs > 0.1f && Input.GetButton("Sprint"))
+        if (velocitylAbs > 0.1f && (Input.GetButton("Sprint") || Input.GetAxisRaw("Sprint") != 0))
         {
             anim.SetBool("Correndo", true);
         }
@@ -189,7 +189,7 @@ public class Movimento : MonoBehaviour
 
     private void DashUpdate()
     {
-        if (Input.GetButtonDown("Dash") && !GameState.IsPlayerDead && !onKnockBack && !GameState.onCutscene)
+        if (Input.GetButtonDown("Dash") && !GameState.IsPlayerDead && !onKnockBack && !GameState.isOnCutscene)
         {
             StartCoroutine(Dash());
         }

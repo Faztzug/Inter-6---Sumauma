@@ -54,7 +54,7 @@ public class MaskThrow : MonoBehaviour
 
     private void Update() 
     {
-        if(Input.GetButtonDown("Mask") && !onThrow && !GameState.IsPlayerDead && !GameState.isGamePaused && !GameState.onCutscene)
+        if(Input.GetButtonDown("Mask") && !onThrow && !GameState.IsPlayerDead && !GameState.isGamePaused && !GameState.isOnCutscene)
         {
             localPosTween?.Kill();
             onThrow = true;

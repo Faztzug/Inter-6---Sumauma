@@ -14,7 +14,7 @@ public class SaveManager
         FileStream file = File.Create(Application.persistentDataPath + kSavePath); 
         bf.Serialize(file, saveData);
         file.Close();
-        Debug.Log("Game data saved!");
+        //Debug.Log("Game data saved!");
     }
     public SaveData LoadGame()
     {

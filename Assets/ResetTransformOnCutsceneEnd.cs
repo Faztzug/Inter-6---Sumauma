@@ -11,8 +11,8 @@ public class ResetTransformOnCutsceneEnd : MonoBehaviour
 
     private void Reset()
     {
-        Debug.Log("RESET CUTSCENE TRANSFORM");
         this.transform.localRotation = Quaternion.identity;
+        Debug.Log("RESET CUTSCENE TRANSFORM " + this.transform.localRotation.ToString());
     }
 
     private void OnDestroy() 

@@ -66,7 +66,6 @@ public class SettingsManager : MonoBehaviour
     {
         if(isInGame) GameState.UpdateQuality();
         else MenuInicial.UpdateQuality();
-        Debug.Log("SETTINGS UPDATE");
     }
 
     private void OnDestroy() 

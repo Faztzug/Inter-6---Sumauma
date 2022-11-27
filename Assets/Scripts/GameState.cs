@@ -75,7 +75,7 @@ public class GameState : MonoBehaviour
                 Debug.Log("empty clip");
                 SetCutsceneCamera();
                 SetMainCamera();
-                OnCutsceneEnd?.Invoke();
+                StartCoroutine(EndCutsceneOnTime(1f));
             }
         }
 
@@ -175,7 +175,7 @@ public class GameState : MonoBehaviour
         yield return new WaitForEndOfFrame();
         mainCanvas.ResumeGame();
         yield return new WaitForSeconds(waitTime);
-        if (!isOnCutscene) yield break;
+        //if (!isOnCutscene) yield break;
         Debug.Log("End Cutscene On Time");
         SetMainCamera();
         mainCanvas.warningAnim.SetActive(true);

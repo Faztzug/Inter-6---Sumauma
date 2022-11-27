@@ -863,7 +863,7 @@ MonoBehaviour:
   maxHealth: 100
   health: 100
   effectTimeMultplier: 10
-  effectGainMultplier: 2
+  effectGainMultplier: 4
   effectDownMultplier: 0.5
   fallingDeathHeight: -1000
   audioSource: {fileID: 4045199953686460968}

@@ -209,6 +209,8 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     audioSource: {fileID: 0}
+  deathEffect: {fileID: 7723219379744116919, guid: 60a53f76d25889c46b669a2c7505cc67,
+    type: 3}
   enemysPrefabs:
   - {fileID: 3204672943901893549, guid: f3f79b373d765bc40a1ff47b28dbf82c, type: 3}
   enemysList: []

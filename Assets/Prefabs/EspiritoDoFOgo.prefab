@@ -258,6 +258,8 @@ MonoBehaviour:
     loop: 0
     playOnAwake: 0
     audioSource: {fileID: 0}
+  deathEffect: {fileID: 7723219379744116919, guid: 02c83e0a21ad61d4bb253d802cbdda9c,
+    type: 3}
 --- !u!135 &2504046486531961549
 SphereCollider:
   m_ObjectHideFlags: 0

@@ -127,11 +127,11 @@ public class MaskThrow : MonoBehaviour
 
     IEnumerator ComeOverHere()
     {
-        yield return new WaitForSecondsRealtime(5f);
+        yield return new WaitForSecondsRealtime(4.5f);
         foreach (var col in maskColliders) col.enabled = false;
 
 
-        yield return new WaitForSecondsRealtime(0.2f);
+        yield return new WaitForSecondsRealtime(0.25f);
         foreach (var col in maskColliders) col.enabled = true;
 
         StartCoroutine(ComeOverHere());

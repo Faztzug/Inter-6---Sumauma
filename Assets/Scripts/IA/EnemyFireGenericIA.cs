@@ -13,6 +13,7 @@ public class EnemyFireGenericIA : EnemyIA
     private float knockBackCounterTime;
     public bool onKnockBack => knockBackCounterTime > 0;
     [SerializeField] private Sound hitPlayerSound;
+    [SerializeField] private GameObject deathEffect;
 
     protected virtual void OnCollisionEnter(Collision collisionInfo)
     {
@@ -62,6 +63,12 @@ public class EnemyFireGenericIA : EnemyIA
         knockBackDir.y = 0.8f;
         rgbd.AddForce(knockBackDir * knockBackForce, ForceMode.Impulse);
         knockBackCounterTime = knockBackTime;
+    }
+
+    public override void EnemyDeath()
+    {
+        Instantiate(deathEffect, this.transform.position, this.transform.rotation);
+        base.EnemyDeath();
     }
 
     protected override void OnValidate()

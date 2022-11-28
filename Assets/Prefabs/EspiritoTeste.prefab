@@ -64,6 +64,9 @@ MonoBehaviour:
     name: Coleta
     volume: 1
     pitch: 1
+    pitchRNG:
+    - 0
+    - 0
     loop: 0
     playOnAwake: 0
     audioSource: {fileID: 0}

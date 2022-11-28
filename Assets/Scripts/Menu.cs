@@ -24,6 +24,16 @@ public class Menu : MonoBehaviour
         SceneManager.LoadScene("Fase 1");
     }
 
+    public void Continuar()
+    {
+        var save = new SaveManager();
+        var level = save.LoadGame().unlockLevelsTo;
+
+        if(level <= 1) SceneManager.LoadScene("Fase 1");
+        else if(level == 2) SceneManager.LoadScene("Fase 2");
+        else if(level >= 3) SceneManager.LoadScene("Fase 3");
+    }
+
     public void FlipBookRight()
     {
         MenuInicial.book.FlipPages(Book.FlipDirection.Right);

@@ -22,4 +22,10 @@ public class PauseMenu : MonoBehaviour
         opcoes.onClick.RemoveListener(GameState.mainCanvas.OpenOptions);
         menuInicial.onClick.RemoveListener(GameState.mainCanvas.VoltarMenu);
     }
+
+    public void Restart()
+    {
+        GameState.saveManager.ResetCheckPointValue(GameState.SaveData);
+        GameState.ReloadScene(0f);
+    }
 }

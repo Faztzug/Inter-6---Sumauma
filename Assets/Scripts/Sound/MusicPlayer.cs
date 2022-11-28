@@ -25,7 +25,7 @@ public class MusicPlayer : MonoBehaviour
 
     public void UpdateVolume()
     {
-        if(!this.gameObject) return;
+        if(this == null) return;
         if(GameState.GameStateInstance != null)
         {
             audioSource.volume = GameState.SaveData.mute ? 0f : musicSound.volume * GameState.SaveData.musicVolume;

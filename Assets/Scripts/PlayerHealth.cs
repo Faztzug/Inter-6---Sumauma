@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Rendering;
+using UnityEngine.EventSystems;
 //using UnityEngine.Rendering.PostProcessing;
 
 public class PlayerHealth : Health
@@ -122,5 +123,6 @@ public class PlayerHealth : Health
         GameState.mainCanvas.ResumeGame();
         Cursor.lockState = CursorLockMode.None;
         GameState.mainCanvas.gameOver.SetActive(true);
+        EventSystem.current.SetSelectedGameObject(GameState.mainCanvas.gameOver.GetComponentInChildren<Button>().gameObject);
     }
 }

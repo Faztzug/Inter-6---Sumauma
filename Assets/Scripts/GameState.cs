@@ -24,6 +24,7 @@ public class GameState : MonoBehaviour
     static public void ToogleGodMode() => GameStateInstance.godMode = !GodMode;
     public Transform playerLookAt;
     static public bool isOnCutscene;
+    static public bool hasOpenCutsceneBook;
     static public bool skipCutscene;
     private Camera mainCamera;
     static public Camera MainCamera { get => gameState.mainCamera; }
@@ -171,21 +172,23 @@ public class GameState : MonoBehaviour
 
     IEnumerator EndCutsceneOnTime(float waitTime)
     {
-        yield return new WaitForEndOfFrame();
         mainCanvas.ResumeGame();
         yield return new WaitForSeconds(waitTime);
-        //if (!isOnCutscene) yield break;
         Debug.Log("End Cutscene On Time");
         SetMainCamera();
         mainCanvas.warningAnim.SetActive(true);
         OnCutsceneEnd?.Invoke();
+        if (waitTime > 10) yield break;
         mainCanvas.PauseGame();
+        yield return new WaitForSecondsRealtime(0.1f);
         var historyPage = 0;
-        if(GetSceneName() == "Fase 1") historyPage = 0;
-        if(GetSceneName() == "Fase 2") historyPage = 2;
-        if(GetSceneName() == "Fase 3") historyPage = 4;
+        if(GetSceneName() == "Fase 1") historyPage = 2;
+        if(GetSceneName() == "Fase 2") historyPage = 3;
+        if(GetSceneName() == "Fase 3") historyPage = 6;
 
         mainCanvas.book.FlipToPage(historyPage);
+
+        hasOpenCutsceneBook = true;
     }
 
     public static void InstantiateSound(Sound sound, Vector3 position, float destroyTime = 10f)

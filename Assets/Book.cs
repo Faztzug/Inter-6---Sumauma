@@ -99,9 +99,11 @@ public class Book : MonoBehaviour
 
     public void FlipToPage(int leftPage)
     {
+        Debug.Log("Flip To....");
         if(inTransition) return;
         if(leftPage % 2 != 0) leftPage++;
         if(currentPages[0] == leftPage) return; 
+        Debug.Log("Flip To");
         var direction = leftPage > currentPages[0] ? FlipDirection.Right : FlipDirection.Left;
         Debug.Log(direction.ToString());
         if(direction == FlipDirection.Right) currentPages = new int[2]{leftPage-2,leftPage-1};

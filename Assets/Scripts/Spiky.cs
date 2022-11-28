@@ -55,12 +55,12 @@ public class Spiky : MonoBehaviour
         }
         else if(other.gameObject.CompareTag("Enemy"))
         {
-            var enemy = other.transform.GetComponent<EnemyFireGenericIA>();
-            var enemyHealth = other.transform.GetComponent<Health>();
+            var enemy = other.gameObject.GetComponent<EnemyFireGenericIA>();
+            var enemyHealth = other.gameObject.GetComponent<Health>();
             Debug.Log("ENEMY WATER DEATH");
             var knockPos = knockBackOnlyUp ? other.transform.position - new Vector3(0,1,0) : this.transform.position;
-            enemy?.KnockBack(knockPos);
-            health?.UpdateHealth(damageByTouch);
+            enemy.KnockBack(knockPos);
+            enemyHealth.UpdateHealth(damageByTouch);
         }
     }
 

@@ -50,7 +50,7 @@ public class Movimento : MonoBehaviour
     // [SerializeField] private AudioClip passosClip;
 
     private Vector3 checkpointPosition;
-    private int tryGoCheckPointTimes = 5;
+    private int tryGoCheckPointTimes = 30;
 
     private bool paused;
 
@@ -88,7 +88,7 @@ public class Movimento : MonoBehaviour
         {
             Debug.Log("Going to BRAZIL " + checkpointPosition.ToString());
             transform.position = Vector3.zero;
-            controller.Move(checkpointPosition);
+            //controller.Move(checkpointPosition);
             transform.position = checkpointPosition;
             tryGoCheckPointTimes--;
             if(tryGoCheckPointTimes <= 0) checkpointPosition = Vector3.zero;

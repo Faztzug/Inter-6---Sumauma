@@ -19,3 +19,14 @@ public class EspeciePagina : MonoBehaviour
         textoObj.SetActive(coletado);
     }
 }
+
+public class CutscenePagina : MonoBehaviour
+{
+    [SerializeField] int levelUnlock;
+
+    void Start()
+    {
+        var level = GameState.SaveData.unlockLevelsTo;
+        this.gameObject.SetActive(levelUnlock >= level);
+    }
+}

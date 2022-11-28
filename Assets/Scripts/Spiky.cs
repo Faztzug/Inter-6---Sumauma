@@ -9,6 +9,7 @@ public class Spiky : MonoBehaviour
     [SerializeField] private bool damageOnTrigger;
     [SerializeField] private bool resetDoubleJumpOnTouch;
     [SerializeField] private bool knockBackOnlyUp;
+    [SerializeField] private bool damageEnemys;
     private PlayerHealth health;
     protected Movimento playerMove;
     private float DamageCoolDown = 0.5f;
@@ -51,6 +52,15 @@ public class Spiky : MonoBehaviour
                 playerMove?.ResetKnockBackTimer();
             }
             else playerMove?.KnockBack(knockPos);
+        }
+        else if(other.gameObject.CompareTag("Enemy"))
+        {
+            var enemy = other.gameObject.GetComponent<EnemyFireGenericIA>();
+            var enemyHealth = other.gameObject.GetComponent<Health>();
+            Debug.Log("ENEMY WATER DEATH");
+            var knockPos = knockBackOnlyUp ? other.transform.position - new Vector3(0,1,0) : this.transform.position;
+            enemy.KnockBack(knockPos);
+            enemyHealth.UpdateHealth(damageByTouch);
         }
     }
 

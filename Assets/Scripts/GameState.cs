@@ -57,6 +57,7 @@ public class GameState : MonoBehaviour
         animalColetadoNaFase = SaveData.animalColetadoNaFase;
         plantaColetadaNaFase = SaveData.plantaColetadaNaFase;
         Application.targetFrameRate = 60;
+        mainCanvas.ResumeGame();
         Debug.Log("HAS CUTSCENE CAM? " + cutSceneGOCam != null);
         
         if(cutSceneGOCam != null)
@@ -80,7 +81,6 @@ public class GameState : MonoBehaviour
         }
 
         saveData.jumpCutscene = false;
-        mainCanvas.ResumeGame();
         mainCanvas.GetColectableImages();
         UpdateQuality();
         OnSettingsUpdated?.Invoke();
@@ -101,7 +101,6 @@ public class GameState : MonoBehaviour
         if(isOnCutscene && Input.GetButtonDown("Pause"))
         {
             StartCoroutine(EndCutsceneOnTime(0f));
-            mainCanvas.ResumeGame();
         }
     }
 
@@ -180,7 +179,13 @@ public class GameState : MonoBehaviour
         SetMainCamera();
         mainCanvas.warningAnim.SetActive(true);
         OnCutsceneEnd?.Invoke();
-        mainCanvas.ResumeGame();
+        mainCanvas.PauseGame();
+        var historyPage = 0;
+        if(GetSceneName() == "Fase 1") historyPage = 0;
+        if(GetSceneName() == "Fase 2") historyPage = 2;
+        if(GetSceneName() == "Fase 3") historyPage = 4;
+
+        mainCanvas.book.FlipToPage(historyPage);
     }
 
     public static void InstantiateSound(Sound sound, Vector3 position, float destroyTime = 10f)

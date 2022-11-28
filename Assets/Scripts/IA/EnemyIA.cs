@@ -23,6 +23,7 @@ public class EnemyIA : MonoBehaviour
     protected int stunTimerAsync;
     protected float outlineMaxThickness;
     [SerializeField] protected Sound[] damageSounds;
+    [SerializeField] protected Sound deathSound;
     protected AudioSource audioSource;
 
     protected virtual void Start() 
@@ -83,6 +84,7 @@ public class EnemyIA : MonoBehaviour
         if(agent.isOnNavMesh) agent.SetDestination(transform.position);
 
         alive = false;
+        GameState.InstantiateSound(deathSound, this.transform.position);
 
         foreach (var collider in GetComponentsInChildren<Collider>())
         {

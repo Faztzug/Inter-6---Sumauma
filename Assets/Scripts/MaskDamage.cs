@@ -8,10 +8,12 @@ public class MaskDamage : MonoBehaviour
     [SerializeField] private AudioSource audioSource;
     public Sound[] hitSounds;
     public Sound[] hitSounds2;
+    public Sound nullHitSound;
 
     private void OnCollisionEnter(Collision other) 
     {
-        if(other.gameObject.CompareTag("Enemy") && transform.parent == null)
+        if(transform.parent != null) return;
+        if(other.gameObject.CompareTag("Enemy"))
         {
             if(other.gameObject.TryGetComponent<Health>(out Health enemyHeatlh))
             {
@@ -24,6 +26,10 @@ public class MaskDamage : MonoBehaviour
             {
                 enemy.KnockBack(this.transform.position);
             }
+        }
+        else
+        {
+            nullHitSound.PlayOn(audioSource);
         }
     }
     

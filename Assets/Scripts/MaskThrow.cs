@@ -67,7 +67,8 @@ public class MaskThrow : MonoBehaviour
             trailVFX.Play();
             StopAllCoroutines();
             foreach (var col in maskColliders) col.enabled = true;
-            maskSound.PlayOn(audioSource);
+            maskSound.Setup(audioSource);
+            audioSource.Play();
         }
 
         if(onThrow)

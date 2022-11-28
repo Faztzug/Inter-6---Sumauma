@@ -41,9 +41,12 @@ public class Movimento : MonoBehaviour
     private float gravityAcceleration;
     
     [Header("Audio")]
-    private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSource2;
     [SerializeField] Sound dashSound;
     [SerializeField] Sound jumpSound;
+    [SerializeField] Sound jumpVoice;
+    [SerializeField] Sound doubleJumpVoice;
     // [SerializeField] private AudioClip passosClip;
 
     private Vector3 checkpointPosition;
@@ -107,6 +110,7 @@ public class Movimento : MonoBehaviour
             {
                 gravityAcceleration = jumpForce;
                 jumpSound.PlayOn(audioSource);
+                jumpVoice.PlayOn(audioSource2);
                 anim.SetTrigger("Jump");
             }
             else gravityAcceleration = -gravity * 10f * Time.deltaTime;
@@ -121,6 +125,7 @@ public class Movimento : MonoBehaviour
                 gravityAcceleration = jumpForce * doubleJump;
                 podeDoubleJump = false;
                 jumpSound.PlayOn(audioSource);
+                doubleJumpVoice.PlayOn(audioSource2);
                 anim.SetTrigger("Jump");
             }
             gravityAcceleration -= gravity * Time.deltaTime;

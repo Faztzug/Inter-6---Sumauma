@@ -222,7 +222,7 @@ MonoBehaviour:
   - 0.184
   - 0.514
   player: {fileID: 0}
-  findPlayerDistance: 50
+  findPlayerDistance: 65
   minPlayerDistance: 0.1
   state: {fileID: 0}
   alive: 1

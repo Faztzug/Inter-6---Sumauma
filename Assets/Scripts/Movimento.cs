@@ -14,7 +14,7 @@ public class Movimento : MonoBehaviour
     [SerializeField] private float jumpForce = 10f;
     public bool allowDoubleJump = true;
     [SerializeField] private float doubleJump = 0.5f;
-    private bool podeDoubleJump = false;
+    public bool podeDoubleJump = false;
     [SerializeField] private Transform playerMiddle;
     [SerializeField] private float knockBackForce = 5f;
     [SerializeField] private float knockUpForce = 2f;

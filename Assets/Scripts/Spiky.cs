@@ -47,7 +47,7 @@ public class Spiky : MonoBehaviour
             if(resetDoubleJumpOnTouch && playerMove != null) 
             {
                 playerMove?.KnockBack(knockPos, 1f);
-                playerMove.allowDoubleJump = true;
+                playerMove.podeDoubleJump = true;
                 playerMove?.ResetKnockBackTimer();
             }
             else playerMove?.KnockBack(knockPos);

@@ -15,6 +15,7 @@ public class Trampolim : MonoBehaviour
             var moveScript =  other.gameObject.GetComponent<Movimento>();
             moveScript.ImpulseJump(force);
             boingSound.PlayOn(audioSource);
+            moveScript.podeDoubleJump = true;
         }
     }
 }

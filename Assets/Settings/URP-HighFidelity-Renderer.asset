@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Active: 1
   settings:
     passTag: Efeitos
-    Event: 1000
+    Event: 450
     filterSettings:
       RenderQueueType: 0
       LayerMask:
@@ -104,12 +104,12 @@ MonoBehaviour:
     overrideMaterialPassIndex: 0
     overrideDepthState: 1
     depthCompareFunction: 4
-    enableWrite: 0
+    enableWrite: 1
     stencilSettings:
       overrideStencilState: 1
       stencilReference: 1
       stencilCompareFunction: 3
-      passOperation: 0
+      passOperation: 5
       failOperation: 0
       zFailOperation: 1
     cameraSettings:

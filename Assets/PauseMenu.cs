@@ -25,8 +25,6 @@ public class PauseMenu : MonoBehaviour
 
     public void Restart()
     {
-        GameState.SaveData.jumpCutscene = false;
-        GameState.saveManager.ResetCheckPointValue(GameState.SaveData);
-        GameState.ReloadScene(0f);
+        GameState.RestartStage();
     }
 }

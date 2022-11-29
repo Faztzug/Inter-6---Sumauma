@@ -41,7 +41,6 @@ public class Spiky : MonoBehaviour
             if(health == null) health = other.transform.GetComponent<PlayerHealth>();
             if(playerMove == null) playerMove = other.gameObject.GetComponent<Movimento>();
             if(playerMove != null && playerMove.onKnockBack == true || DamageCoolDown > 0) return;
-            Debug.Log("SPIKY");
             DamageCoolDown = 0.5f;
             health?.UpdateHealth(damageByTouch);
             var knockPos = knockBackOnlyUp ? GameState.PlayerTransform.position : this.transform.position;
@@ -57,7 +56,6 @@ public class Spiky : MonoBehaviour
         {
             var enemy = other.gameObject.GetComponent<EnemyFireGenericIA>();
             var enemyHealth = other.gameObject.GetComponent<Health>();
-            Debug.Log("ENEMY WATER DEATH");
             var knockPos = knockBackOnlyUp ? other.transform.position - new Vector3(0,1,0) : this.transform.position;
             enemy.KnockBack(knockPos);
             enemyHealth.UpdateHealth(damageByTouch);

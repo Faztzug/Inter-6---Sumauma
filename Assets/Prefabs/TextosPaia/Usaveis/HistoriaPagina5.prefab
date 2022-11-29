@@ -1,0 +1,152 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6249522054230733819
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 903618953934080896, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_text
+      value: "Por fim, a protetora da Floresta Amaz\xF4nica enviou o guardi\xE3o
+        para coletar a alma do boto cor de rosa e do guaran\xE1. Ele usufruiu das
+        vit\xF3rias r\xE9gia como plataforma para n\xE3o se mergulhar no grande rio
+        que ali empecilhava seu caminho para a entrega de todas as esp\xE9cies coletadas
+        para a M\xE3e Suma\xFAma. \r\nPor\xE9m teve cuidado tamb\xE9m para n\xE3o
+        afundar junto com as vit\xF3rias r\xE9gia, uma planta muito fr\xE1gil que
+        n\xE3o aguenta por muito tempo corpos pesados acima dela."
+      objectReference: {fileID: 0}
+    - target: {fileID: 903618953934080896, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 77.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 2150838896008944153, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_Name
+      value: HistoriaPagina5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3962515500582761048, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: levelUnlock
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326204919897432030, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_text
+      value: RIO
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326204919897432030, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 124.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8dc47e3e8e199e4aa3fde3207e89f19, type: 3}

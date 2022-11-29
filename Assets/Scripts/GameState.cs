@@ -42,6 +42,7 @@ public class GameState : MonoBehaviour
 
     public static bool animalColetadoNaFase;
     public static bool plantaColetadaNaFase;
+    private bool jumpBook;
 
     private void Awake()
     {
@@ -55,6 +56,8 @@ public class GameState : MonoBehaviour
         animalColetadoNaFase = false;
         plantaColetadaNaFase = false;
         SaveData = saveManager.LoadGame();
+
+        jumpBook = saveData.jumpCutscene;
         animalColetadoNaFase = SaveData.animalColetadoNaFase;
         plantaColetadaNaFase = SaveData.plantaColetadaNaFase;
         Application.targetFrameRate = 60;
@@ -80,6 +83,11 @@ public class GameState : MonoBehaviour
                 StartCoroutine(EndCutsceneOnTime(1f));
             }
         }
+        else 
+        {
+            Debug.Log("CAM IS NULL");
+            StartCoroutine(EndCutsceneOnTime(1f));
+        }
 
         saveData.jumpCutscene = false;
         mainCanvas.GetColectableImages();
@@ -102,7 +110,16 @@ public class GameState : MonoBehaviour
         if(isOnCutscene && Input.GetButtonDown("Pause"))
         {
             StartCoroutine(EndCutsceneOnTime(0f));
+            StartCoroutine(StartJumpBook());
         }
+    }
+
+    public static void RestartStage()
+    {
+        SaveData.jumpCutscene = false;
+        saveManager.ResetCheckPointValue(SaveData);
+        saveManager.SaveGame(SaveData);
+        ReloadScene(0f, false);
     }
 
     public static bool KeyItemAlreadyColected(ColectableType type)
@@ -114,11 +131,11 @@ public class GameState : MonoBehaviour
 
     public static string GetSceneName() => SceneManager.GetActiveScene().name;
 
-    public static void ReloadScene(float waitTime)
+    public static void ReloadScene(float waitTime, bool jumpCutscene = true)
     {
         var ob = GameStateInstance;
         var sceneName = ob.gameObject.scene.name;
-        SaveData.jumpCutscene = true;
+        SaveData.jumpCutscene = jumpCutscene;
         saveManager.SaveGame(SaveData);
         ob.StartCoroutine(ob.LoadSceneCourotine(waitTime, sceneName));
     }
@@ -178,17 +195,22 @@ public class GameState : MonoBehaviour
         SetMainCamera();
         mainCanvas.warningAnim.SetActive(true);
         OnCutsceneEnd?.Invoke();
-        if (waitTime > 10) yield break;
+        if (jumpBook) yield break;
         mainCanvas.PauseGame();
         yield return new WaitForSecondsRealtime(0.1f);
         var historyPage = 0;
-        if(GetSceneName() == "Fase 1") historyPage = 2;
-        if(GetSceneName() == "Fase 2") historyPage = 3;
-        if(GetSceneName() == "Fase 3") historyPage = 6;
+        if(GetSceneName() == "Fase 1") historyPage = 4;
+        if(GetSceneName() == "Fase 2") historyPage = 10;
+        if(GetSceneName() == "Fase 3") historyPage = 12;
 
         mainCanvas.book.FlipToPage(historyPage);
 
         hasOpenCutsceneBook = true;
+    }
+    IEnumerator StartJumpBook()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+        jumpBook = true;
     }
 
     public static void InstantiateSound(Sound sound, Vector3 position, float destroyTime = 10f)
@@ -263,7 +285,7 @@ public class GameState : MonoBehaviour
         return false;
     }
 
-    public void CheckEndStage()
+    public void CheckEndStage(bool force = false)
     {
         SaveData.animalColetadoNaFase = animalColetadoNaFase;
         SaveData.plantaColetadaNaFase = plantaColetadaNaFase;
@@ -289,14 +311,24 @@ public class GameState : MonoBehaviour
             }
             LoadScene("Fase 3");
         }
-        if (GetSceneName() == "Fase 3")
+        if (GetSceneName() == "Fase 3" && force)
         {
             if(saveData.unlockLevelsTo < 4)
             {
                 saveData.unlockLevelsTo = 4;
                 saveManager.SaveGame(saveData);
             }
-            LoadScene("Menu inicial");
+            //LoadScene("Menu inicial");
+            StartCoroutine(EndGame());
         }
+    }
+
+    IEnumerator EndGame()
+    {
+        mainCanvas.PauseGame();
+        yield return new WaitForSecondsRealtime(1f);
+        mainCanvas.book.FlipToPage(20);
+        yield return new WaitForSecondsRealtime(7f);
+        LoadScene("Menu inicial");
     }
 }

@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6249522054230733819
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 903618953934080896, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_text
+      value: "Ainda havia muito desafio pela frente. O guardi\xE3o foi enviado \xE0s
+        matas de v\xE1rzea a fim de encontrar a alma da Arara Azul e do A\xE7a\xED,
+        por\xE9m devia tomar bastante cuidado para n\xE3o cair nas terras alagadas
+        do local.\r\nmas gra\xE7a a ben\xE7\xE3o da M\xE3e Suma\xFAma, o protetor
+        possu\xEDa a habilidade que iria impedi-lo de sucumbir no local inundado."
+      objectReference: {fileID: 0}
+    - target: {fileID: 903618953934080896, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 94.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2150838896008944153, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_Name
+      value: HistoriaPagina4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3962515500582761048, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: levelUnlock
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326204919897432030, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_text
+      value: "v\xE1rzea"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326204919897432030, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 124.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8dc47e3e8e199e4aa3fde3207e89f19, type: 3}

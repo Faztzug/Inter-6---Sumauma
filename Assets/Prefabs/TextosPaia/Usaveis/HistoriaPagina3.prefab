@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6249522054230733819
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 903618953934080896, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_text
+      value: "Um dia, ele enviou muitos s\xFAditos para consumir a Floresta Amaz\xF4nica,
+        isso acabou destruindo muitas esp\xE9cies e quase levando a extin\xE7\xE3o
+        de algumas, prejudicando todo o ecossistema e at\xE9 mesmo a vida humana.
+        A M\xE3e Suma\xFAma enviou muitos dos seus guardi\xF5es para salvar a alma
+        de esp\xE9cies que acabaram morrendo durante as queimadas que o Fogo causou,
+        duas delas s\xE3o a On\xE7a pintada e a Helic\xF4nia, que se encontravam
+        perdidas no meio de tanto calor."
+      objectReference: {fileID: 0}
+    - target: {fileID: 903618953934080896, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 81.35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2150838896008944153, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_Name
+      value: HistoriaPagina3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326204919897432030, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_text
+      value: "esp\xEDritos"
+      objectReference: {fileID: 0}
+    - target: {fileID: 4326204919897432030, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_fontSize
+      value: 124.55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5257488300679801053, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f8dc47e3e8e199e4aa3fde3207e89f19, type: 3}

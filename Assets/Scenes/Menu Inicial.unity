@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028334, g: 0.2257134, b: 0.30692226, a: 1}
+  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -181,7 +181,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 67453327a1e62024fa507a4d6eb3f3f6, type: 3}
+  m_Sprite: {fileID: -1328172524, guid: 3b07f4e73825a5840a25603c11b29c33, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -434,7 +434,7 @@ PrefabInstance:
     - target: {fileID: 6544220831800389049, guid: eb835445f3858964fbe53afe3b6dea66,
         type: 3}
       propertyPath: pages.Array.size
-      value: 6
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6544220831800389049, guid: eb835445f3858964fbe53afe3b6dea66,
         type: 3}
@@ -464,25 +464,25 @@ PrefabInstance:
         type: 3}
       propertyPath: pages.Array.data[4]
       value: 
-      objectReference: {fileID: 5605250253649422514, guid: db6dadaf2ac1cf843862b8fb0c486a38,
+      objectReference: {fileID: 5605250253649422514, guid: ad748962b701d2a49927cacf99d10b94,
         type: 3}
     - target: {fileID: 6544220831800389049, guid: eb835445f3858964fbe53afe3b6dea66,
         type: 3}
       propertyPath: pages.Array.data[5]
       value: 
-      objectReference: {fileID: 5629427315072725629, guid: 48b85c4d999d2a348b25d1e16d91b401,
+      objectReference: {fileID: 5605250253649422514, guid: db6dadaf2ac1cf843862b8fb0c486a38,
         type: 3}
     - target: {fileID: 6544220831800389049, guid: eb835445f3858964fbe53afe3b6dea66,
         type: 3}
       propertyPath: pages.Array.data[6]
       value: 
-      objectReference: {fileID: 6666293750373324138, guid: b41670c070790bf4b9b38abbe4926f10,
+      objectReference: {fileID: 5432347920602016226, guid: eeeae1e063e76d042bde43b407e8ac72,
         type: 3}
     - target: {fileID: 6544220831800389049, guid: eb835445f3858964fbe53afe3b6dea66,
         type: 3}
       propertyPath: pages.Array.data[7]
       value: 
-      objectReference: {fileID: 6666293750373324138, guid: b41670c070790bf4b9b38abbe4926f10,
+      objectReference: {fileID: 5629427315072725629, guid: 48b85c4d999d2a348b25d1e16d91b401,
         type: 3}
     - target: {fileID: 6544220831800389049, guid: eb835445f3858964fbe53afe3b6dea66,
         type: 3}

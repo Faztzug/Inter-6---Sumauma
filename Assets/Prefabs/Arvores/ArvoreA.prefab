@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3504965432024822623}
   - component: {fileID: 9071636197306825390}
   - component: {fileID: 6724132439778795861}
+  - component: {fileID: 8622715433542145372}
   m_Layer: 0
   m_Name: ArvoreA
   m_TagString: Untagged
@@ -95,7 +96,7 @@ BoxCollider:
   m_GameObject: {fileID: 3144883689749697162}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 6.110837, y: 31.16656, z: 4.8372917}
   m_Center: {x: -0.051101208, y: 14.148379, z: -0.33182907}
@@ -113,7 +114,7 @@ LODGroup:
   m_AnimateCrossFading: 0
   m_LastLODIsBillboard: 0
   m_LODs:
-  - screenRelativeHeight: 0.010939498
+  - screenRelativeHeight: 0.012399013
     fadeTransitionWidth: 0
     renderers:
     - renderer: {fileID: 3504965432024822623}
@@ -124,3 +125,17 @@ LODGroup:
     fadeTransitionWidth: 0
     renderers: []
   m_Enabled: 1
+--- !u!136 &8622715433542145372
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3144883689749697162}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1
+  m_Height: 31.16656
+  m_Direction: 1
+  m_Center: {x: 0, y: 14.148379, z: 0}

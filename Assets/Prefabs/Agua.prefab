@@ -119,6 +119,7 @@ MonoBehaviour:
   damageOnTrigger: 1
   resetDoubleJumpOnTouch: 1
   knockBackOnlyUp: 1
+  damageEnemys: 1
 --- !u!65 &4702853248948751402
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -52,7 +52,7 @@ public class Spiky : MonoBehaviour
             }
             else playerMove?.KnockBack(knockPos);
         }
-        else if(other.gameObject.CompareTag("Enemy"))
+        else if(other.gameObject.CompareTag("Enemy") && damageEnemys)
         {
             var enemy = other.gameObject.GetComponent<EnemyFireGenericIA>();
             var enemyHealth = other.gameObject.GetComponent<Health>();

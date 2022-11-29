@@ -149,5 +149,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: HistoriaImagePage3
       objectReference: {fileID: 0}
+    - target: {fileID: 8599382780332080553, guid: c2b98e3e574108247942f14519ded0b2,
+        type: 3}
+      propertyPath: levelUnlock
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2b98e3e574108247942f14519ded0b2, type: 3}

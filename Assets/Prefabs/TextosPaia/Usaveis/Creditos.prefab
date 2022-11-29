@@ -12,8 +12,8 @@ PrefabInstance:
       propertyPath: m_text
       value: "Som:\nLucas Cremonesi Vibiano\n\nPrograma\xE7\xE3o:\nLuiz Fernando
         Alves de Souza\nGuilherme de Toledo Burgheri\n\nDocumenta\xE7\xE3o:\nGiovanni
-        Bendini Claudino\n\nModelagem e Cen\xE1rios:\nGuilherme Camini Lunardi\nMichelle
-        Dantas Marques\nVitor Da Silva Lima"
+        Bendini Claudino\n\nModelagem e Dire\xE7\xE3o de Arte:\nGuilherme Camini
+        Lunardi\nMichelle Dantas Marques\nVitor Da Silva Lima"
       objectReference: {fileID: 0}
     - target: {fileID: 903618953934080896, guid: f8dc47e3e8e199e4aa3fde3207e89f19,
         type: 3}

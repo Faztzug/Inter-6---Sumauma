@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Fase 3.unity
     guid: fefec23facb9daf49814dd6c7a8f1251
   - enabled: 1
+    path: Assets/Scenes/Cutscene_Final.unity
+    guid: 454e5e70a72e8544b86671041a0d7cf2
+  - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   m_configObjects: {}

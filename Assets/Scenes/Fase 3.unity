@@ -10957,8 +10957,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5437381876965743591, guid: 23e8558ec73fb42479dde4a129acd7f1,
         type: 3}
-      propertyPath: RollSpeed
-      value: -600
+      propertyPath: MoveSpeed
+      value: 150
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e8558ec73fb42479dde4a129acd7f1, type: 3}
@@ -14959,7 +14959,7 @@ PrefabInstance:
     - target: {fileID: 1121052462936376150, guid: 23e8558ec73fb42479dde4a129acd7f1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 10.2
+      value: 10.78
       objectReference: {fileID: 0}
     - target: {fileID: 1121052462936376150, guid: 23e8558ec73fb42479dde4a129acd7f1,
         type: 3}
@@ -15003,8 +15003,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5437381876965743591, guid: 23e8558ec73fb42479dde4a129acd7f1,
         type: 3}
-      propertyPath: RollSpeed
-      value: -600
+      propertyPath: MoveSpeed
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e8558ec73fb42479dde4a129acd7f1, type: 3}
@@ -16962,8 +16962,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5437381876965743591, guid: 23e8558ec73fb42479dde4a129acd7f1,
         type: 3}
-      propertyPath: RollSpeed
-      value: -600
+      propertyPath: MoveSpeed
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e8558ec73fb42479dde4a129acd7f1, type: 3}
@@ -17195,6 +17195,11 @@ PrefabInstance:
       propertyPath: alma
       value: 
       objectReference: {fileID: 1596009967}
+    - target: {fileID: 7733508956908152653, guid: 4938480a2ce6177419a23b53f656476a,
+        type: 3}
+      propertyPath: itemEnum
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4938480a2ce6177419a23b53f656476a, type: 3}
 --- !u!1 &1277618313 stripped
@@ -17999,8 +18004,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5437381876965743591, guid: 23e8558ec73fb42479dde4a129acd7f1,
         type: 3}
-      propertyPath: RollSpeed
-      value: -600
+      propertyPath: MoveSpeed
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e8558ec73fb42479dde4a129acd7f1, type: 3}
@@ -24337,6 +24342,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.y
       value: 2.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5437381876965743591, guid: 23e8558ec73fb42479dde4a129acd7f1,
+        type: 3}
+      propertyPath: MoveSpeed
+      value: 80
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23e8558ec73fb42479dde4a129acd7f1, type: 3}

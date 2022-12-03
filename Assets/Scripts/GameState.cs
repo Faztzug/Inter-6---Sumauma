@@ -291,7 +291,7 @@ public class GameState : MonoBehaviour
         SaveData.plantaColetadaNaFase = plantaColetadaNaFase;
 
         if(!animalColetadoNaFase || !plantaColetadaNaFase) return;
-        SaveData = saveManager.ResetCheckPointValue(SaveData);
+        if (GetSceneName() != "Fase 3") SaveData = saveManager.ResetCheckPointValue(SaveData);
 
         if (GetSceneName() == "Fase 1")
         {
@@ -313,6 +313,7 @@ public class GameState : MonoBehaviour
         }
         if (GetSceneName() == "Fase 3" && force)
         {
+            SaveData = saveManager.ResetCheckPointValue(SaveData);
             if(saveData.unlockLevelsTo < 4)
             {
                 saveData.unlockLevelsTo = 4;
@@ -325,10 +326,11 @@ public class GameState : MonoBehaviour
 
     IEnumerator EndGame()
     {
-        mainCanvas.PauseGame();
         yield return new WaitForSecondsRealtime(1f);
-        mainCanvas.book.FlipToPage(20);
-        yield return new WaitForSecondsRealtime(7f);
-        LoadScene("Menu inicial");
+        // mainCanvas.PauseGame();
+        // yield return new WaitForSecondsRealtime(1f);
+        // mainCanvas.book.FlipToPage(20);
+        // yield return new WaitForSecondsRealtime(7f);
+        LoadScene("Cutscene_Final");
     }
 }

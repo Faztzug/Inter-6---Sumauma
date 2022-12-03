@@ -14,7 +14,8 @@ public class Item : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             CollectItem(other);
-            alma.SetActive(true);
+            if(alma) alma.SetActive(true);
+            else Debug.LogWarning("Iem Sem Alma Referenciada no Inspetor");
         }
 
     }

@@ -31,7 +31,7 @@ public class ManageGameEnd : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
         canvas.book.FlipToPage(20);
         isOnBook = true;
-        yield return new WaitForSecondsRealtime(60f);
+        yield return new WaitForSecondsRealtime(120f);
         canvas.ResumeGame();
     }
 }
